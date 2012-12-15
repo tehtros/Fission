@@ -1,0 +1,16 @@
+#ifndef FISSION_H_INCLUDED
+#define FISSION_H_INCLUDED
+
+#include <Core/Math.h>
+#include <Core/GameObject.h>
+#include <Core/Component.h>
+
+#include <Rendering/ShapeComponent.h>
+#include <Rendering/SpriteComponent.h>
+#include <Rendering/GlowingShapeComponent.h>
+#include <Physics/RigidBodyComponent.h>
+#include <Physics/DragComponent.h>
+
+#include <Game.h>
+
+#endif // FISSION_H_INCLUDED

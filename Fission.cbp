@@ -1,0 +1,1662 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Fission" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="DebugWin">
+				<Option platforms="Windows;" />
+				<Option output="bin\DebugWin\libFission" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj\DebugWin\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="ReleaseWin">
+				<Option platforms="Windows;" />
+				<Option output="bin\ReleaseWin\libFission" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj\ReleaseWin\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+			</Target>
+			<Target title="Test">
+				<Option output="bin\Test\Fission" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\Test\" />
+				<Option object_output="\obj\Test" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="bin\DebugWin\libFission.a" />
+					<Add library="extlibs\libs-mingw\libfreetype.a" />
+					<Add library="extlibs\libs-mingw\libjpeg.a" />
+					<Add library="extlibs\libs-mingw\libopenal32.a" />
+					<Add library="extlibs\libs-mingw\libsndfile.a" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="comctl32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-std=gnu++0x" />
+			<Add option="-DSFML_STATIC" />
+			<Add option="-DGLEW_STATIC" />
+			<Add directory="." />
+			<Add directory="include" />
+			<Add directory="extlibs\headers\AL" />
+			<Add directory="extlibs\headers\freetype" />
+			<Add directory="extlibs\headers\jpeg" />
+			<Add directory="extlibs\headers\libsndfile\windows" />
+			<Add directory="extlibs\headers" />
+			<Add directory="glew" />
+		</Compiler>
+		<Unit filename="Box2D\Box2D.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2ChainShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2ChainShape.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2CircleShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2CircleShape.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2EdgeShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2EdgeShape.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2PolygonShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2PolygonShape.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\Shapes\b2Shape.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2BroadPhase.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2BroadPhase.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2CollideCircle.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2CollideEdge.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2CollidePolygon.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2Collision.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2Collision.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2Distance.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2Distance.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2DynamicTree.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2DynamicTree.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2TimeOfImpact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Collision\b2TimeOfImpact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2BlockAllocator.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2BlockAllocator.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Draw.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Draw.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2GrowableStack.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Math.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Math.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Settings.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Settings.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2StackAllocator.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2StackAllocator.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Timer.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Common\b2Timer.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\ConvexDecomposition\ConvexDecomposition.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\ConvexDecomposition\b2Polygon.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\ConvexDecomposition\b2Polygon.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\ConvexDecomposition\b2Triangle.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\ConvexDecomposition\b2Triangle.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2ChainAndCircleContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2CircleContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2CircleContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2Contact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2Contact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2ContactSolver.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2ContactSolver.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2PolygonContact.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Contacts\b2PolygonContact.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2DistanceJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2DistanceJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2FrictionJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2FrictionJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2GearJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2GearJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2Joint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2Joint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2MouseJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2MouseJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2PrismaticJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2PrismaticJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2PulleyJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2PulleyJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2RevoluteJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2RevoluteJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2RopeJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2RopeJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2WeldJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2WeldJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2WheelJoint.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\Joints\b2WheelJoint.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2Body.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2Body.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2ContactManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2ContactManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2Fixture.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2Fixture.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2Island.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2Island.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2TimeStep.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2World.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2World.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2WorldCallbacks.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Dynamics\b2WorldCallbacks.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Rope\b2Rope.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Box2D\Rope\b2Rope.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\AABB.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\AABB.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\Color3f.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\Color3f.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\Point2i.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\Point2i.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\Vec2f.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Constructs\Vec2f.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\ConvexHull.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\ConvexHull.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\EmissiveLight.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\EmissiveLight.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\Light.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\Light.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\LightSystem.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\LightSystem.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\Light_Point.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\Light_Point.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\ShadowFin.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Light\ShadowFin.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\QuadTree.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\QuadTree.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\QuadTreeNode.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\QuadTreeNode.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\QuadTreeOccupant.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\QuadTreeOccupant.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\StaticQuadTree.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\QuadTree\StaticQuadTree.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Utils.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="LTBL\Utils.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Rain\Emitter.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Rain\Emitter.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Rain\Particle.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="Rain\Particle.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\ALCheck.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\ALCheck.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\AudioDevice.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\AudioDevice.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Export.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Listener.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Listener.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Music.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Music.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Sound.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\Sound.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundBuffer.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundBuffer.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundBufferRecorder.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundBufferRecorder.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundFile.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundFile.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundRecorder.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundRecorder.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundSource.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundSource.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundStream.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Audio\SoundStream.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Config.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\BlendMode.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\CircleShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\CircleShape.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Color.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Color.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\ConvexShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\ConvexShape.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Drawable.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Export.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Font.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Font.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\GLCheck.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\GLCheck.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Glyph.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Image.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Image.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\ImageLoader.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\ImageLoader.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\PrimitiveType.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Rect.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RectangleShape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RectangleShape.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderStates.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderStates.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTarget.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTarget.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTexture.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTexture.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTextureImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTextureImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTextureImplDefault.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTextureImplDefault.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTextureImplFBO.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderTextureImplFBO.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderWindow.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\RenderWindow.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Shader.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Shader.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Shape.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Shape.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Sprite.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Sprite.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Text.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Text.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Texture.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Texture.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\TextureSaver.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\TextureSaver.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Transform.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Transform.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Transformable.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Transformable.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Vertex.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\Vertex.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\VertexArray.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\VertexArray.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\View.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\View.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\stb_image\stb_image.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Graphics\stb_image\stb_image_write.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Main\SFML_Main.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Export.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Ftp.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Ftp.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Http.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Http.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\IpAddress.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\IpAddress.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Packet.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Packet.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Socket.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Socket.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\SocketHandle.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\SocketImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\SocketSelector.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\SocketSelector.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\TcpListener.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\TcpListener.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\TcpSocket.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\TcpSocket.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\UdpSocket.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\UdpSocket.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Unix\SocketImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Network\Unix\SocketImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Network\Win32\SocketImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Network\Win32\SocketImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\OpenGL.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Clock.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Clock.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Err.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Err.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Export.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\InputStream.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Lock.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Lock.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Mutex.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Mutex.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\NonCopyable.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Sleep.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Sleep.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\String.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\String.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Thread.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Thread.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\ThreadLocal.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\ThreadLocal.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\ThreadLocalPtr.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Time.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Time.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\ClockImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\ClockImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\MutexImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\MutexImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\SleepImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\SleepImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\ThreadImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\ThreadImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\ThreadLocalImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Unix\ThreadLocalImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\System\Utf.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Vector2.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Vector3.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\ClockImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\ClockImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\MutexImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\MutexImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\SleepImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\SleepImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\ThreadImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\ThreadImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\ThreadLocalImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\System\Win32\ThreadLocalImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Context.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Context.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\ContextSettings.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Event.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Export.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\GlContext.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\GlContext.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\GlResource.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\GlResource.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\InputImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Joystick.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Joystick.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\JoystickImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\JoystickManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\JoystickManager.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Keyboard.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Keyboard.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\Display.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\Display.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\GlxContext.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\GlxContext.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\InputImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\InputImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\JoystickImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\JoystickImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\VideoModeImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\WindowImplX11.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Linux\WindowImplX11.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\Mouse.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Mouse.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\AutoreleasePoolWrapper.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\HIDInputManager.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\HIDJoystickManager.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\HIDJoystickManager.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\InputImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\JoystickImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\JoystickImpl.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\SFApplication.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\SFContext.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\SFOpenGLView.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\SFViewController.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\SFWindow.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\SFWindowController.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\VideoModeImpl.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\WindowImplCocoa.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\WindowImplDelegateProtocol.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\cg_sf_conversion.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\cg_sf_conversion.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\OSX\cpp_objc_conversion.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SFML\Window\VideoMode.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\VideoMode.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\VideoModeImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\InputImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\InputImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\JoystickImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\JoystickImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\VideoModeImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\WglContext.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\WglContext.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\WindowImplWin32.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Win32\WindowImplWin32.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Window.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\Window.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\WindowHandle.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\WindowImpl.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\WindowImpl.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\WindowStyle.hpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\glext\glext.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\glext\glxext.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="SFML\Window\glext\wglext.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="glew\GL\glew.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="glew\GL\glxew.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="glew\GL\wglew.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="glew\glew.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="glew\glewinfo.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="glew\visualinfo.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\Component.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\GameObject.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\InputManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\Manager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\Math.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\RefCounted.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\ResourceManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\State.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Core\StateManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Fission.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Game.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Physics\DragComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Physics\PhysicsManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Physics\RigidBodyComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\PlayerControlComponent.h">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="include\Rendering\GlowingShapeComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Rendering\RenderingManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Rendering\ShapeComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Rendering\SpriteComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Scene\Scene.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Scene\SceneManager.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="src\Core\Component.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Core\GameObject.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Core\InputManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Core\ResourceManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Core\State.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Core\StateManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Game.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Physics\DragComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Physics\PhysicsManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Physics\RigidBodyComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\PlayerControlComponent.cpp">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="src\Rendering\GlowingShapeComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Rendering\RenderingManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Rendering\ShapeComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Rendering\SpriteComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Scene\Scene.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Scene\SceneManager.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

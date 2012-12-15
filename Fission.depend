@@ -1,0 +1,2129 @@
+# depslib dependency file v1.0
+1355527114 source:c:\users\teddy\programming\fission\main.cpp
+	<iostream>
+	<assert.h>
+	<Fission.h>
+	"PlayerControlComponent.h"
+
+1355215069 source:c:\users\teddy\programming\fission\src\scene\gameobject.cpp
+	"Scene/GameObject.h"
+
+1355213846 c:\users\teddy\programming\fission\include\scene\gameobject.h
+	<vector>
+	"Core/RefCounted.h"
+	"Scene/Component.h"
+
+1355091480 c:\users\teddy\programming\fission\include\refcounted.h
+
+1355092252 c:\users\teddy\programming\fission\include\core\refcounted.h
+
+1355120079 source:c:\users\teddy\programming\fission\src\core\state.cpp
+	"Core/State.h"
+
+1355454283 c:\users\teddy\programming\fission\include\core\state.h
+	<SFML/Graphics/RenderWindow.hpp>
+
+1355213269 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
+	"Core/StateManager.h"
+	"Core/State.h"
+
+1355202536 c:\users\teddy\programming\fission\include\core\statemanager.h
+	<stack>
+	<Core/State.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\shapes\b2chainshape.cpp
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+	<cstring>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\shapes\b2chainshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\shapes\b2shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2blockallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2settings.h
+	<cassert>
+	<cmath>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2math.h
+	<Box2D/Common/b2Settings.h>
+	<cmath>
+	<cfloat>
+	<cstddef>
+	<limits>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\b2collision.h
+	<Box2D/Common/b2Math.h>
+	<climits>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\shapes\b2edgeshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\shapes\b2circleshape.cpp
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<new>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\shapes\b2circleshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\shapes\b2edgeshape.cpp
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\shapes\b2polygonshape.cpp
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<new>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\shapes\b2polygonshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2broadphase.cpp
+	<Box2D/Collision/b2BroadPhase.h>
+	<cstring>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\b2broadphase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\b2dynamictree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2growablestack.h
+	<Box2D/Common/b2Settings.h>
+	<cstring>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2collidecircle.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2collideedge.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2collidepolygon.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2collision.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2Distance.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\b2distance.h
+	<Box2D/Common/b2Math.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2distance.cpp
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2dynamictree.cpp
+	<Box2D/Collision/b2DynamicTree.h>
+	<cstring>
+	<cfloat>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\collision\b2timeofimpact.cpp
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<cstdio>
+
+1346494012 c:\users\teddy\programming\fission\box2d\collision\b2timeofimpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\common\b2blockallocator.cpp
+	<Box2D/Common/b2BlockAllocator.h>
+	<cstdlib>
+	<climits>
+	<cstring>
+	<memory>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\common\b2draw.cpp
+	<Box2D/Common/b2Draw.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2draw.h
+	<Box2D/Common/b2Math.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\common\b2math.cpp
+	<Box2D/Common/b2Math.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\common\b2settings.cpp
+	<Box2D/Common/b2Settings.h>
+	<cstdlib>
+	<cstdio>
+	<cstdarg>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\common\b2stackallocator.cpp
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Common/b2Math.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2stackallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\common\b2timer.cpp
+	<Box2D/Common/b2Timer.h>
+	<windows.h>
+	<sys/time.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\common\b2timer.h
+	<Box2D/Common/b2Settings.h>
+
+1347498878 source:c:\users\teddy\programming\fission\box2d\convexdecomposition\b2polygon.cpp
+	"Box2D/Common/b2Math.h"
+	"Box2D/Common/b2Settings.h"
+	"Box2D/Collision/Shapes/b2Shape.h"
+	"Box2D/Collision/Shapes/b2PolygonShape.h"
+	"Box2D/Dynamics/b2Fixture.h"
+	"Box2D/Dynamics/b2Body.h"
+	"b2Triangle.h"
+	"b2Polygon.h"
+	<iostream>
+	<cmath>
+	<climits>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1347498878 c:\users\teddy\programming\fission\box2d\convexdecomposition\b2triangle.h
+	"Box2D/Common/b2Math.h"
+
+1347498878 c:\users\teddy\programming\fission\box2d\convexdecomposition\b2polygon.h
+	"Box2D/Common/b2Math.h"
+	"Box2D/Common/b2Settings.h"
+	"b2Triangle.h"
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+
+1347498878 source:c:\users\teddy\programming\fission\box2d\convexdecomposition\b2triangle.cpp
+	"b2Triangle.h"
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2chainandcirclecontact.cpp
+	<Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2chainandcirclecontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2chainandpolygoncontact.cpp
+	<Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<new>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2chainandpolygoncontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2circlecontact.cpp
+	<Box2D/Dynamics/Contacts/b2CircleContact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<new>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2circlecontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2worldcallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2contact.cpp
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Contacts/b2CircleContact.h>
+	<Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h>
+	<Box2D/Dynamics/Contacts/b2PolygonContact.h>
+	<Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h>
+	<Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h>
+	<Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h>
+	<Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h>
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2polygonandcirclecontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2polygoncontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2edgeandcirclecontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2edgeandpolygoncontact.h
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2contactsolver.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2timestep.h
+	<Box2D/Common/b2Math.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2world.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2contactmanager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2contactsolver.cpp
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Common/b2StackAllocator.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2edgeandcirclecontact.cpp
+	<Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<new>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2edgeandpolygoncontact.cpp
+	<Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<new>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2polygonandcirclecontact.cpp
+	<Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<new>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\contacts\b2polygoncontact.cpp
+	<Box2D/Dynamics/Contacts/b2PolygonContact.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<new>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2distancejoint.cpp
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2distancejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2joint.h
+	<Box2D/Common/b2Math.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2frictionjoint.cpp
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2frictionjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2gearjoint.cpp
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2gearjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2revolutejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2prismaticjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2joint.cpp
+	<Box2D/Dynamics/Joints/b2Joint.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<new>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2wheeljoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2mousejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2pulleyjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2weldjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\joints\b2ropejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2mousejoint.cpp
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2prismaticjoint.cpp
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2pulleyjoint.cpp
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2revolutejoint.cpp
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2ropejoint.cpp
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2weldjoint.cpp
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\joints\b2wheeljoint.cpp
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\b2body.cpp
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\b2contactmanager.cpp
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\b2fixture.cpp
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2BlockAllocator.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\b2island.cpp
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Dynamics/b2Island.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Dynamics/Joints/b2Joint.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Common/b2Timer.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\dynamics\b2island.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\b2world.cpp
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2Island.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Contacts/b2ContactSolver.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<new>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\dynamics\b2worldcallbacks.cpp
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1346494012 source:c:\users\teddy\programming\fission\box2d\rope\b2rope.cpp
+	<Box2D/Rope/b2Rope.h>
+	<Box2D/Common/b2Draw.h>
+
+1346494012 c:\users\teddy\programming\fission\box2d\rope\b2rope.h
+	<Box2D/Common/b2Math.h>
+
+1355454068 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
+	"Rendering/RenderingManager.h"
+
+1355523604 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
+	<SFML/Graphics.hpp>
+	<LTBL/Light/LightSystem.h>
+	<LTBL/Light/Light_Point.h>
+	<LTBL/Utils.h>
+	<Core/Math.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\alcheck.cpp
+	<SFML/Audio/ALCheck.hpp>
+	<SFML/Audio/AudioDevice.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\alcheck.hpp
+	<SFML/Config.hpp>
+	<iostream>
+	<string>
+	<al.h>
+	<alc.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\config.hpp
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\al\al.h
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\al\alc.h
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\audiodevice.hpp
+	<set>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\err.hpp
+	<SFML/System/Export.hpp>
+	<ostream>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\export.hpp
+	<SFML/Config.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\audiodevice.cpp
+	<SFML/Audio/AudioDevice.hpp>
+	<SFML/Audio/ALCheck.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\vector3.hpp
+	<SFML/System/Vector3.inl>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\vector3.inl
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\listener.cpp
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/ALCheck.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\music.cpp
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/ALCheck.hpp>
+	<SFML/Audio/SoundFile.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Err.hpp>
+	<fstream>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\thread.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+	<SFML/System/Thread.inl>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\noncopyable.hpp
+	<SFML/System/Export.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\thread.inl
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\time.hpp
+	<SFML/System/Export.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\mutex.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\soundfile.hpp
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<sndfile.h>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\libsndfile\windows\sndfile.h
+	<stdio.h>
+	<sys/types.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\lock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\sound.cpp
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/ALCheck.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundbuffer.cpp
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/AudioDevice.hpp>
+	<SFML/Audio/ALCheck.hpp>
+	<SFML/System/Err.hpp>
+	<memory>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundbufferrecorder.cpp
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<algorithm>
+	<iterator>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Thread.hpp>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundfile.cpp
+	<SFML/Audio/SoundFile.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Err.hpp>
+	<cstring>
+	<cctype>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\inputstream.hpp
+	<SFML/Config.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundrecorder.cpp
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/AudioDevice.hpp>
+	<SFML/Audio/ALCheck.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\sleep.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundsource.cpp
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/ALCheck.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundstream.cpp
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/AudioDevice.hpp>
+	<SFML/Audio/ALCheck.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\circleshape.cpp
+	<SFML/Graphics/CircleShape.hpp>
+	<cmath>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\circleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\export.hpp
+	<SFML/Config.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\shape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/Vector2.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\drawable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\renderstates.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\blendmode.hpp
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\transform.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rect.hpp
+	<SFML/System/Vector2.hpp>
+	<algorithm>
+	<SFML/Graphics/Rect.inl>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\vector2.hpp
+	<SFML/System/Vector2.inl>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\vector2.inl
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rect.inl
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\transformable.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\vertexarray.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\vertex.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/System/Vector2.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\color.hpp
+	<SFML/Graphics/Export.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\primitivetype.hpp
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/View.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window.hpp
+	<SFML/System.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/Window/WindowStyle.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Utf.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\clock.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\string.hpp
+	<SFML/System/Export.hpp>
+	<locale>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\threadlocal.hpp
+	<SFML/System/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<cstdlib>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\threadlocalptr.hpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/ThreadLocalPtr.inl>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\threadlocalptr.inl
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\utf.hpp
+	<SFML/Config.hpp>
+	<algorithm>
+	<locale>
+	<string>
+	<cstdlib>
+	<SFML/System/Utf.inl>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\utf.inl
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\context.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\export.hpp
+	<SFML/Config.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\glresource.hpp
+	<SFML/Window/Export.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\contextsettings.hpp
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\event.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\joystick.hpp
+	<SFML/Window/Export.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\keyboard.hpp
+	<SFML/Window/Export.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\mouse.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/System/Vector2.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\videomode.hpp
+	<SFML/Window/Export.hpp>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\window.hpp
+	<SFML/Window/Export.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/Clock.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\windowhandle.hpp
+	<SFML/Config.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\windowstyle.hpp
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\font.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/String.hpp>
+	<map>
+	<string>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\glyph.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\texture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\image.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<string>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertexture.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertarget.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/PrimitiveType.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\view.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/System/Vector2.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\renderwindow.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Window/Window.hpp>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\shader.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Vector3.hpp>
+	<map>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rectangleshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\convexshape.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\sprite.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\text.hpp
+	<SFML/Graphics/Export.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Transformable.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/System/String.hpp>
+	<string>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\color.cpp
+	<SFML/Graphics/Color.hpp>
+	<algorithm>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\convexshape.cpp
+	<SFML/Graphics/ConvexShape.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\font.cpp
+	<SFML/Graphics/Font.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Err.hpp>
+	<ft2build.h>
+	<cstdlib>
+	<cstring>
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\ft2build.h
+	<freetype/config/ftheader.h>
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\freetype\config\ftheader.h
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\glcheck.cpp
+	<SFML/Graphics/GLCheck.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\glcheck.hpp
+	<SFML/Config.hpp>
+	<GL/glew.h>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\image.cpp
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/ImageLoader.hpp>
+	<SFML/System/Err.hpp>
+	<algorithm>
+	<cstring>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\imageloader.hpp
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Vector2.hpp>
+	<string>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\imageloader.cpp
+	<SFML/Graphics/ImageLoader.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Err.hpp>
+	<SFML/Graphics/stb_image/stb_image.h>
+	<SFML/Graphics/stb_image/stb_image_write.h>
+	<jpeglib.h>
+	<jerror.h>
+	<cctype>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\stb_image\stb_image.h
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\stb_image\stb_image_write.h
+	<stdarg.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<assert.h>
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\jpeg\jpeglib.h
+	"jconfig.h"
+	"jmorecfg.h"
+	"jpegint.h"
+	"jerror.h"
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\jpeg\jconfig.h
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\jpeg\jmorecfg.h
+
+1354657168 c:\users\teddy\programming\fission\extlibs\headers\jpeg\jerror.h
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rectangleshape.cpp
+	<SFML/Graphics/RectangleShape.hpp>
+	<cmath>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\renderstates.cpp
+	<SFML/Graphics/RenderStates.hpp>
+	<cstddef>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertarget.cpp
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/GLCheck.hpp>
+	<iostream>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertexture.cpp
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderTextureImplFBO.hpp>
+	<SFML/Graphics/RenderTextureImplDefault.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimplfbo.hpp
+	<SFML/Graphics/RenderTextureImpl.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/Window/GlResource.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpl.hpp
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpldefault.hpp
+	<SFML/Graphics/RenderTextureImpl.hpp>
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/Context.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpl.cpp
+	<SFML/Graphics/RenderTextureImpl.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpldefault.cpp
+	<SFML/Graphics/RenderTextureImplDefault.hpp>
+	<SFML/Graphics/GLCheck.hpp>
+	<SFML/Graphics/TextureSaver.hpp>
+	<SFML/Window/Context.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\graphics\texturesaver.hpp
+	<SFML/Graphics/GLCheck.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimplfbo.cpp
+	<SFML/Graphics/RenderTextureImplFBO.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/GLCheck.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\renderwindow.cpp
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/GLCheck.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\shader.cpp
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/GLCheck.hpp>
+	<SFML/System/InputStream.hpp>
+	<SFML/System/Err.hpp>
+	<fstream>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\shape.cpp
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/System/Err.hpp>
+	<cmath>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\sprite.cpp
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<cstdlib>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\text.cpp
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<cassert>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\texture.cpp
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/GLCheck.hpp>
+	<SFML/Graphics/TextureSaver.hpp>
+	<SFML/Window/Window.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Err.hpp>
+	<cassert>
+	<cstring>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\texturesaver.cpp
+	<SFML/Graphics/TextureSaver.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\transform.cpp
+	<SFML/Graphics/Transform.hpp>
+	<cmath>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\transformable.cpp
+	<SFML/Graphics/Transformable.hpp>
+	<cmath>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\vertex.cpp
+	<SFML/Graphics/Vertex.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\vertexarray.cpp
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\view.cpp
+	<SFML/Graphics/View.hpp>
+	<cmath>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\main\sfml_main.cpp
+	<windows.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\ftp.cpp
+	<SFML/Network/Ftp.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<algorithm>
+	<fstream>
+	<iterator>
+	<sstream>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\ftp.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\export.hpp
+	<SFML/Config.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\tcpsocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\socket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/SocketHandle.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\sockethandle.hpp
+	<SFML/Config.hpp>
+	<basetsd.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\ipaddress.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+	<istream>
+	<ostream>
+	<string>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\http.cpp
+	<SFML/Network/Http.hpp>
+	<cctype>
+	<algorithm>
+	<iterator>
+	<sstream>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\http.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<map>
+	<string>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\ipaddress.cpp
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/Http.hpp>
+	<SFML/Network/SocketImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\socketimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/Network/Win32/SocketImpl.hpp>
+	<SFML/Network/Unix/SocketImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\win32\socketimpl.hpp
+	<SFML/Network/Socket.hpp>
+	<winsock2.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\unix\socketimpl.hpp
+	<SFML/Network/Socket.hpp>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<netinet/tcp.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<unistd.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\packet.cpp
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/SocketImpl.hpp>
+	<SFML/System/String.hpp>
+	<cstring>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\packet.hpp
+	<SFML/Network/Export.hpp>
+	<string>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\socket.cpp
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/SocketImpl.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\socketselector.cpp
+	<SFML/Network/SocketSelector.hpp>
+	<SFML/Network/Socket.hpp>
+	<SFML/Network/SocketImpl.hpp>
+	<SFML/System/Err.hpp>
+	<utility>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\socketselector.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\tcplistener.cpp
+	<SFML/Network/TcpListener.hpp>
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/Network/SocketImpl.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\tcplistener.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\tcpsocket.cpp
+	<SFML/Network/TcpSocket.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/SocketImpl.hpp>
+	<SFML/System/Err.hpp>
+	<algorithm>
+	<cstring>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\udpsocket.cpp
+	<SFML/Network/UdpSocket.hpp>
+	<SFML/Network/IpAddress.hpp>
+	<SFML/Network/Packet.hpp>
+	<SFML/Network/SocketImpl.hpp>
+	<SFML/System/Err.hpp>
+	<algorithm>
+
+1354657168 c:\users\teddy\programming\fission\sfml\network\udpsocket.hpp
+	<SFML/Network/Export.hpp>
+	<SFML/Network/Socket.hpp>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\network\win32\socketimpl.cpp
+	<SFML/Network/Win32/SocketImpl.hpp>
+	<cstring>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\clock.cpp
+	<SFML/System/Clock.hpp>
+	<SFML/System/Win32/ClockImpl.hpp>
+	<SFML/System/Unix/ClockImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\win32\clockimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\unix\clockimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\err.cpp
+	<SFML/System/Err.hpp>
+	<streambuf>
+	<cstdio>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\lock.cpp
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\mutex.cpp
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Win32/MutexImpl.hpp>
+	<SFML/System/Unix/MutexImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\win32\muteximpl.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\unix\muteximpl.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\sleep.cpp
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Win32/SleepImpl.hpp>
+	<SFML/System/Unix/SleepImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\win32\sleepimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\unix\sleepimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/System/Time.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\string.cpp
+	<SFML/System/String.hpp>
+	<SFML/System/Utf.hpp>
+	<iterator>
+	<cstring>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\thread.cpp
+	<SFML/System/Thread.hpp>
+	<SFML/System/Win32/ThreadImpl.hpp>
+	<SFML/System/Unix/ThreadImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\win32\threadimpl.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\unix\threadimpl.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\threadlocal.cpp
+	<SFML/System/ThreadLocal.hpp>
+	<SFML/System/Win32/ThreadLocalImpl.hpp>
+	<SFML/System/Unix/ThreadLocalImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\win32\threadlocalimpl.hpp
+	<SFML/System/NonCopyable.hpp>
+	<windows.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\system\unix\threadlocalimpl.hpp
+	<SFML/System/NonCopyable.hpp>
+	<pthread.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\time.cpp
+	<SFML/System/Time.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\clockimpl.cpp
+	<SFML/System/Win32/ClockImpl.hpp>
+	<windows.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\muteximpl.cpp
+	<SFML/System/Win32/MutexImpl.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\sleepimpl.cpp
+	<SFML/System/Win32/SleepImpl.hpp>
+	<windows.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\threadimpl.cpp
+	<SFML/System/Win32/ThreadImpl.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Err.hpp>
+	<cassert>
+	<process.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\threadlocalimpl.cpp
+	<SFML/System/Win32/ThreadLocalImpl.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\context.cpp
+	<SFML/Window/Context.hpp>
+	<SFML/Window/GlContext.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\glcontext.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/ContextSettings.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\glcontext.cpp
+	<SFML/Window/GlContext.hpp>
+	<SFML/System/ThreadLocalPtr.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Lock.hpp>
+	<SFML/OpenGL.hpp>
+	<SFML/Window/glext/glext.h>
+	<set>
+	<cstdlib>
+	<cassert>
+	<SFML/Window/Win32/WglContext.hpp>
+	<SFML/Window/Linux/GlxContext.hpp>
+	<SFML/Window/OSX/SFContext.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\opengl.hpp
+	<SFML/Config.hpp>
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\glext\glext.h
+	<windows.h>
+	<stddef.h>
+	<inttypes.h>
+	<inttypes.h>
+	<inttypes.h>
+	<stdint.h>
+	<stdint.h>
+	<inttypes.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\win32\wglcontext.hpp
+	<SFML/Window/GlContext.hpp>
+	<SFML/OpenGL.hpp>
+	<windows.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\linux\glxcontext.hpp
+	<SFML/Window/GlContext.hpp>
+	<X11/Xlib.h>
+	<GL/glx.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\osx\sfcontext.hpp
+	<SFML/Window/GlContext.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\glresource.cpp
+	<SFML/Window/GlResource.hpp>
+	<SFML/Window/GlContext.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Lock.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\joystick.cpp
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/JoystickManager.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\joystickmanager.hpp
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/JoystickImpl.hpp>
+	<SFML/System/NonCopyable.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\joystickimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Joystick.hpp>
+	<algorithm>
+	<SFML/Window/Win32/JoystickImpl.hpp>
+	<SFML/Window/Linux/JoystickImpl.hpp>
+	<SFML/Window/OSX/JoystickImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\win32\joystickimpl.hpp
+	<SFML/Window/JoystickImpl.hpp>
+	<windows.h>
+	<mmsystem.h>
+	<cmath>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\linux\joystickimpl.hpp
+	<linux/joystick.h>
+	<fcntl.h>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\osx\joystickimpl.hpp
+	<SFML/Window/JoystickImpl.hpp>
+	<IOKit/hid/IOHIDDevice.h>
+	<map>
+	<vector>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\joystickmanager.cpp
+	<SFML/Window/JoystickManager.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\keyboard.cpp
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/InputImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\inputimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/Window/Win32/InputImpl.hpp>
+	<SFML/Window/Linux/InputImpl.hpp>
+	<SFML/Window/OSX/InputImpl.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\win32\inputimpl.hpp
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\linux\inputimpl.hpp
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\osx\inputimpl.hpp
+	<SFML/Window/Keyboard.hpp>
+	<SFML/Window/Mouse.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\mouse.cpp
+	<SFML/Window/Mouse.hpp>
+	<SFML/Window/InputImpl.hpp>
+	<SFML/Window/Window.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\videomode.cpp
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/VideoModeImpl.hpp>
+	<algorithm>
+	<functional>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\videomodeimpl.hpp
+	<SFML/Window/VideoMode.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\inputimpl.cpp
+	<SFML/Window/Window.hpp>
+	<SFML/Window/Win32/InputImpl.hpp>
+	<windows.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\joystickimpl.cpp
+	<SFML/Window/JoystickImpl.hpp>
+	<SFML/System/Clock.hpp>
+	<windows.h>
+	<cmath>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\videomodeimpl.cpp
+	<SFML/Window/VideoModeImpl.hpp>
+	<windows.h>
+	<algorithm>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\wglcontext.cpp
+	<SFML/Window/WindowImpl.hpp>
+	<SFML/Window/Win32/WglContext.hpp>
+	<SFML/Window/glext/wglext.h>
+	<SFML/System/Lock.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\windowimpl.hpp
+	<SFML/Config.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/Joystick.hpp>
+	<SFML/Window/JoystickImpl.hpp>
+	<SFML/Window/VideoMode.hpp>
+	<SFML/Window/WindowHandle.hpp>
+	<queue>
+	<set>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\glext\wglext.h
+	<windows.h>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\windowimplwin32.cpp
+	<SFML/Window/Win32/WindowImplWin32.hpp>
+	<SFML/Window/WindowStyle.hpp>
+	<GL/gl.h>
+	<SFML/Window/glext/wglext.h>
+	<SFML/Window/glext/glext.h>
+	<SFML/System/Err.hpp>
+	<vector>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\win32\windowimplwin32.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowImpl.hpp>
+	<windows.h>
+	<string>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\window.cpp
+	<SFML/Window/Window.hpp>
+	<SFML/Window/GlContext.hpp>
+	<SFML/Window/WindowImpl.hpp>
+	<SFML/System/Sleep.hpp>
+	<SFML/System/Err.hpp>
+
+1354657168 source:c:\users\teddy\programming\fission\sfml\window\windowimpl.cpp
+	<SFML/Window/WindowImpl.hpp>
+	<SFML/Window/Event.hpp>
+	<SFML/Window/JoystickManager.hpp>
+	<SFML/System/Sleep.hpp>
+	<algorithm>
+	<cmath>
+	<SFML/Window/Win32/WindowImplWin32.hpp>
+	<SFML/Window/Linux/WindowImplX11.hpp>
+	<SFML/Window/OSX/WindowImplCocoa.hpp>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\linux\windowimplx11.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowImpl.hpp>
+	<X11/Xlib.h>
+	<set>
+	<string>
+
+1354657168 c:\users\teddy\programming\fission\sfml\window\osx\windowimplcocoa.hpp
+	<SFML/Window/Event.hpp>
+	<SFML/Window/WindowImpl.hpp>
+
+1355451443 c:\users\teddy\programming\fission\include\game.h
+	<Core/ResourceManager.h>
+	<Core/InputManager.h>
+	<Core/StateManager.h>
+	<Rendering/RenderingManager.h>
+	<Physics/PhysicsManager.h>
+	<Scene/SceneManager.h>
+
+1355523872 source:c:\users\teddy\programming\fission\src\game.cpp
+	"Game.h"
+	<Core/Math.h>
+
+1344286748 c:\users\teddy\programming\fission\glew\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1344286748 source:c:\users\teddy\programming\fission\glew\glew.c
+	<GL/glew.h>
+	<GL/wglew.h>
+	<GL/glxew.h>
+	<dlfcn.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+	<string.h>
+	<AvailabilityMacros.h>
+	<dlfcn.h>
+	<mach-o/dyld.h>
+
+1344286748 c:\users\teddy\programming\fission\glew\gl\wglew.h
+	<windows.h>
+
+1344286748 c:\users\teddy\programming\fission\glew\gl\glxew.h
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<X11/Xmd.h>
+	<GL/glew.h>
+
+1344286748 source:c:\users\teddy\programming\fission\glew\glewinfo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<GL/glew.h>
+	<GL/wglew.h>
+	<GL/glxew.h>
+	<GL/Regal.h>
+	<AGL/agl.h>
+
+1344286748 source:c:\users\teddy\programming\fission\glew\visualinfo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<GL/glew.h>
+	<GL/wglew.h>
+	<AGL/agl.h>
+	<GL/glxew.h>
+
+1355525564 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
+	"Core/InputManager.h"
+	<iostream>
+
+1355515181 c:\users\teddy\programming\fission\include\core\inputmanager.h
+	<SFML/Window.hpp>
+	"Core/Manager.h"
+
+1355275717 c:\users\teddy\programming\fission\include\core\manager.h
+
+1355128551 c:\users\teddy\programming\fission\ltbl\light\lightsystem.h
+	<SFML/OpenGL.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<LTBL/QuadTree/StaticQuadTree.h>
+	<LTBL/Light/Light.h>
+	<LTBL/Light/EmissiveLight.h>
+	<LTBL/Light/ConvexHull.h>
+	<LTBL/Light/ShadowFin.h>
+	<LTBL/Constructs.h>
+	<unordered_set>
+	<vector>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\quadtree\staticquadtree.h
+	<LTBL/QuadTree/QuadTree.h>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\quadtree\quadtree.h
+	<LTBL/QuadTree/QuadTreeNode.h>
+	<LTBL/QuadTree/QuadTreeOccupant.h>
+	<unordered_set>
+	<memory>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\quadtree\quadtreenode.h
+	<LTBL/Constructs/AABB.h>
+	<LTBL/Constructs/Point2i.h>
+	<LTBL/QuadTree/QuadTreeOccupant.h>
+	<vector>
+	<unordered_set>
+	<memory>
+
+1355128480 c:\users\teddy\programming\fission\ltbl\constructs\aabb.h
+	<LTBL/Constructs/Vec2f.h>
+
+1355297815 c:\users\teddy\programming\fission\ltbl\constructs\vec2f.h
+	<iostream>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\constructs\point2i.h
+
+1343985297 c:\users\teddy\programming\fission\ltbl\quadtree\quadtreeoccupant.h
+	<LTBL/QuadTree/QuadTreeNode.h>
+	<LTBL/Constructs/AABB.h>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\light\light.h
+	<SFML/OpenGL.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<LTBL/Constructs.h>
+	<LTBL/QuadTree/QuadTree.h>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\constructs.h
+	<LTBL/Constructs/Vec2f.h>
+	<LTBL/Constructs/AABB.h>
+	<LTBL/Constructs/Point2i.h>
+	<LTBL/Constructs/Color3f.h>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\constructs\color3f.h
+
+1343985297 c:\users\teddy\programming\fission\ltbl\light\emissivelight.h
+	<LTBL/QuadTree/QuadTree.h>
+	<LTBL/Constructs/Color3f.h>
+	<SFML/OpenGL.hpp>
+	<SFML/Graphics/Texture.hpp>
+
+1355300646 c:\users\teddy\programming\fission\ltbl\light\convexhull.h
+	<SFML/OpenGL.hpp>
+	<LTBL/Constructs.h>
+	<LTBL/QuadTree/QuadTree.h>
+	<vector>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\light\shadowfin.h
+	<SFML/OpenGL.hpp>
+	<LTBL/Constructs/Vec2f.h>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\light\light_point.h
+	<LTBL/Light/Light.h>
+
+1343985297 c:\users\teddy\programming\fission\ltbl\utils.h
+	<math.h>
+	<string>
+
+1355128091 source:c:\users\teddy\programming\fission\ltbl\constructs\aabb.cpp
+	<LTBL/Constructs/AABB.h>
+	<cmath>
+	<SFML/OpenGL.hpp>
+
+1343985297 source:c:\users\teddy\programming\fission\ltbl\constructs\color3f.cpp
+	<LTBL/Constructs/Color3f.h>
+	<SFML/OpenGL.hpp>
+
+1343985297 source:c:\users\teddy\programming\fission\ltbl\constructs\point2i.cpp
+	<LTBL/Constructs/Point2i.h>
+
+1355299901 source:c:\users\teddy\programming\fission\ltbl\constructs\vec2f.cpp
+	<LTBL/Constructs/Vec2f.h>
+	<math.h>
+
+1355300673 source:c:\users\teddy\programming\fission\ltbl\light\convexhull.cpp
+	<LTBL/Light/ConvexHull.h>
+	<LTBL/Utils.h>
+	<assert.h>
+	<iostream>
+	<fstream>
+	<sstream>
+	<cmath>
+
+1343985297 source:c:\users\teddy\programming\fission\ltbl\light\emissivelight.cpp
+	<LTBL/Light/EmissiveLight.h>
+	<math.h>
+
+1343985297 source:c:\users\teddy\programming\fission\ltbl\light\light.cpp
+	<LTBL/Light/Light.h>
+	<assert.h>
+
+1355384652 source:c:\users\teddy\programming\fission\ltbl\light\lightsystem.cpp
+	<GL/glew.h>
+	<LTBL/QuadTree/QuadTreeOccupant.h>
+	<LTBL/Light/LightSystem.h>
+	<LTBL/Light/ShadowFin.h>
+	<LTBL/Utils.h>
+	<SFML/Graphics/GLCheck.hpp>
+	<assert.h>
+
+1355138799 source:c:\users\teddy\programming\fission\ltbl\light\light_point.cpp
+	<LTBL/Light/Light_Point.h>
+	<LTBL/Light/ShadowFin.h>
+	<LTBL/Utils.h>
+	<assert.h>
+
+1343985297 source:c:\users\teddy\programming\fission\ltbl\light\shadowfin.cpp
+	<LTBL/Light/ShadowFin.h>
+
+1355128150 source:c:\users\teddy\programming\fission\ltbl\quadtree\quadtree.cpp
+	<LTBL/QuadTree/QuadTree.h>
+	<LTBL/QuadTree/QuadTreeNode.h>
+	<LTBL/QuadTree/QuadTree.h>
+	<SFML/OpenGL.hpp>
+	<list>
+
+1355259424 source:c:\users\teddy\programming\fission\ltbl\quadtree\quadtreenode.cpp
+	<LTBL/QuadTree/QuadTreeNode.h>
+	<LTBL/QuadTree/QuadTree.h>
+	<assert.h>
+	<list>
+
+1343985297 source:c:\users\teddy\programming\fission\ltbl\quadtree\quadtreeoccupant.cpp
+	<LTBL/QuadTree/QuadTreeOccupant.h>
+	<LTBL/QuadTree/QuadTreeNode.h>
+	<LTBL/QuadTree/QuadTree.h>
+	<LTBL/Constructs/Vec2f.h>
+	<assert.h>
+
+1355259556 source:c:\users\teddy\programming\fission\ltbl\quadtree\staticquadtree.cpp
+	<LTBL/QuadTree/StaticQuadTree.h>
+	<assert.h>
+
+1355128174 source:c:\users\teddy\programming\fission\ltbl\utils.cpp
+	<LTBL/Utils.h>
+	<sstream>
+	<cstdlib>
+
+1355196700 source:c:\users\teddy\programming\fission\src\scene\component.cpp
+	"Scene/Component.h"
+
+1355213801 c:\users\teddy\programming\fission\include\scene\component.h
+	<string>
+	<SFML/Graphics/RenderWindow.hpp>
+	"Core/RefCounted.h"
+
+1355454431 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
+	"Rendering/SpriteComponent.h"
+	<SFML/Graphics/Sprite.hpp>
+	<iostream>
+	<Core/ResourceManager.h>
+	<Core/GameObject.h>
+	<Rendering/RenderingManager.h>
+
+1355454305 c:\users\teddy\programming\fission\include\rendering\spritecomponent.h
+	<SFML/System/Time.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	"Core/Component.h"
+
+1355277316 source:c:\users\teddy\programming\fission\src\core\resourcemanager.cpp
+	"Core/ResourceManager.h"
+
+1355202315 c:\users\teddy\programming\fission\include\core\resourcemanager.h
+	<string>
+	<vector>
+	<SFML/Graphics/Texture.hpp>
+	"Core/Manager.h"
+
+1355454373 source:c:\users\teddy\programming\fission\src\scene\scene.cpp
+	"Scene/Scene.h"
+	"Core/GameObject.h"
+	"Rendering/RenderingManager.h"
+	"Scene/SceneManager.h"
+
+1355454362 c:\users\teddy\programming\fission\include\scene\scene.h
+	<vector>
+	<SFML/Graphics/RenderWindow.hpp>
+
+1355214324 c:\users\teddy\programming\fission\include\scene\scenemanager.h
+	<string>
+	<vector>
+	"Core/Manager.h"
+	"Scene.h"
+
+1355219556 source:c:\users\teddy\programming\fission\src\scene\scenemanager.cpp
+	"Scene/SceneManager.h"
+	"Scene/SceneManager.h"
+	"Scene/Scene.h"
+	"Core/GameObject.h"
+	"Rendering/LightComponent.h"
+	"Rendering/MeshComponent.h"
+	"Physics/CharacterControllerComponent.h"
+	"Physics/RigidBodyComponent.h"
+	"Logic/WeaponComponent.h"
+
+1355523786 c:\users\teddy\programming\fission\include\fission.h
+	<Core/Math.h>
+	<Core/GameObject.h>
+	<Core/Component.h>
+	<Rendering/ShapeComponent.h>
+	<Rendering/SpriteComponent.h>
+	<Rendering/GlowingShapeComponent.h>
+	<Physics/RigidBodyComponent.h>
+	<Physics/DragComponent.h>
+	<Game.h>
+
+1355357503 c:\users\teddy\programming\fission\include\physics\rigidbodycomponent.h
+	<Box2D/Box2D.h>
+	"Core/Component.h"
+
+1355297261 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
+	"Physics/RigidBodyComponent.h"
+	<fstream>
+	<Core/Math.h>
+	<Core/GameObject.h>
+	<Physics/PhysicsManager.h>
+
+1355528379 c:\users\teddy\programming\fission\include\core\component.h
+	<string>
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	"Core/RefCounted.h"
+
+1355219578 source:c:\users\teddy\programming\fission\src\core\component.cpp
+	"Core/Component.h"
+
+1355528834 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
+	"Core/GameObject.h"
+
+1355528800 c:\users\teddy\programming\fission\include\core\gameobject.h
+	<vector>
+	<SFML/System/Vector2.hpp>
+	"Core/RefCounted.h"
+	"Core/Component.h"
+
+1346494012 c:\users\teddy\programming\fission\box2d\box2d.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+
+1355528871 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
+	"Physics/PhysicsManager.h"
+	<Core/GameObject.h>
+
+1355527067 c:\users\teddy\programming\fission\include\physics\physicsmanager.h
+	<Box2D/Box2D.h>
+
+1355281102 source:c:\users\teddy\programming\fission\src\shapecomponent\shapecomponent.cpp
+	"Rendering/ShapeComponent.h"
+	<fstream>
+	<Core/GameObject.h>
+	<Rendering/RenderingManager.h>
+
+1355471560 c:\users\teddy\programming\fission\include\rendering\shapecomponent.h
+	<SFML/Graphics/ConvexShape.hpp>
+	<LTBL/Light/ConvexHull.h>
+	<Core/Component.h>
+
+1355523575 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
+	"Rendering/ShapeComponent.h"
+	<fstream>
+	<Core/Math.h>
+	<Core/GameObject.h>
+	<Rendering/RenderingManager.h>
+
+1355527807 c:\users\teddy\programming\fission\include\core\math.h
+	<SFML/System/Vector2.hpp>
+
+1355528239 source:c:\users\teddy\programming\fission\src\physics\dragcomponent.cpp
+	"Physics/DragComponent.h"
+	<Core/Math.h>
+	<Core/InputManager.h>
+	<Core/GameObject.h>
+	<Physics/PhysicsManager.h>
+	<Physics/RigidBodyComponent.h>
+	<iostream>
+
+1355513418 c:\users\teddy\programming\fission\include\physics\dragcomponent.h
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Core/Component.h>
+
+1355530940 source:c:\users\teddy\programming\fission\src\playercontrolcomponent.cpp
+	"PlayerControlComponent.h"
+	<Core/InputManager.h>
+	<Core/GameObject.h>
+	<Rendering/SpriteComponent.h>
+	<Physics/RigidBodyComponent.h>
+
+1355530578 c:\users\teddy\programming\fission\include\playercontrolcomponent.h
+	<Core/Component.h>
+
+1355389338 source:c:\users\teddy\programming\fission\rain\emitter.cpp
+	"Emitter.h"
+
+1355391025 c:\users\teddy\programming\fission\rain\emitter.h
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Color.hpp>
+
+1355390097 source:c:\users\teddy\programming\fission\rain\particle.cpp
+	"Particle.h"
+
+1355390109 c:\users\teddy\programming\fission\rain\particle.h
+	<SFML/System/Vector2.hpp>
+	<SFML/Graphics/Color.hpp>
+
+1355511690 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
+	"Rendering/GlowingShapeComponent.h"
+	<SFML/Graphics.hpp>
+	<Core/ResourceManager.h>
+	<Core/GameObject.h>
+	<Rendering/RenderingManager.h>
+
+1355511671 c:\users\teddy\programming\fission\include\rendering\glowingshapecomponent.h
+	<LTBL/Light/EmissiveLight.h>
+	<Rendering/ShapeComponent.h>
+
