@@ -22,15 +22,15 @@ const float DEGTORAD = PI / 180.0f;
 const float RADTODEG   = 180.0f / PI;
 
 /// Utility function to convert pixel coordinates to world coordinates
-inline sf::Vector2f screenToWorld(sf::Vector2i screen)
+inline sf::Vector2f screenToWorld(sf::Vector2f screen)
 {
     return sf::Vector2f(screen.x,-screen.y)/PTU;
 }
 
 /// Utility function to convert world coordinates to screen coordinates
-inline sf::Vector2f worldToScreen(sf::Vector2i screen)
+inline sf::Vector2f worldToScreen(sf::Vector2f world)
 {
-    return sf::Vector2f(screen.x,-screen.y)*PTU;
+    return sf::Vector2f(world.x,-world.y)*PTU;
 }
 
 /// Utility function to convert a radian value to degrees

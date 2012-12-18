@@ -51,6 +51,9 @@ void Game::run(State *state)
 
         mStateManager->getCurrentState()->onPreRender(mRenderingManager->getRenderWindow());
         mSceneManager->getCurrentScene()->onRender(mRenderingManager->getRenderWindow());
+
+        mRenderingManager->renderLights();
+
         mStateManager->getCurrentState()->onPostRender(mRenderingManager->getRenderWindow());
 
         //finish rendering

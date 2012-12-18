@@ -10,6 +10,8 @@
 #include <Rendering/GlowingShapeComponent.h>
 #include <Physics/RigidBodyComponent.h>
 #include <Physics/DragComponent.h>
+#include <Logic/WeaponComponent.h>
+#include <Logic/ProjectileComponent.h>
 
 #include <Game.h>
 

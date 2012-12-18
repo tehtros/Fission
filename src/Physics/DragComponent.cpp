@@ -15,7 +15,7 @@ DragComponent::DragComponent(GameObject *object, std::string name) : Component(o
 
 DragComponent::~DragComponent()
 {
-    //dtor
+    PhysicsManager::get()->setDragger(NULL);
 }
 
 bool DragComponent::update(float dt)
@@ -23,7 +23,7 @@ bool DragComponent::update(float dt)
     bool isTouched = false;
 
     // Real world coordinate from mouse position
-    sf::Vector2f mouseWorld = screenToWorld(InputManager::get()->getMousePosition());
+    sf::Vector2f mouseWorld = screenToWorld(sf::Vector2f(InputManager::get()->getMousePosition().x, InputManager::get()->getMousePosition().y));
     b2Vec2 mousePos = b2Vec2(mouseWorld.x, mouseWorld.y);
 
     if (InputManager::get()->getLMBState() == ButtonState::PRESSED)
@@ -39,7 +39,7 @@ bool DragComponent::update(float dt)
         }
     }
 
-    if (isTouched && mMouseJoint == NULL) // Just tapped the object
+    if (isTouched && !mMouseJoint) // Just tapped the object
     {
         b2MouseJointDef mousedef;
 
@@ -54,15 +54,18 @@ bool DragComponent::update(float dt)
 
         mBody->SetAwake(true);
         mMouseJoint = (b2MouseJoint*)PhysicsManager::get()->getWorld()->CreateJoint(&mousedef);
+
+        PhysicsManager::get()->setDragger(this);
     }
-    else if (InputManager::get()->getLMBDown() && mMouseJoint != NULL) // We are dragging this component around
+    else if (InputManager::get()->getLMBDown() && mMouseJoint) // We are dragging this component around
     {
         mMouseJoint->SetTarget(mousePos);
         mBody->SetAwake(true);
     }
-    else if (InputManager::get()->getLMBState() == ButtonState::RELEASED && mMouseJoint != NULL)
+    else if (InputManager::get()->getLMBState() == ButtonState::RELEASED && mMouseJoint)
     {
         PhysicsManager::get()->getWorld()->DestroyJoint(mMouseJoint);
+        PhysicsManager::get()->setDragger(NULL);
         mMouseJoint = NULL;
     }
 

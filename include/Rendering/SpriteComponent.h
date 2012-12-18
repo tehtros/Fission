@@ -18,6 +18,8 @@ class SpriteComponent : public Component
         //accessors
         sf::Sprite *getSprite(){return mSprite;}
 
+        bool getAnimFinished(){return !mLoopAnim&&mCurFrame==mEndFrame;}
+
         //mutators
         void setFrames(int frames){mFrames = frames;}
         void setFramesPerRow(int frames){mFramesPerRow = frames;}
@@ -29,7 +31,7 @@ class SpriteComponent : public Component
                 mCurFrame=start;
             mStartFrame=start;mEndFrame=end;
         }
-        bool getAnimFinished(){return !mLoopAnim&&mCurFrame==mEndFrame;}
+        void setKillOnAnimFinish(bool kill){mKillOnAnimFinish=kill;}
 
     protected:
         sf::Sprite *mSprite;
@@ -44,6 +46,8 @@ class SpriteComponent : public Component
         bool mLoopAnim;                         //Whether or not to loop the animation
         int mStartFrame;                        //The start frame of the animation loop
         int mEndFrame;                          //The end frame of the animation loop
+
+        bool mKillOnAnimFinish;                 //Kill when the animation finishes?
 
     private:
 };

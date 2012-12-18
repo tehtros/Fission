@@ -13,9 +13,14 @@ class DragComponent : public Component
 
         virtual bool update(float dt);
 
+        b2MouseJoint *getMouseJoint(){return mMouseJoint;}
+
+        void setMouseJoint(b2MouseJoint *joint){mMouseJoint=joint;}
+
     protected:
-        b2MouseJoint *mMouseJoint;
         b2Body *mBody;
+
+        b2MouseJoint *mMouseJoint;
 
     private:
 };

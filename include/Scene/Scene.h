@@ -25,6 +25,8 @@ class Scene
 
         void clear();
 
+        std::vector <GameObject*> &getGameObjects(){return mGameObjects;}
+
     protected:
         std::vector <GameObject*> mGameObjects;
 

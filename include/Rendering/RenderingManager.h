@@ -17,6 +17,7 @@ class RenderingManager
         virtual bool update(float dt);
 
         void beginRender();
+        void renderLights();
         void endRender();
 
         sf::RenderWindow *getRenderWindow(){return mRenderWindow;}

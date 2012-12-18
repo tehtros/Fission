@@ -3,6 +3,8 @@
 
 #include <Box2D/Box2D.h>
 
+class DragComponent;
+
 class PhysicsManager : public b2ContactListener
 {
     public:
@@ -20,9 +22,11 @@ class PhysicsManager : public b2ContactListener
         // Accessors
         b2World *getWorld(){return mWorld;}
         b2Body *getGroundBody(){return mGroundBody;}
+        DragComponent *getDragger(){return mDragger;}
 
         // Mutators
         void setGroundBody(b2Body *body){mGroundBody=body;}
+        void setDragger(DragComponent *dragger){mDragger=dragger;}
 
         static PhysicsManager *get(){return Instance;}
 
@@ -30,6 +34,9 @@ class PhysicsManager : public b2ContactListener
         b2World *mWorld;
 
         b2Body *mGroundBody;
+
+        /// The one and only mouse drag component
+        DragComponent *mDragger;
 
     private:
         static PhysicsManager *Instance;

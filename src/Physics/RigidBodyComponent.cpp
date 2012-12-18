@@ -65,7 +65,7 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
 
 RigidBodyComponent::~RigidBodyComponent()
 {
-    //dtor
+    PhysicsManager::get()->getWorld()->DestroyBody(mBody);
 }
 
 bool RigidBodyComponent::update(float dt)

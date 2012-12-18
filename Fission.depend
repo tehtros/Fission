@@ -1,9 +1,11 @@
 # depslib dependency file v1.0
-1355527114 source:c:\users\teddy\programming\fission\main.cpp
+1355771363 source:c:\users\teddy\programming\fission\main.cpp
 	<iostream>
 	<assert.h>
-	<Fission.h>
-	"PlayerControlComponent.h"
+	<cstdlib>
+	<ctime>
+	<LTBL/Constructs/Vec2f.h>
+	"Villain.h"
 
 1355215069 source:c:\users\teddy\programming\fission\src\scene\gameobject.cpp
 	"Scene/GameObject.h"
@@ -525,10 +527,10 @@
 1346494012 c:\users\teddy\programming\fission\box2d\rope\b2rope.h
 	<Box2D/Common/b2Math.h>
 
-1355454068 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
+1355656073 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
 	"Rendering/RenderingManager.h"
 
-1355523604 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
+1355656089 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
 	<SFML/Graphics.hpp>
 	<LTBL/Light/LightSystem.h>
 	<LTBL/Light/Light_Point.h>
@@ -759,7 +761,8 @@
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\vector2.hpp
+1355690291 c:\users\teddy\programming\fission\sfml\system\vector2.hpp
+	<cmath>
 	<SFML/System/Vector2.inl>
 
 1354657168 c:\users\teddy\programming\fission\sfml\system\vector2.inl
@@ -1701,7 +1704,7 @@
 	<Physics/PhysicsManager.h>
 	<Scene/SceneManager.h>
 
-1355523872 source:c:\users\teddy\programming\fission\src\game.cpp
+1355656168 source:c:\users\teddy\programming\fission\src\game.cpp
 	"Game.h"
 	<Core/Math.h>
 
@@ -1933,7 +1936,7 @@
 	<SFML/Graphics/RenderWindow.hpp>
 	"Core/RefCounted.h"
 
-1355454431 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
+1355688352 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
 	"Rendering/SpriteComponent.h"
 	<SFML/Graphics/Sprite.hpp>
 	<iostream>
@@ -1941,17 +1944,18 @@
 	<Core/GameObject.h>
 	<Rendering/RenderingManager.h>
 
-1355454305 c:\users\teddy\programming\fission\include\rendering\spritecomponent.h
+1355688442 c:\users\teddy\programming\fission\include\rendering\spritecomponent.h
 	<SFML/System/Time.hpp>
 	<SFML/Graphics/Sprite.hpp>
 	"Core/Component.h"
 
-1355277316 source:c:\users\teddy\programming\fission\src\core\resourcemanager.cpp
+1355655600 source:c:\users\teddy\programming\fission\src\core\resourcemanager.cpp
 	"Core/ResourceManager.h"
 
-1355202315 c:\users\teddy\programming\fission\include\core\resourcemanager.h
+1355655531 c:\users\teddy\programming\fission\include\core\resourcemanager.h
 	<string>
 	<vector>
+	<SFML/Graphics/Font.hpp>
 	<SFML/Graphics/Texture.hpp>
 	"Core/Manager.h"
 
@@ -1961,7 +1965,7 @@
 	"Rendering/RenderingManager.h"
 	"Scene/SceneManager.h"
 
-1355454362 c:\users\teddy\programming\fission\include\scene\scene.h
+1355689793 c:\users\teddy\programming\fission\include\scene\scene.h
 	<vector>
 	<SFML/Graphics/RenderWindow.hpp>
 
@@ -1982,7 +1986,7 @@
 	"Physics/RigidBodyComponent.h"
 	"Logic/WeaponComponent.h"
 
-1355523786 c:\users\teddy\programming\fission\include\fission.h
+1355556824 c:\users\teddy\programming\fission\include\fission.h
 	<Core/Math.h>
 	<Core/GameObject.h>
 	<Core/Component.h>
@@ -1991,21 +1995,24 @@
 	<Rendering/GlowingShapeComponent.h>
 	<Physics/RigidBodyComponent.h>
 	<Physics/DragComponent.h>
+	<Logic/WeaponComponent.h>
+	<Logic/ProjectileComponent.h>
 	<Game.h>
 
 1355357503 c:\users\teddy\programming\fission\include\physics\rigidbodycomponent.h
 	<Box2D/Box2D.h>
 	"Core/Component.h"
 
-1355297261 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
+1355639257 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
 	"Physics/RigidBodyComponent.h"
 	<fstream>
 	<Core/Math.h>
 	<Core/GameObject.h>
 	<Physics/PhysicsManager.h>
 
-1355528379 c:\users\teddy\programming\fission\include\core\component.h
+1355597933 c:\users\teddy\programming\fission\include\core\component.h
 	<string>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/RenderWindow.hpp>
 	"Core/RefCounted.h"
@@ -2013,10 +2020,10 @@
 1355219578 source:c:\users\teddy\programming\fission\src\core\component.cpp
 	"Core/Component.h"
 
-1355528834 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
+1355649380 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
 	"Core/GameObject.h"
 
-1355528800 c:\users\teddy\programming\fission\include\core\gameobject.h
+1355649342 c:\users\teddy\programming\fission\include\core\gameobject.h
 	<vector>
 	<SFML/System/Vector2.hpp>
 	"Core/RefCounted.h"
@@ -2051,11 +2058,11 @@
 	<Box2D/Dynamics/Joints/b2RopeJoint.h>
 	<Box2D/Dynamics/Joints/b2WeldJoint.h>
 
-1355528871 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
+1355746607 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
 	"Physics/PhysicsManager.h"
 	<Core/GameObject.h>
 
-1355527067 c:\users\teddy\programming\fission\include\physics\physicsmanager.h
+1355746563 c:\users\teddy\programming\fission\include\physics\physicsmanager.h
 	<Box2D/Box2D.h>
 
 1355281102 source:c:\users\teddy\programming\fission\src\shapecomponent\shapecomponent.cpp
@@ -2076,10 +2083,10 @@
 	<Core/GameObject.h>
 	<Rendering/RenderingManager.h>
 
-1355527807 c:\users\teddy\programming\fission\include\core\math.h
+1355605397 c:\users\teddy\programming\fission\include\core\math.h
 	<SFML/System/Vector2.hpp>
 
-1355528239 source:c:\users\teddy\programming\fission\src\physics\dragcomponent.cpp
+1355746766 source:c:\users\teddy\programming\fission\src\physics\dragcomponent.cpp
 	"Physics/DragComponent.h"
 	<Core/Math.h>
 	<Core/InputManager.h>
@@ -2088,19 +2095,23 @@
 	<Physics/RigidBodyComponent.h>
 	<iostream>
 
-1355513418 c:\users\teddy\programming\fission\include\physics\dragcomponent.h
+1355746844 c:\users\teddy\programming\fission\include\physics\dragcomponent.h
 	<Box2D/Dynamics/Joints/b2MouseJoint.h>
 	<Core/Component.h>
 
-1355530940 source:c:\users\teddy\programming\fission\src\playercontrolcomponent.cpp
+1355685566 source:c:\users\teddy\programming\fission\src\playercontrolcomponent.cpp
 	"PlayerControlComponent.h"
 	<Core/InputManager.h>
 	<Core/GameObject.h>
 	<Rendering/SpriteComponent.h>
 	<Physics/RigidBodyComponent.h>
+	<Scene/SceneManager.h>
+	<Logic/WeaponComponent.h>
+	<Logic/ProjectileComponent.h>
+	"Villain.h"
 
-1355530578 c:\users\teddy\programming\fission\include\playercontrolcomponent.h
-	<Core/Component.h>
+1355657476 c:\users\teddy\programming\fission\include\playercontrolcomponent.h
+	"HPComponent.h"
 
 1355389338 source:c:\users\teddy\programming\fission\rain\emitter.cpp
 	"Emitter.h"
@@ -2126,4 +2137,71 @@
 1355511671 c:\users\teddy\programming\fission\include\rendering\glowingshapecomponent.h
 	<LTBL/Light/EmissiveLight.h>
 	<Rendering/ShapeComponent.h>
+
+1355739508 c:\users\teddy\programming\fission\include\logic\weaponcomponent.h
+	<Core/Component.h>
+
+1355739634 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
+	"Logic/WeaponComponent.h"
+	<Core/Math.h>
+	<Core/GameObject.h>
+	<Scene/SceneManager.h>
+	<Physics/PhysicsManager.h>
+	<Logic/ProjectileComponent.h>
+
+1355685455 source:c:\users\teddy\programming\fission\src\logic\projectilecomponent.cpp
+	"Logic/ProjectileComponent.h"
+	<GL/gl.h>
+	<Core/ResourceManager.h>
+	<Core/GameObject.h>
+	<Rendering/RenderingManager.h>
+	<iostream>
+
+1355649355 c:\users\teddy\programming\fission\include\logic\projectilecomponent.h
+	<LTBL/Light/EmissiveLight.h>
+	<Core/Component.h>
+
+1355748015 source:c:\users\teddy\programming\fission\src\aicontrolcomponent.cpp
+	"AIControlComponent.h"
+	<iostream>
+	<cstdlib>
+	<Core/Math.h>
+	<Core/ResourceManager.h>
+	<Core/GameObject.h>
+	<Rendering/SpriteComponent.h>
+	<Physics/RigidBodyComponent.h>
+	<Logic/WeaponComponent.h>
+	<Logic/ProjectileComponent.h>
+	"Villain.h"
+
+1355654765 c:\users\teddy\programming\fission\include\aicontrolcomponent.h
+	<SFML/Graphics/Sprite.hpp>
+	"HPComponent.h"
+
+1355749138 c:\users\teddy\programming\fission\include\villain.h
+	<Fission.h>
+	"PlayerControlComponent.h"
+	"AIControlComponent.h"
+	"AirplaneComponent.h"
+	"PillComponent.h"
+
+1355630582 source:c:\users\teddy\programming\fission\src\hpcomponent.cpp
+	"HPComponent.h"
+
+1355630597 c:\users\teddy\programming\fission\include\hpcomponent.h
+	<Core/Component.h>
+
+1355747989 source:c:\users\teddy\programming\fission\src\airplanecomponent.cpp
+	"AirplaneComponent.h"
+	"Villain.h"
+
+1355703315 c:\users\teddy\programming\fission\include\airplanecomponent.h
+	<Core/Component.h>
+
+1355748815 c:\users\teddy\programming\fission\include\pillcomponent.h
+	<Core/Component.h>
+
+1355748851 source:c:\users\teddy\programming\fission\src\pillcomponent.cpp
+	"PillComponent.h"
+	"Villain.h"
 

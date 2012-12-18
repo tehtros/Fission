@@ -11,6 +11,7 @@ Defines a component of a GameObject. Derive from this to add functionality to a 
 
 #include <string>
 
+#include <Box2D/Dynamics/Contacts/b2Contact.h>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -29,6 +30,9 @@ class Component : public RefCounted
 
         virtual void onSetPosition(sf::Vector2f position){} //called when the object's position is set
         virtual void onSetRotation(float rotation){} //called when the object's position is set
+
+        /// Called before a collision with the owning object is processed
+        virtual void onPreSolve(GameObject *object, b2Contact* contact, const b2Manifold* oldManifold){}
 
         /// Called when the owning GameObject starts colliding with another
         virtual void onContactBegin(GameObject *object){}

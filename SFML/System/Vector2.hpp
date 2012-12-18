@@ -25,6 +25,8 @@
 #ifndef SFML_VECTOR2_HPP
 #define SFML_VECTOR2_HPP
 
+#include <cmath>
+
 
 namespace sf
 {
@@ -68,6 +70,74 @@ public :
     ////////////////////////////////////////////////////////////
     template <typename U>
     explicit Vector2(const Vector2<U>& vector);
+
+    //! Normalize the vector.
+	/** The null vector is left untouched.
+	\return Reference to this vector, after normalization. */
+	Vector2<T>& normalize()
+	{
+		float length = (float)(x*x + y*y);
+		if (length == 0.f)
+			return *this;
+		length = sqrt ( 1.f/length );
+		x = (T)(x * length);
+		y = (T)(y * length);
+		return *this;
+	}
+
+    //! Rotates the point anticlockwise around a center by an amount of degrees.
+	/** \param Degrees Amount of degrees to rotate by, anticlockwise.
+	\param Center Rotation center.
+	\return This vector after transformation. */
+	Vector2<T>& rotateBy(float degrees, const Vector2<T>& center=Vector2<T>())
+	{
+		degrees *= 3.14159f/180.f;
+		const float cs = cos(degrees);
+		const float sn = sin(degrees);
+
+		x -= center.x;
+		y -= center.y;
+
+		T nx = (T)(x*cs - y*sn);
+		T ny = (T)(x*sn + y*cs);
+
+        x = nx;
+        y = ny;
+
+		x += center.x;
+		y += center.y;
+		return *this;
+	}
+
+	//! Calculates the angle of this vector in degrees in the trigonometric sense.
+	/** 0 is to the right (3 o'clock), values increase counter-clockwise.
+	This method has been suggested by Pr3t3nd3r.
+	\return Returns a value between 0 and 360. */
+	float getAngleTrig() const
+	{
+		if (y == 0)
+			return x < 0 ? 180 : 0;
+		else
+		if (x == 0)
+			return y < 0 ? 270 : 90;
+
+		if ( y > 0)
+			if (x > 0)
+				return atan(y/x) * 180.f/3.14159f;
+			else
+				return 180.0-atan(y/-x) * 180.f/3.14159f;
+		else
+			if (x > 0)
+				return 360.0-atan(-y/x) * 180.f/3.14159f;
+			else
+				return 180.0+atan(-y/-x) * 180.f/3.14159f;
+	}
+
+	/// Get the length of this vector
+	float getLength()
+	{
+	    return sqrt(x*x + y*y);
+	}
 
     ////////////////////////////////////////////////////////////
     // Member data

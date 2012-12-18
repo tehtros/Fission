@@ -10,9 +10,10 @@ PhysicsManager::PhysicsManager()
 
     mWorld = new b2World(b2Vec2(0, -10)); //gravity = 10
     mWorld->SetContactListener(this);
-    mWorld->SetAutoClearForces(false);
 
     mGroundBody = NULL;
+
+    mDragger = NULL;
 }
 
 PhysicsManager::~PhysicsManager()
@@ -31,6 +32,9 @@ void PhysicsManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
 {
     GameObject *objectA = static_cast <GameObject*> (contact->GetFixtureA()->GetBody()->GetUserData()); //grab the first object
     GameObject *objectB = static_cast <GameObject*> (contact->GetFixtureB()->GetBody()->GetUserData()); //grab the second object
+
+    objectA->onPreSolve(objectB, contact, oldManifold);
+    objectB->onPreSolve(objectA, contact, oldManifold);
 }
 
 void PhysicsManager::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)

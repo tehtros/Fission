@@ -13,11 +13,18 @@ GameObject::GameObject()
     mAlive = true;
 
     mRotation = 0;
+    mTeam = -1;
 }
 
 GameObject::~GameObject()
 {
-    //dtor
+    for (unsigned int c = 0; c < mComponents.size(); c++)
+    {
+        Component *component = mComponents[c];
+        mComponents.erase(mComponents.begin()+c);
+        c--;
+        component->release();
+    }
 }
 
 bool GameObject::update(float dt)
@@ -30,6 +37,7 @@ bool GameObject::update(float dt)
             //if the component doesn't want to live, end his suffering
             mComponents[c]->release();
             mComponents.erase(mComponents.begin()+c);
+            c--;
         }
     }
 
@@ -41,6 +49,14 @@ void GameObject::onRender(sf::RenderTarget *target, sf::RenderStates states)
     for (unsigned int c = 0; c < mComponents.size(); c++)
     {
         mComponents[c]->onRender(target, states);
+    }
+}
+
+void GameObject::onPreSolve(GameObject *object, b2Contact* contact, const b2Manifold* oldManifold)
+{
+    for (unsigned int c = 0; c < mComponents.size(); c++)
+    {
+        mComponents[c]->onPreSolve(object, contact, oldManifold);
     }
 }
 
@@ -75,6 +91,7 @@ void GameObject::removeComponent(Component *component)
             //keeeeel it!!!!!
             mComponents[c]->release();
             mComponents.erase(mComponents.begin()+c);
+            c--;
         }
     }
 }

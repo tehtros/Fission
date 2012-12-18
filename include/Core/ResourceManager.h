@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
 #include "Core/Manager.h"
@@ -20,6 +21,7 @@ class ResourceManager : public Manager
         virtual ~ResourceManager();
 
         sf::Texture *getTexture(std::string name);
+        sf::Font *getFont(std::string name);
 
         static ResourceManager *get(){return Instance;}
 

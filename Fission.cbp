@@ -1501,6 +1501,12 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
+		<Unit filename="include\AIControlComponent.h">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="include\AirplaneComponent.h">
+			<Option target="Test" />
+		</Unit>
 		<Unit filename="include\Core\Component.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
@@ -1545,6 +1551,17 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
+		<Unit filename="include\HPComponent.h">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="include\Logic\ProjectileComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Logic\WeaponComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
 		<Unit filename="include\Physics\DragComponent.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
@@ -1556,6 +1573,9 @@
 		<Unit filename="include\Physics\RigidBodyComponent.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\PillComponent.h">
+			<Option target="Test" />
 		</Unit>
 		<Unit filename="include\PlayerControlComponent.h">
 			<Option target="Test" />
@@ -1584,7 +1604,16 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
+		<Unit filename="include\Villain.h">
+			<Option target="Test" />
+		</Unit>
 		<Unit filename="main.cpp">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="src\AIControlComponent.cpp">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="src\AirplaneComponent.cpp">
 			<Option target="Test" />
 		</Unit>
 		<Unit filename="src\Core\Component.cpp">
@@ -1615,6 +1644,17 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
+		<Unit filename="src\HPComponent.cpp">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="src\Logic\ProjectileComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Logic\WeaponComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
 		<Unit filename="src\Physics\DragComponent.cpp">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
@@ -1626,6 +1666,9 @@
 		<Unit filename="src\Physics\RigidBodyComponent.cpp">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\PillComponent.cpp">
+			<Option target="Test" />
 		</Unit>
 		<Unit filename="src\PlayerControlComponent.cpp">
 			<Option target="Test" />

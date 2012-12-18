@@ -24,6 +24,8 @@ SpriteComponent::SpriteComponent(GameObject *object, std::string name, std::stri
     mFrameDim = sf::Vector2i(texture->getSize().x/mFramesPerRow, texture->getSize().y/(mFrames/mFramesPerRow));
     mStartFrame = 0;
     mEndFrame = mFrames-1;
+
+    mKillOnAnimFinish = false;
 }
 
 SpriteComponent::~SpriteComponent()
@@ -33,6 +35,11 @@ SpriteComponent::~SpriteComponent()
 
 bool SpriteComponent::update(float dt)
 {
+    if (mKillOnAnimFinish && getAnimFinished())
+    {
+        mGameObject->kill();
+    }
+
     if (mAnimClock.getElapsedTime().asMilliseconds() >= mAnimDelay && (mLoopAnim || mCurFrame != mEndFrame))
     {
         mAnimClock.restart();

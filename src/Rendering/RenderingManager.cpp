@@ -36,13 +36,16 @@ void RenderingManager::beginRender()
     mLightSystem->SetView(mRenderWindow->getView());
 }
 
-void RenderingManager::endRender()
+void RenderingManager::renderLights()
 {
     //calculate the lights
     mLightSystem->RenderLights();
 
     //draw the lights
     mLightSystem->RenderLightTexture();
+}
 
+void RenderingManager::endRender()
+{
     mRenderWindow->display(); //display the window
 }
