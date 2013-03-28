@@ -3,9 +3,10 @@
 
 #include <stack>
 
+#include <Core/Manager.h>
 #include <Core/State.h>
 
-class StateManager
+class StateManager : public Manager
 {
     public:
         StateManager();

@@ -12,8 +12,13 @@ class SpriteComponent : public Component
         SpriteComponent(GameObject *object, std::string name, std::string imgPath, int frames = 1, int framesPerRow = 1);
         virtual ~SpriteComponent();
 
+        virtual void serialize(sf::Packet &packet);
+        virtual void deserialize(sf::Packet &packet);
+
         virtual bool update(float dt);
         virtual void onRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
+
+        static Component *createComponent(GameObject *object);
 
         //accessors
         sf::Sprite *getSprite(){return mSprite;}
@@ -32,9 +37,12 @@ class SpriteComponent : public Component
             mStartFrame=start;mEndFrame=end;
         }
         void setKillOnAnimFinish(bool kill){mKillOnAnimFinish=kill;}
+        void setTexture(sf::Texture *texture);
+        void setTexture(std::string path);
 
     protected:
         sf::Sprite *mSprite;
+        std::string mTexturePath;
 
         int mFrames;                            //Total number of frames in animation
         int mFramesPerRow;                      //Number of frames per row in sprite sheet

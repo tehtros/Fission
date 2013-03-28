@@ -9,9 +9,22 @@
 
 SpriteComponent::SpriteComponent(GameObject *object, std::string name, std::string imgPath, int frames, int framesPerRow) : Component(object, name)
 {
-    sf::Texture *texture = ResourceManager::get()->getTexture(imgPath);
-    texture->setRepeated(false);
-    mSprite = new sf::Sprite(*texture);
+    mTexturePath = imgPath;
+
+    if (mTexturePath == "") // If a path wasn't specified, we don't want to try to load anything
+        return;
+
+    sf::Texture *texture = ResourceManager::get()->getTexture(mTexturePath);
+    if (texture)
+    {
+        texture->setRepeated(false);
+        mSprite = new sf::Sprite(*texture);
+    }
+    else
+    {
+        mSprite = NULL;
+        return;
+    }
 
     //base animation stuff
     mCurFrame = 0;
@@ -26,11 +39,56 @@ SpriteComponent::SpriteComponent(GameObject *object, std::string name, std::stri
     mEndFrame = mFrames-1;
 
     mKillOnAnimFinish = false;
+
+    mTypeName = "SpriteComponent";
 }
 
 SpriteComponent::~SpriteComponent()
 {
     //dtor
+}
+
+void SpriteComponent::serialize(sf::Packet &packet)
+{
+    Component::serialize(packet);
+
+    packet << mTexturePath;
+    packet << mCurFrame << mFrameDir << mAnimDelay << sf::Int8(mLoopAnim) << mFrames << mFramesPerRow << sf::Int8(mKillOnAnimFinish);
+}
+
+void SpriteComponent::deserialize(sf::Packet &packet)
+{
+    Component::deserialize(packet);
+
+    packet >> mTexturePath;
+    sf::Texture *texture = ResourceManager::get()->getTexture(mTexturePath);
+    if (texture)
+    {
+        texture->setRepeated(false);
+        mSprite = new sf::Sprite(*texture);
+    }
+    else
+    {
+        mSprite = NULL;
+        return;
+    }
+
+    //base animation stuff
+    packet >> mCurFrame >> mFrameDir >> mAnimDelay;
+
+    sf::Int8 loop;
+    packet >> loop;
+    mLoopAnim = loop;
+
+    packet >> mFrames >> mFramesPerRow;
+
+    mFrameDim = sf::Vector2i(texture->getSize().x/mFramesPerRow, texture->getSize().y/(mFrames/mFramesPerRow));
+    mStartFrame = 0;
+    mEndFrame = mFrames-1;
+
+    sf::Int8 kill;
+    packet >> kill;
+    mKillOnAnimFinish = kill;
 }
 
 bool SpriteComponent::update(float dt)
@@ -57,7 +115,7 @@ bool SpriteComponent::update(float dt)
 void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states)
 {
     //invalid frame - don't render
-    if (mCurFrame < mStartFrame || mCurFrame > mEndFrame)
+    if (!mSprite || mCurFrame < mStartFrame || mCurFrame > mEndFrame)
         return;
 
     //calculate frame position
@@ -67,10 +125,28 @@ void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states
     mSprite->setTextureRect(sf::IntRect(frameX, frameY, mFrameDim.x, mFrameDim.y));
 
     //calculate pixel position from GameObject position
-    sf::Vector2f newPos = mGameObject->getPosition()*RenderingManager::get()->getPTU();
+    sf::Vector2f newPos = (mGameObject->getPosition()*RenderingManager::get()->getPTU());
     newPos.y *= -1;
+    newPos += RenderingManager::get()->getCameraScreenOffset();
 
     mSprite->setPosition(newPos-sf::Vector2f(mFrameDim.x/2, mFrameDim.y/2));
     mSprite->setRotation(-mGameObject->getRotation());
     target->draw(*mSprite, states); //rendahhh!!!!
+}
+
+Component *SpriteComponent::createComponent(GameObject *object)
+{
+    return new SpriteComponent(object, "sprite", "", 1, 1);
+}
+
+void SpriteComponent::setTexture(sf::Texture *texture)
+{
+    if (mSprite)
+        delete mSprite;
+    mSprite = new sf::Sprite(*texture);
+}
+
+void SpriteComponent::setTexture(std::string path)
+{
+    setTexture(ResourceManager::get()->getTexture(path));
 }

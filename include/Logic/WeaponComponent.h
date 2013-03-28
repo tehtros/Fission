@@ -24,6 +24,8 @@ class WeaponComponent : public Component
         /// Option to specify the rotation rather than getting it from the owning GameObject
         virtual void fire(float rotation);
 
+        static Component *createComponent(GameObject *object);
+
         // Accessors
 
         // Mutators

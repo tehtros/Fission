@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Test" />
+	<ActiveTarget name="TestServer" />
 	<File name="Box2D\Collision\Shapes\b2ChainShape.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="916" topLine="7" />
 	</File>
@@ -16,14 +16,17 @@
 	<File name="Box2D\Dynamics\Contacts\b2Contact.h" open="0" top="0" tabpos="0">
 		<Cursor position="3013" topLine="65" />
 	</File>
+	<File name="Box2D\Dynamics\Joints\b2Joint.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3532" topLine="107" />
+	</File>
 	<File name="Box2D\Dynamics\b2Body.h" open="0" top="0" tabpos="0">
-		<Cursor position="13643" topLine="334" />
+		<Cursor position="1453" topLine="27" />
 	</File>
 	<File name="Box2D\Dynamics\b2Fixture.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1827" topLine="30" />
 	</File>
 	<File name="Box2D\Dynamics\b2World.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="5294" topLine="212" />
+		<Cursor position="5294" topLine="229" />
 	</File>
 	<File name="Box2D\Dynamics\b2WorldCallbacks.h" open="0" top="0" tabpos="0">
 		<Cursor position="3202" topLine="96" />
@@ -38,7 +41,7 @@
 		<Cursor position="1908" topLine="106" />
 	</File>
 	<File name="LTBL\Constructs\Vec2f.h" open="0" top="0" tabpos="0">
-		<Cursor position="736" topLine="16" />
+		<Cursor position="69" topLine="0" />
 	</File>
 	<File name="LTBL\Light\ConvexHull.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1369" topLine="40" />
@@ -100,6 +103,9 @@
 	<File name="Rain\Particle.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="350" topLine="0" />
 	</File>
+	<File name="SFML\Config.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="4406" topLine="132" />
+	</File>
 	<File name="SFML\Graphics\Color.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1558" topLine="28" />
 	</File>
@@ -121,6 +127,9 @@
 	<File name="SFML\Graphics\RenderStates.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1398" topLine="18" />
 	</File>
+	<File name="SFML\Graphics\RenderTarget.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="4868" topLine="122" />
+	</File>
 	<File name="SFML\Graphics\RenderTarget.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="9690" topLine="224" />
 	</File>
@@ -133,8 +142,29 @@
 	<File name="SFML\Graphics\Transformable.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="3702" topLine="77" />
 	</File>
+	<File name="SFML\Main\SFML_Main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1193" topLine="21" />
+	</File>
+	<File name="SFML\Network\IpAddress.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="8072" topLine="185" />
+	</File>
+	<File name="SFML\Network\Packet.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="8928" topLine="163" />
+	</File>
 	<File name="SFML\Network\Packet.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="870" topLine="84" />
+		<Cursor position="6119" topLine="167" />
+	</File>
+	<File name="SFML\Network\Socket.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2460" topLine="75" />
+	</File>
+	<File name="SFML\Network\Socket.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="1735" topLine="156" />
+	</File>
+	<File name="SFML\Network\UdpSocket.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="6281" topLine="170" />
+	</File>
+	<File name="SFML\Network\UdpSocket.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="1706" topLine="138" />
 	</File>
 	<File name="SFML\Network\Unix\SocketImpl.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1387" topLine="21" />
@@ -145,8 +175,14 @@
 	<File name="SFML\System\InputStream.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="756" topLine="11" />
 	</File>
+	<File name="SFML\System\Mutex.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1676" topLine="34" />
+	</File>
+	<File name="SFML\System\String.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="4378" topLine="87" />
+	</File>
 	<File name="SFML\System\Vector2.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="2906" topLine="75" />
+		<Cursor position="2750" topLine="67" />
 	</File>
 	<File name="SFML\Window.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="29" />
@@ -164,7 +200,13 @@
 		<Cursor position="2612" topLine="139" />
 	</File>
 	<File name="SFML\Window\Mouse.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="1780" topLine="75" />
+		<Cursor position="2037" topLine="48" />
+	</File>
+	<File name="enet\enet.h" open="0" top="0" tabpos="0">
+		<Cursor position="21447" topLine="521" />
+	</File>
+	<File name="enet\host.c" open="0" top="0" tabpos="0">
+		<Cursor position="10025" topLine="252" />
 	</File>
 	<File name="glew\GL\glew.h" open="0" top="0" tabpos="0">
 		<Cursor position="4221" topLine="72" />
@@ -172,139 +214,157 @@
 	<File name="glew\glew.c" open="0" top="0" tabpos="0">
 		<Cursor position="1798" topLine="128" />
 	</File>
-	<File name="include\AIControlComponent.h" open="1" top="0" tabpos="2">
-		<Cursor position="1289" topLine="16" />
-	</File>
 	<File name="include\Core\Component.h" open="0" top="0" tabpos="0">
-		<Cursor position="261" topLine="2" />
+		<Cursor position="676" topLine="17" />
 	</File>
 	<File name="include\Core\GameObject.h" open="0" top="0" tabpos="0">
-		<Cursor position="1796" topLine="53" />
+		<Cursor position="2012" topLine="54" />
 	</File>
 	<File name="include\Core\InputManager.h" open="0" top="0" tabpos="0">
-		<Cursor position="1388" topLine="37" />
+		<Cursor position="307" topLine="27" />
 	</File>
 	<File name="include\Core\Manager.h" open="0" top="0" tabpos="0">
-		<Cursor position="204" topLine="3" />
+		<Cursor position="344" topLine="6" />
 	</File>
 	<File name="include\Core\Math.h" open="0" top="0" tabpos="0">
-		<Cursor position="687" topLine="21" />
+		<Cursor position="201" topLine="3" />
 	</File>
 	<File name="include\Core\RefCounted.h" open="0" top="0" tabpos="0">
 		<Cursor position="267" topLine="6" />
 	</File>
+	<File name="include\Core\ResourceManager.h" open="0" top="0" tabpos="0">
+		<Cursor position="262" topLine="15" />
+	</File>
 	<File name="include\Core\State.h" open="0" top="0" tabpos="0">
-		<Cursor position="558" topLine="9" />
+		<Cursor position="801" topLine="15" />
 	</File>
 	<File name="include\Core\StateManager.h" open="0" top="0" tabpos="0">
-		<Cursor position="383" topLine="3" />
+		<Cursor position="159" topLine="0" />
 	</File>
 	<File name="include\Fission.h" open="0" top="0" tabpos="0">
-		<Cursor position="419" topLine="0" />
+		<Cursor position="699" topLine="3" />
 	</File>
 	<File name="include\Game.h" open="0" top="0" tabpos="5">
-		<Cursor position="831" topLine="16" />
+		<Cursor position="738" topLine="12" />
+	</File>
+	<File name="include\GameState.h" open="1" top="0" tabpos="1">
+		<Cursor position="851" topLine="24" />
+	</File>
+	<File name="include\HeroControlComponent.h" open="1" top="0" tabpos="3">
+		<Cursor position="162" topLine="3" />
 	</File>
 	<File name="include\Logic\ProjectileComponent.h" open="0" top="0" tabpos="0">
-		<Cursor position="84" topLine="0" />
+		<Cursor position="864" topLine="12" />
 	</File>
 	<File name="include\Logic\WeaponComponent.h" open="0" top="0" tabpos="0">
-		<Cursor position="664" topLine="6" />
+		<Cursor position="759" topLine="24" />
+	</File>
+	<File name="include\Network\Chat.h" open="0" top="0" tabpos="5">
+		<Cursor position="531" topLine="12" />
+	</File>
+	<File name="include\Network\NetworkManager.h" open="0" top="0" tabpos="3">
+		<Cursor position="660" topLine="31" />
 	</File>
 	<File name="include\Physics\DragComponent.h" open="0" top="0" tabpos="0">
-		<Cursor position="405" topLine="0" />
+		<Cursor position="407" topLine="1" />
 	</File>
 	<File name="include\Physics\PhysicsManager.h" open="0" top="0" tabpos="0">
-		<Cursor position="118" topLine="0" />
+		<Cursor position="174" topLine="0" />
 	</File>
 	<File name="include\Physics\RigidBodyComponent.h" open="0" top="0" tabpos="0">
-		<Cursor position="530" topLine="0" />
+		<Cursor position="140" topLine="1" />
 	</File>
-	<File name="include\PlayerControlComponent.h" open="0" top="0" tabpos="2">
-		<Cursor position="138" topLine="0" />
+	<File name="include\PlayerDatabase.h" open="1" top="0" tabpos="5">
+		<Cursor position="112" topLine="0" />
 	</File>
 	<File name="include\Rendering\GlowingShapeComponent.h" open="0" top="0" tabpos="0">
 		<Cursor position="308" topLine="0" />
 	</File>
 	<File name="include\Rendering\RenderingManager.h" open="0" top="0" tabpos="3">
-		<Cursor position="591" topLine="16" />
+		<Cursor position="951" topLine="21" />
 	</File>
 	<File name="include\Rendering\ShapeComponent.h" open="0" top="0" tabpos="0">
 		<Cursor position="670" topLine="0" />
 	</File>
 	<File name="include\Rendering\SpriteComponent.h" open="0" top="0" tabpos="0">
-		<Cursor position="873" topLine="28" />
+		<Cursor position="1389" topLine="26" />
 	</File>
 	<File name="include\Scene\Scene.h" open="0" top="0" tabpos="0">
-		<Cursor position="392" topLine="3" />
+		<Cursor position="615" topLine="9" />
 	</File>
 	<File name="include\Scene\SceneManager.h" open="0" top="0" tabpos="0">
-		<Cursor position="942" topLine="5" />
+		<Cursor position="349" topLine="8" />
 	</File>
-	<File name="include\Villain.h" open="0" top="0" tabpos="0">
-		<Cursor position="105" topLine="0" />
+	<File name="mainClient.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="369" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="80" topLine="6" />
-	</File>
-	<File name="src\AIControlComponent.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="1097" topLine="27" />
+	<File name="mainServer.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="369" topLine="0" />
 	</File>
 	<File name="src\Core\GameObject.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="946" topLine="45" />
+		<Cursor position="202" topLine="0" />
 	</File>
 	<File name="src\Core\InputManager.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="500" topLine="95" />
+		<Cursor position="3473" topLine="95" />
 	</File>
 	<File name="src\Core\ResourceManager.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="735" topLine="15" />
+		<Cursor position="866" topLine="0" />
 	</File>
 	<File name="src\Core\State.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="142" topLine="1" />
+		<Cursor position="145" topLine="1" />
 	</File>
 	<File name="src\Core\StateManager.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="162" topLine="0" />
+		<Cursor position="492" topLine="12" />
 	</File>
 	<File name="src\Game.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="26" topLine="0" />
+		<Cursor position="2008" topLine="48" />
 	</File>
-	<File name="src\HPComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="28" topLine="0" />
+	<File name="src\GameState.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="2304" topLine="85" />
+	</File>
+	<File name="src\HeroControlComponent.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1259" topLine="82" />
 	</File>
 	<File name="src\Logic\ProjectileComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="584" topLine="0" />
+		<Cursor position="897" topLine="19" />
 	</File>
 	<File name="src\Logic\WeaponComponent.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="2999" topLine="15" />
+		<Cursor position="1234" topLine="78" />
 	</File>
-	<File name="src\Physics\DragComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="741" topLine="14" />
+	<File name="src\Network\Chat.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="7302" topLine="162" />
+	</File>
+	<File name="src\Network\NetworkManager.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="5533" topLine="194" />
+	</File>
+	<File name="src\Physics\DragComponent.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1799" topLine="54" />
 	</File>
 	<File name="src\Physics\PhysicsManager.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="918" topLine="22" />
+		<Cursor position="2606" topLine="54" />
 	</File>
 	<File name="src\Physics\RigidBodyComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="1712" topLine="46" />
+		<Cursor position="389" topLine="70" />
 	</File>
-	<File name="src\PlayerControlComponent.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2371" topLine="67" />
+	<File name="src\PlayerDatabase.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="64" topLine="78" />
 	</File>
 	<File name="src\Rendering\GlowingShapeComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="2985" topLine="74" />
+		<Cursor position="2687" topLine="73" />
 	</File>
 	<File name="src\Rendering\RenderingManager.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="268" topLine="0" />
+		<Cursor position="1010" topLine="28" />
 	</File>
 	<File name="src\Rendering\ShapeComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="142" topLine="0" />
+		<Cursor position="2115" topLine="63" />
 	</File>
 	<File name="src\Rendering\SpriteComponent.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="1902" topLine="10" />
+		<Cursor position="1744" topLine="54" />
 	</File>
 	<File name="src\Scene\Scene.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="891" topLine="33" />
+		<Cursor position="1323" topLine="12" />
 	</File>
 	<File name="src\Scene\SceneManager.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="553" topLine="15" />
+		<Cursor position="456" topLine="39" />
 	</File>
 </CodeBlocks_layout_file>

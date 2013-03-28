@@ -13,8 +13,12 @@ class DragComponent : public Component
 
         virtual bool update(float dt);
 
+        static Component *createComponent(GameObject *object);
+
+        // Accessors
         b2MouseJoint *getMouseJoint(){return mMouseJoint;}
 
+        // Mutators
         void setMouseJoint(b2MouseJoint *joint){mMouseJoint=joint;}
 
     protected:

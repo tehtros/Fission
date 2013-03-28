@@ -26,6 +26,7 @@ class SceneManager : public Manager
         GameObject *createGameObject();
         void addGameObject(GameObject *object){mCurrentScene->addGameObject(object);}
         void destroyGameObject(GameObject *object){mCurrentScene->destroyGameObject(object);}
+        GameObject *findGameObject(int ID){return mCurrentScene->findGameObject(ID);}
 
         void clearScene(){mCurrentScene->clear();}
 
@@ -33,13 +34,18 @@ class SceneManager : public Manager
         ComponentCreationFunction getComponentCreationFunction(std::string name);
         void removeComponentCreationFunction(std::string name);
 
-        //accessors
+        // Accessors
         Scene *getCurrentScene(){return mCurrentScene;}
+
+        // Mutators
 
         static SceneManager *get(){return Instance;}
 
     protected:
+        /// List of all the loaded scenes
         std::vector <Scene*> mScenes;
+
+        /// The scene currently being used
         Scene *mCurrentScene;
 
         std::vector <ComponentCreationFunction> mComponentCreationFunctions;

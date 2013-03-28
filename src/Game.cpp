@@ -1,6 +1,13 @@
 #include "Game.h"
 
 #include <Core/Math.h>
+#include <Core/ResourceManager.h>
+#include <Core/InputManager.h>
+#include <Core/StateManager.h>
+#include <Rendering/RenderingManager.h>
+#include <Physics/PhysicsManager.h>
+#include <Scene/SceneManager.h>
+#include <Network/NetworkManager.h>
 
 Game::Game()
 {
@@ -12,6 +19,7 @@ Game::Game()
     mRenderingManager = new RenderingManager;
     mPhysicsManager = new PhysicsManager;
     mInputManager = new InputManager(mRenderingManager->getRenderWindow());
+    mNetworkManager = new NetworkManager;
 }
 
 Game::~Game()
@@ -21,7 +29,6 @@ Game::~Game()
 
 void Game::run(State *state)
 {
-    state->initialize();
     mStateManager->pushState(state);
 
     int lastFrameTime = InputManager::get()->getTime();
@@ -35,15 +42,17 @@ void Game::run(State *state)
         //calculate framerate
         mFrameRate = 1.f/deltaTime;
 
-        if (mRunning)
+        if (mRunning && !mPhysicsManager->getPaused())
             mRunning = mPhysicsManager->update(deltaTime);
-        if (mRunning)
+        if (mRunning && !mInputManager->getPaused())
             mRunning = mInputManager->update(deltaTime);
-        if (mRunning)
+        if (mRunning && !mNetworkManager->getPaused())
+            mRunning = mNetworkManager->update(deltaTime);
+        if (mRunning && !mSceneManager->getPaused())
             mRunning = mSceneManager->update(deltaTime);
-        if (mRunning)
+        if (mRunning && !mStateManager->getPaused())
             mRunning = mStateManager->update(deltaTime);
-        if (mRunning)
+        if (mRunning && !mRenderingManager->getPaused())
             mRunning = mRenderingManager->update(deltaTime);
 
         //start rendering

@@ -14,6 +14,7 @@ Also, components can be attached for functionality.
 #include <vector>
 
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Network/Packet.hpp>
 
 #include "Core/RefCounted.h"
 #include "Core/Component.h"
@@ -23,6 +24,9 @@ class GameObject : public RefCounted
     public:
         GameObject();
         virtual ~GameObject();
+
+        void serialize(sf::Packet &packet);
+        void deserialize(sf::Packet &packet);
 
         virtual bool update(float dt);
         virtual void onRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
@@ -55,16 +59,14 @@ class GameObject : public RefCounted
 
         void kill(){mAlive=false;}
 
-        //accessors
-        int getType(){return mType;}
+        // Accessors
         int getID(){return mID;}
         bool getAlive(){return mAlive;}
         sf::Vector2f getPosition(){return mPosition;}
         float getRotation(){return mRotation;}
         int getTeam(){return mTeam;}
 
-        //mutators
-        void setType(int type){mType=type;}
+        // Mutators
         void setID(int ID){mID=ID;}
         void setPosition(sf::Vector2f position, Component *caller = NULL);
         void setRotation(float rotation, Component *caller = NULL);

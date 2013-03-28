@@ -13,6 +13,16 @@
 #include <Logic/WeaponComponent.h>
 #include <Logic/ProjectileComponent.h>
 
+#include <Core/ResourceManager.h>
+#include <Core/InputManager.h>
+#include <Core/StateManager.h>
+#include <Rendering/RenderingManager.h>
+#include <Physics/PhysicsManager.h>
+#include <Scene/SceneManager.h>
+#include <Network/NetworkManager.h>
+
+#include <Network/Chat.h>
+
 #include <Game.h>
 
 #endif // FISSION_H_INCLUDED

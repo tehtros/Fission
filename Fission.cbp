@@ -27,10 +27,10 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 			</Target>
-			<Target title="Test">
-				<Option output="bin\Test\Fission" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="bin\Test\" />
-				<Option object_output="\obj\Test" />
+			<Target title="TestServer">
+				<Option output="bin\TestServer\Fission" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\TestServer\" />
+				<Option object_output="\obj\TestServer" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
@@ -50,6 +50,33 @@
 					<Add library="gdi32" />
 					<Add library="comctl32" />
 					<Add library="winmm" />
+					<Add library="ws2_32" />
+				</Linker>
+			</Target>
+			<Target title="TestClient">
+				<Option output="bin\TestClient\Fission" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\TestClient\" />
+				<Option object_output="\obj\TestClient" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="bin\DebugWin\libFission.a" />
+					<Add library="extlibs\libs-mingw\libfreetype.a" />
+					<Add library="extlibs\libs-mingw\libjpeg.a" />
+					<Add library="extlibs\libs-mingw\libopenal32.a" />
+					<Add library="extlibs\libs-mingw\libsndfile.a" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="comctl32" />
+					<Add library="winmm" />
+					<Add library="ws2_32" />
 				</Linker>
 			</Target>
 		</Build>
@@ -1474,6 +1501,87 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
+		<Unit filename="enet\callbacks.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\callbacks.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\compress.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\enet.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\host.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\list.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\list.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\packet.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\peer.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\protocol.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\protocol.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\time.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\types.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\unix.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\unix.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\utility.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\win32.c">
+			<Option compilerVar="CC" />
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="enet\win32.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
 		<Unit filename="glew\GL\glew.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
@@ -1500,12 +1608,6 @@
 			<Option compilerVar="CC" />
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
-		</Unit>
-		<Unit filename="include\AIControlComponent.h">
-			<Option target="Test" />
-		</Unit>
-		<Unit filename="include\AirplaneComponent.h">
-			<Option target="Test" />
 		</Unit>
 		<Unit filename="include\Core\Component.h">
 			<Option target="DebugWin" />
@@ -1551,14 +1653,27 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
-		<Unit filename="include\HPComponent.h">
-			<Option target="Test" />
+		<Unit filename="include\GameState.h">
+			<Option target="TestServer" />
+			<Option target="TestClient" />
+		</Unit>
+		<Unit filename="include\HeroControlComponent.h">
+			<Option target="TestServer" />
+			<Option target="TestClient" />
 		</Unit>
 		<Unit filename="include\Logic\ProjectileComponent.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
 		<Unit filename="include\Logic\WeaponComponent.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Network\Chat.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="include\Network\NetworkManager.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
@@ -1574,11 +1689,9 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
-		<Unit filename="include\PillComponent.h">
-			<Option target="Test" />
-		</Unit>
-		<Unit filename="include\PlayerControlComponent.h">
-			<Option target="Test" />
+		<Unit filename="include\PlayerDatabase.h">
+			<Option target="TestServer" />
+			<Option target="TestClient" />
 		</Unit>
 		<Unit filename="include\Rendering\GlowingShapeComponent.h">
 			<Option target="DebugWin" />
@@ -1604,17 +1717,11 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
-		<Unit filename="include\Villain.h">
-			<Option target="Test" />
+		<Unit filename="mainClient.cpp">
+			<Option target="TestClient" />
 		</Unit>
-		<Unit filename="main.cpp">
-			<Option target="Test" />
-		</Unit>
-		<Unit filename="src\AIControlComponent.cpp">
-			<Option target="Test" />
-		</Unit>
-		<Unit filename="src\AirplaneComponent.cpp">
-			<Option target="Test" />
+		<Unit filename="mainServer.cpp">
+			<Option target="TestServer" />
 		</Unit>
 		<Unit filename="src\Core\Component.cpp">
 			<Option target="DebugWin" />
@@ -1644,14 +1751,27 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
-		<Unit filename="src\HPComponent.cpp">
-			<Option target="Test" />
+		<Unit filename="src\GameState.cpp">
+			<Option target="TestServer" />
+			<Option target="TestClient" />
+		</Unit>
+		<Unit filename="src\HeroControlComponent.cpp">
+			<Option target="TestServer" />
+			<Option target="TestClient" />
 		</Unit>
 		<Unit filename="src\Logic\ProjectileComponent.cpp">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
 		<Unit filename="src\Logic\WeaponComponent.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Network\Chat.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src\Network\NetworkManager.cpp">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
@@ -1667,11 +1787,9 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
-		<Unit filename="src\PillComponent.cpp">
-			<Option target="Test" />
-		</Unit>
-		<Unit filename="src\PlayerControlComponent.cpp">
-			<Option target="Test" />
+		<Unit filename="src\PlayerDatabase.cpp">
+			<Option target="TestServer" />
+			<Option target="TestClient" />
 		</Unit>
 		<Unit filename="src\Rendering\GlowingShapeComponent.cpp">
 			<Option target="DebugWin" />

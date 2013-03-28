@@ -28,6 +28,8 @@ WeaponComponent::WeaponComponent(GameObject *object, std::string name) : Compone
     mCoolDown = 100;
     mFirePoint = sf::Vector2f(0.5f,0);
     mVisibleBullets = true;
+
+    mTypeName = "WeaponComponent";
 }
 
 WeaponComponent::~WeaponComponent()
@@ -122,4 +124,9 @@ void WeaponComponent::fire(float rotation)
             break;
         }
     }
+}
+
+Component *WeaponComponent::createComponent(GameObject *object)
+{
+    return new WeaponComponent(object, "weapon");
 }

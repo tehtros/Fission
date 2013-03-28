@@ -10,6 +10,7 @@ Abstract base class for all game states.
 #define STATE_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Network.hpp>
 
 class State
 {
@@ -20,16 +21,21 @@ class State
         virtual void initialize(){}
         virtual bool update(float dt);
 
+        // Networking stuff
+        virtual void onConnect(int ID){}
+        virtual void onDisconnect(int ID){}
+        virtual void handlePacket(sf::Packet &packet, int connectorID){}
+
         virtual void onPreRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default){}
         virtual void onPostRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default){}
 
         void kill(){mAlive=false;}
 
-        //accessors
+        // Accessors
         bool getAlive(){return mAlive;}
 
     protected:
-        bool mAlive; //whether or not the object should live to see another frame
+        bool mAlive; //whether or not the state should live to see another frame
 
     private:
 };

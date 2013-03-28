@@ -8,6 +8,8 @@ GameObject implementation
 
 #include "Core/GameObject.h"
 
+#include <Scene/SceneManager.h>
+
 GameObject::GameObject()
 {
     mAlive = true;
@@ -24,6 +26,45 @@ GameObject::~GameObject()
         mComponents.erase(mComponents.begin()+c);
         c--;
         component->release();
+    }
+}
+
+void GameObject::serialize(sf::Packet &packet)
+{
+    packet << mID;
+
+    packet << (int)mComponents.size();
+    for (unsigned int c = 0; c < mComponents.size(); c++)
+    {
+        packet << mComponents[c]->getTypeName();
+        mComponents[c]->serialize(packet);
+    }
+}
+
+void GameObject::deserialize(sf::Packet &packet)
+{
+    packet >> mID;
+
+    // Get all the components
+    int componentCount;
+    std::string componentType;
+
+    packet >> componentCount;
+    for (int c = 0; c < componentCount; c++)
+    {
+        packet >> componentType;
+
+        if (SceneManager::get()->getComponentCreationFunction(componentType) != NULL)
+        {
+            Component *component = SceneManager::get()->getComponentCreationFunction(componentType)(this);
+            component->deserialize(packet);
+            addComponent(component);
+        }
+        else
+        {
+            // TODO: Failed to deserialize GameObject
+            return;
+        }
     }
 }
 

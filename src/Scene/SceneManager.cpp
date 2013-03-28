@@ -4,12 +4,10 @@
 #include "Scene/Scene.h"
 #include "Core/GameObject.h"
 
-/*#include "Rendering/CameraComponent.h"
-#include "Rendering/LightComponent.h"
-#include "Rendering/MeshComponent.h"
-#include "Physics/CharacterControllerComponent.h"
+#include "Rendering/SpriteComponent.h"
 #include "Physics/RigidBodyComponent.h"
-#include "Logic/WeaponComponent.h"*/
+#include "Physics/DragComponent.h"
+#include "Logic/WeaponComponent.h"
 
 SceneManager *SceneManager::Instance = NULL;
 
@@ -20,12 +18,10 @@ SceneManager::SceneManager()
     mCurrentScene = new Scene;
     mScenes.push_back(mCurrentScene);
 
-    /*registerComponentCreationFunction("MeshComponent", MeshComponent::createComponent);
-    registerComponentCreationFunction("LightComponent", LightComponent::createComponent);
-    registerComponentCreationFunction("CameraComponent", CameraComponent::createComponent);
-    registerComponentCreationFunction("CharacterControllerComponent", CharacterControllerComponent::createComponent);
+    registerComponentCreationFunction("SpriteComponent", SpriteComponent::createComponent);
     registerComponentCreationFunction("RigidBodyComponent", RigidBodyComponent::createComponent);
-    registerComponentCreationFunction("WeaponComponent", WeaponComponent::createComponent);*/
+    registerComponentCreationFunction("DragComponent", DragComponent::createComponent);
+    registerComponentCreationFunction("WeaponComponent", WeaponComponent::createComponent);
 }
 
 SceneManager::~SceneManager()

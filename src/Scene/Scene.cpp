@@ -53,13 +53,27 @@ void Scene::destroyGameObject(GameObject *object)
 {
     for (unsigned int o = 0; o < mGameObjects.size(); o++)
     {
-        if (mGameObjects[o] == object) //find the GameObject
+        if (mGameObjects[o] == object) // Find the GameObject
         {
-            mGameObjects[o]->release(); //release the GameObject
+            mGameObjects[o]->kill(); // Make sure it's dead
+            mGameObjects[o]->release(); // Release the GameObject
             mGameObjects.erase(mGameObjects.begin()+o);
             return;
         }
     }
+}
+
+GameObject *Scene::findGameObject(int ID)
+{
+    for (unsigned int o = 0; o < mGameObjects.size(); o++)
+    {
+        if (mGameObjects[o]->getID() == ID) //find the GameObject
+        {
+            return mGameObjects[o];
+        }
+    }
+
+    return NULL; // Couldn't find it
 }
 
 void Scene::clear()

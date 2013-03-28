@@ -3,6 +3,7 @@
 #include <Core/Math.h>
 #include <Core/InputManager.h>
 #include <Core/GameObject.h>
+#include <Rendering/RenderingManager.h>
 #include <Physics/PhysicsManager.h>
 #include <Physics/RigidBodyComponent.h>
 #include <iostream>
@@ -11,6 +12,8 @@ DragComponent::DragComponent(GameObject *object, std::string name) : Component(o
 {
     mMouseJoint = NULL;
     mBody = mGameObject->getComponent<RigidBodyComponent>()->getBody();
+
+    mTypeName = "DragComponent";
 }
 
 DragComponent::~DragComponent()
@@ -23,7 +26,10 @@ bool DragComponent::update(float dt)
     bool isTouched = false;
 
     // Real world coordinate from mouse position
-    sf::Vector2f mouseWorld = screenToWorld(sf::Vector2f(InputManager::get()->getMousePosition().x, InputManager::get()->getMousePosition().y));
+    //sf::Vector2f camOffset =
+    sf::Vector2f mouseScreen = sf::Vector2f(InputManager::get()->getMousePosition().x, InputManager::get()->getMousePosition().y)-
+                                RenderingManager::get()->getCameraScreenOffset();
+    sf::Vector2f mouseWorld = screenToWorld(mouseScreen);
     b2Vec2 mousePos = b2Vec2(mouseWorld.x, mouseWorld.y);
 
     if (InputManager::get()->getLMBState() == ButtonState::PRESSED)
@@ -70,4 +76,9 @@ bool DragComponent::update(float dt)
     }
 
     return true;
+}
+
+Component *DragComponent::createComponent(GameObject *object)
+{
+    return new DragComponent(object, "");
 }

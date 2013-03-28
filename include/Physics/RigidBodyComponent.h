@@ -11,16 +11,27 @@ class RigidBodyComponent : public Component
         RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile);
         virtual ~RigidBodyComponent();
 
+        virtual void serialize(sf::Packet &packet);
+        virtual void deserialize(sf::Packet &packet);
+
         virtual bool update(float dt);
 
         virtual void onSetPosition(sf::Vector2f position);
         virtual void onSetRotation(float rotation);
 
-        //accessors
+        static Component *createComponent(GameObject *object);
+
+        // Accessors
         b2Body *getBody(){return mBody;}
+        int getCollisionGroup(){return mCollisionGroup;}
+
+        // Mutators
+        void setCollisionGroup(int group){mCollisionGroup=group;}
 
     protected:
         b2Body *mBody; //Box2D body
+        int mCollisionGroup;
+
     private:
 };
 

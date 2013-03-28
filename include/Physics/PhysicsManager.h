@@ -3,9 +3,11 @@
 
 #include <Box2D/Box2D.h>
 
+#include <Core/Manager.h>
+
 class DragComponent;
 
-class PhysicsManager : public b2ContactListener
+class PhysicsManager : public Manager, b2ContactListener
 {
     public:
         PhysicsManager();

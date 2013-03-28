@@ -71,6 +71,13 @@ void Packet::clear()
 
 
 ////////////////////////////////////////////////////////////
+void Packet::reset()
+{
+    m_readPos = 0;
+}
+
+
+////////////////////////////////////////////////////////////
 const void* Packet::getData() const
 {
     return !m_data.empty() ? &m_data[0] : NULL;

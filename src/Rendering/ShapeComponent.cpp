@@ -71,8 +71,9 @@ void ShapeComponent::onRender(sf::RenderTarget *target, sf::RenderStates states)
 {
     sf::Vector2u screenSize = target->getSize();
 
-    sf::Vector2f newPos = mGameObject->getPosition()*RenderingManager::get()->getPTU();
+    sf::Vector2f newPos = (mGameObject->getPosition()*RenderingManager::get()->getPTU());
     newPos.y *= -1;
+    newPos += RenderingManager::get()->getCameraScreenOffset();
 
     mShape->setPosition(newPos);
     mShape->setRotation(-mGameObject->getRotation());

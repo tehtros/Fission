@@ -1,9 +1,12 @@
-#include "PlayerControlComponent.h"
+#include "EnemyComponent.h"
 
-#include <Core/InputManager.h>
+#include <Core/ResourceManager.h>
 #include <Core/GameObject.h>
 #include <Rendering/SpriteComponent.h>
 #include <Physics/RigidBodyComponent.h>
+
+#include "GameState.h"
+#include "PlayerControlComponent.h"
 
 //move states
 enum
@@ -21,23 +24,34 @@ enum
     RIGHT
 };
 
-PlayerControlComponent::PlayerControlComponent(GameObject *object, std::string name) : Component(object, name)
+EnemyComponent::EnemyComponent(GameObject *object, std::string name, GameState *state) : Component(object, name)
 {
+    mGameState = state;
+
     mOnGround = false; // Floating by default
     mContactCount = 0;
 
     mGameObject->getComponent<SpriteComponent>()->setFrameLoop(0,0);
     mMoveState = STAND;
     mDirection = LEFT;
+
+    mLeader = NULL;
 }
 
-PlayerControlComponent::~PlayerControlComponent()
+EnemyComponent::~EnemyComponent()
 {
     //dtor
 }
 
-bool PlayerControlComponent::update(float dt)
+bool EnemyComponent::update(float dt)
 {
+    // First of all, check to see if I'm dead
+    if (mGameObject->getPosition().y < -5)
+    {
+        mGameObject->kill();
+        return true;
+    }
+
     SpriteComponent *sprite = mGameObject->getComponent<SpriteComponent>();
     RigidBodyComponent *body = mGameObject->getComponent<RigidBodyComponent>();
 
@@ -48,7 +62,35 @@ bool PlayerControlComponent::update(float dt)
     else if (mContactCount == 0)
         mOnGround = false;
 
-    if (InputManager::get()->getKeyDown(sf::Keyboard::A))
+    bool left, right, jump;
+    left = right = jump = false;
+
+    if (mLeader)
+    {
+        float xdist = mLeader->getPosition().x-mGameObject->getPosition().x; // Distance from my leader
+
+        if (xdist < -mFollowDistance)
+            left = true;
+        else if (xdist > mFollowDistance)
+            right = true;
+
+        for (unsigned int j = 0; j < mGameState->getJumpPoints().size(); j++)
+        {
+            if ((mGameObject->getPosition()-mGameState->getJumpPoints()[j]).getLength() < 0.4f)
+            {
+                if (mContactClock.getElapsedTime().asMilliseconds() > 200 && (left || right))
+                    jump = true;
+                else
+                {
+                    left = false;
+                    right = false;
+                    jump = false;
+                }
+            }
+        }
+    }
+
+    if (left)
     {
         if (!mOnGround) //not on the ground
         {
@@ -70,7 +112,7 @@ bool PlayerControlComponent::update(float dt)
             }
         }
     }
-    else if (InputManager::get()->getKeyDown(sf::Keyboard::D))
+    else if (right)
     {
         if (!mOnGround)
         {
@@ -105,7 +147,7 @@ bool PlayerControlComponent::update(float dt)
     {
     }
 
-    if (InputManager::get()->getKeyState(sf::Keyboard::W) == ButtonState::PRESSED && mOnGround) //jump!
+    if (jump && mOnGround) //jump!
     {
         mMoveState = JUMP;
         body->getBody()->SetLinearVelocity(b2Vec2(0,15));
@@ -174,16 +216,37 @@ bool PlayerControlComponent::update(float dt)
     return true;
 }
 
-void PlayerControlComponent::onContactBegin(GameObject *object)
+void EnemyComponent::onContactBegin(GameObject *object)
 {
     if (object->getComponent<RigidBodyComponent>())
     {
         mContactClock.restart(); //restart the contact clock
         mContactCount++;
+
+        if (object->getComponent<PlayerControlComponent>())
+        {
+            if (object->getPosition().y-0.5 > mGameObject->getPosition().y &&
+                abs(object->getPosition().x-mGameObject->getPosition().x) < 0.1)
+            {
+                // Contact stuff
+                object->getComponent<RigidBodyComponent>()->getBody()->SetLinearVelocity(b2Vec2(0,7));
+                object->onContactEnd(mGameObject);
+
+                // Following stuff
+                mLeader = object;
+                mFollowDistance = 4.f+(mLeader->getComponent<PlayerControlComponent>()->getFollowers()*1.f);
+                mLeader->getComponent<PlayerControlComponent>()->addFollower();
+
+                // Turn me into a loving peewee - they don't collide with the leader and look prettier
+                mGameObject->getComponent<RigidBodyComponent>()->setCollisionGroup(1);
+                mGameObject->onContactEnd(object);
+                mGameObject->getComponent<SpriteComponent>()->setTexture(ResourceManager::get()->getTexture("Content/Textures/pinkpeewee.png"));
+            }
+        }
     }
 }
 
-void PlayerControlComponent::onContactEnd(GameObject *object)
+void EnemyComponent::onContactEnd(GameObject *object)
 {
     if (object->getComponent<RigidBodyComponent>())
         mContactCount--;

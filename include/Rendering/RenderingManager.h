@@ -6,9 +6,10 @@
 #include <LTBL/Light/Light_Point.h>
 #include <LTBL/Utils.h>
 
+#include <Core/Manager.h>
 #include <Core/Math.h>
 
-class RenderingManager
+class RenderingManager : public Manager
 {
     public:
         RenderingManager();
@@ -20,10 +21,16 @@ class RenderingManager
         void renderLights();
         void endRender();
 
+        // Accessors
         sf::RenderWindow *getRenderWindow(){return mRenderWindow;}
         ltbl::LightSystem *getLightSystem(){return mLightSystem;}
 
         float getPTU(){return PTU;}
+        sf::Vector2f getCameraPosition(){return mCameraPosition;}
+        sf::Vector2f getCameraScreenOffset(){return (sf::Vector2f(-mCameraPosition.x, mCameraPosition.y)*mPTU)+(mRenderWindow->getView().getSize()/2.f);}
+
+        // Mutators
+        void setCameraPosition(sf::Vector2f pos){mCameraPosition=pos;}
 
         static RenderingManager *get(){return Instance;}
 
@@ -31,7 +38,11 @@ class RenderingManager
         sf::RenderWindow *mRenderWindow; //the sfml render window
         ltbl::LightSystem *mLightSystem; //the lighting system
 
-        float mPTU; //pixels to units
+        /// Pixel to unit ratio
+        float mPTU;
+
+        /// Position of the camera
+        sf::Vector2f mCameraPosition;
 
     private:
         static RenderingManager *Instance;

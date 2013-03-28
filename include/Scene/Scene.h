@@ -22,6 +22,7 @@ class Scene
 
         void addGameObject(GameObject *object);
         void destroyGameObject(GameObject *object);
+        GameObject *findGameObject(int ID);
 
         void clear();
 

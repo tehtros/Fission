@@ -1,14 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <Core/ResourceManager.h>
-#include <Core/InputManager.h>
-#include <Core/StateManager.h>
-#include <Rendering/RenderingManager.h>
-#include <Physics/PhysicsManager.h>
-#include <Scene/SceneManager.h>
-
 class State;
+class ResourceManager;
+class InputManager;
+class StateManager;
+class RenderingManager;
+class PhysicsManager;
+class SceneManager;
+class NetworkManager;
 
 class Game
 {
@@ -30,6 +30,7 @@ class Game
         RenderingManager *mRenderingManager;
         PhysicsManager *mPhysicsManager;
         SceneManager *mSceneManager;
+        NetworkManager *mNetworkManager;
 
         bool mRunning;
 

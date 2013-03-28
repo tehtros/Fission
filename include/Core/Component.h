@@ -14,6 +14,7 @@ Defines a component of a GameObject. Derive from this to add functionality to a 
 #include <Box2D/Dynamics/Contacts/b2Contact.h>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Network/Packet.hpp>
 
 #include "Core/RefCounted.h"
 
@@ -25,8 +26,14 @@ class Component : public RefCounted
         Component(GameObject *object, std::string name);
         virtual ~Component();
 
+        virtual void serialize(sf::Packet &packet);
+        virtual void deserialize(sf::Packet &packet);
+
         virtual bool update(float dt){return true;}
         virtual void onRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default){}
+
+        /// Handle packets sent to this Component
+        virtual void handlePacket(sf::Packet &packet){}
 
         virtual void onSetPosition(sf::Vector2f position){} //called when the object's position is set
         virtual void onSetRotation(float rotation){} //called when the object's position is set
@@ -42,13 +49,16 @@ class Component : public RefCounted
 
         //accessors
         std::string getName(){return mName;}
+        std::string getTypeName(){return mTypeName;}
 
         //mutators
         void setName(std::string name){mName=name;}
+        void getTypeName(std::string typeName){mTypeName=typeName;}
 
     protected:
         GameObject *mGameObject;
         std::string mName;
+        std::string mTypeName;
 
     private:
 };

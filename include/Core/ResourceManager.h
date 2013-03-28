@@ -6,7 +6,7 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
-#include "Core/Manager.h"
+#include <Core/Manager.h>
 
 struct Resource
 {
