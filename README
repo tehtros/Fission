@@ -1,0 +1,14 @@
+By: Theodore DeRego
+
+Fission
+=======
+
+A simple 2D game engine based on SFML, Box2D, and ENet. It uses a component-entity based design, where you create
+abstract game gbjects then add components to them.
+
+Features:
+ - Amazing 2D physics using Box2D
+ - Easy animated sprite sheets.
+ - Networking to make multiplayer games a breeze.
+ - 2D lighting using LTBL, an add-on for SFML.
+ - Easy weapons for all of your action games.
