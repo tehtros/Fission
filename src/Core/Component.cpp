@@ -13,6 +13,8 @@ Component::Component(GameObject *object, std::string name)
     mGameObject = object;
     mName = name;
     mTypeName = "Component";
+
+    mShouldSerialize = true;
 }
 
 Component::~Component()

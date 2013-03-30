@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Network/Packet.hpp>
 
 class SceneManager;
 class GameObject;
@@ -19,6 +20,11 @@ class Scene
 
         //void save(std::string fileName);
         //void load(std::string fileName);
+
+        void serializeCreationPacket(sf::Packet &packet);
+        void deserializeCreationPacket(sf::Packet &packet);
+
+        void serializeUpdatePacket(sf::Packet &packet);
 
         void addGameObject(GameObject *object);
         void destroyGameObject(GameObject *object);

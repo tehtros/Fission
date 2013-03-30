@@ -36,6 +36,10 @@ class Game
 
         int mFrameRate; //the FPS that we calculate
 
+        float mLockStep; // The tick rate of the physics engine
+        float mLockStepAccumulator; // Accumulator for physics time processing
+        float mLockStepAccumulatorRatio; // Ratio of delta time left to physics lock step
+
     private:
 };
 

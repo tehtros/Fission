@@ -88,10 +88,6 @@ void WeaponComponent::fire(float rotation)
                         continue;
                     if (output.fraction < closestFraction)
                     {
-                        //no friendly fire
-                        if (((GameObject*)b->GetUserData())->getTeam() == mGameObject->getTeam() && mGameObject->getTeam() != -1)
-                            continue;
-
                         hitObject = ((GameObject*)b->GetUserData());
                         closestFraction = output.fraction;
                         normal = sf::Vector2f(output.normal.x, output.normal.x);
@@ -108,12 +104,13 @@ void WeaponComponent::fire(float rotation)
 
             proj->setPosition(start);
             proj->setRotation(rotation);
-            proj->setTeam(mGameObject->getTeam());
 
             // Tell the object that it has taken damage
             if (hitObject)
             {
-                hitObject->onContactBegin(proj); // Tell the hit object that he just got hit
+                // Tell the hit object that he just got hit
+                hitObject->onPreSolve(proj, NULL, NULL);
+                hitObject->onContactBegin(proj);
                 hitObject->onContactEnd(proj);
             }
 

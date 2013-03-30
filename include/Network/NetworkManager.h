@@ -19,6 +19,8 @@ namespace PacketType
 {
     enum
     {
+        SCENE_CREATION,
+        CREATE_OBJECT,
         COMPONENT_MESSAGE,
         USER_MESSAGE
     };
@@ -46,6 +48,8 @@ class NetworkManager : public Manager
         virtual bool update(float dt);
 
         void send(sf::Packet packet, int connectorID = 0, int excludeID = 0, bool reliable = true); // connectorID is only relevant to server. It is 0 to send to all clients
+        void sendSceneCreation(int connectorID = 0, int excludeID = 0, bool reliable = true);
+        void sendGameObject(GameObject *object, int connectorID = 0, int excludeID = 0, bool reliable = true);
         void sendToComponent(sf::Packet packet, GameObject *object, Component *component, int connectorID = 0, int excludeID = 0, bool reliable = true);
 
         int findConnectorID(std::string IP);

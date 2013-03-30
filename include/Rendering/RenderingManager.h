@@ -26,6 +26,7 @@ class RenderingManager : public Manager
         ltbl::LightSystem *getLightSystem(){return mLightSystem;}
 
         float getPTU(){return PTU;}
+        sf::Vector2f getScreenSize(){return sf::Vector2f(mRenderWindow->getSize().x, mRenderWindow->getSize().y);}
         sf::Vector2f getCameraPosition(){return mCameraPosition;}
         sf::Vector2f getCameraScreenOffset(){return (sf::Vector2f(-mCameraPosition.x, mCameraPosition.y)*mPTU)+(mRenderWindow->getView().getSize()/2.f);}
 

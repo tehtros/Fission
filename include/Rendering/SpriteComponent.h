@@ -22,6 +22,9 @@ class SpriteComponent : public Component
 
         //accessors
         sf::Sprite *getSprite(){return mSprite;}
+        sf::Vector2f getFrameSize(){return sf::Vector2f(mFrameDim.x, mFrameDim.y);}
+        sf::Vector2f getPosition(){return mRelativePosition;}
+        float getRotation(){return mRelativeRotation;}
 
         bool getAnimFinished(){return !mLoopAnim&&mCurFrame==mEndFrame;}
 
@@ -39,6 +42,8 @@ class SpriteComponent : public Component
         void setKillOnAnimFinish(bool kill){mKillOnAnimFinish=kill;}
         void setTexture(sf::Texture *texture);
         void setTexture(std::string path);
+        void setPosition(sf::Vector2f pos){mRelativePosition=pos;}
+        void setRotation(float rot){mRelativeRotation=rot;}
 
     protected:
         sf::Sprite *mSprite;
@@ -54,6 +59,12 @@ class SpriteComponent : public Component
         bool mLoopAnim;                         //Whether or not to loop the animation
         int mStartFrame;                        //The start frame of the animation loop
         int mEndFrame;                          //The end frame of the animation loop
+
+        /// Position relative to the GameObject
+        sf::Vector2f mRelativePosition;
+
+        /// Rotation relative to the GameObject
+        float mRelativeRotation;
 
         bool mKillOnAnimFinish;                 //Kill when the animation finishes?
 

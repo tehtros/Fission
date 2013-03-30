@@ -3,7 +3,7 @@
 #include "Core/GameObject.h"
 #include "Rendering/RenderingManager.h"
 #include "Scene/SceneManager.h"
-
+#include "Physics/RigidBodyComponent.h"
 
 Scene::Scene()
 {
@@ -40,6 +40,62 @@ void Scene::onRender(sf::RenderTarget *target, sf::RenderStates states)
     for (unsigned int o = 0; o < mGameObjects.size(); o++)
     {
         mGameObjects[o]->onRender(target, states);
+    }
+}
+
+void Scene::serializeCreationPacket(sf::Packet &packet)
+{
+    // Get networked object count
+    int objectCount = 0;
+    for (unsigned int o = 0; o < mGameObjects.size(); o++)
+    {
+        if (mGameObjects[o]->getSyncNetwork())
+            objectCount++;
+    }
+
+    packet << objectCount;
+    for (unsigned int o = 0; o < mGameObjects.size(); o++)
+    {
+        if (mGameObjects[o]->getSyncNetwork())
+            mGameObjects[o]->serialize(packet);
+    }
+}
+
+void Scene::deserializeCreationPacket(sf::Packet &packet)
+{
+    int objectCount;
+    packet >> objectCount;
+
+    for (int o = 0; o < objectCount; o++)
+    {
+        SceneManager::get()->createGameObject()->deserialize(packet);
+    }
+}
+
+void Scene::serializeUpdatePacket(sf::Packet &packet)
+{
+    // Get networked object count
+    int objectCount = 0;
+    for (unsigned int o = 0; o < mGameObjects.size(); o++)
+    {
+        if (mGameObjects[o]->getSyncNetwork())
+            objectCount++;
+    }
+
+    packet << objectCount;
+    for (unsigned int o = 0; o < mGameObjects.size(); o++)
+    {
+        if (mGameObjects[o]->getSyncNetwork())
+        {
+            RigidBodyComponent *body = mGameObjects[o]->getComponent<RigidBodyComponent>();
+
+            packet << mGameObjects[o]->getID();
+            packet << mGameObjects[o]->getPosition().x << mGameObjects[o]->getPosition().y << mGameObjects[o]->getRotation();
+
+            if (body)
+                packet << body->getBody()->GetLinearVelocity().x << body->getBody()->GetLinearVelocity().y
+                       << body->getBody()->GetAngularVelocity();
+        }
     }
 }
 

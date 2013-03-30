@@ -159,7 +159,7 @@ void Chat::draw(sf::RenderTarget *target, sf::RenderStates states)
             text += std::string("SAY: ")+mMessage;
 
         sf::Text contText(text, *mFont, 16);
-        contText.setColor(sf::Color(25,25,25));
+        contText.setColor(sf::Color(255,255,255));
         contText.move(sf::Vector2f(5, 5));
         target->draw(contText, states);
     }

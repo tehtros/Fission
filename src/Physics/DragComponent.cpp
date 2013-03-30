@@ -80,5 +80,5 @@ bool DragComponent::update(float dt)
 
 Component *DragComponent::createComponent(GameObject *object)
 {
-    return new DragComponent(object, "");
+    return new DragComponent(object, "drag");
 }

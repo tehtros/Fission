@@ -21,8 +21,11 @@ class PhysicsManager : public Manager, b2ContactListener
         virtual void BeginContact(b2Contact* contact);
         virtual void EndContact(b2Contact* contact);
 
+        void resetTime(){mTime=0;}
+
         // Accessors
         b2World *getWorld(){return mWorld;}
+        int getTime(){return mTime;}
         b2Body *getGroundBody(){return mGroundBody;}
         DragComponent *getDragger(){return mDragger;}
 
@@ -34,6 +37,9 @@ class PhysicsManager : public Manager, b2ContactListener
 
     protected:
         b2World *mWorld;
+
+        /// Number of frames that have passed since the time was reset
+        int mTime;
 
         b2Body *mGroundBody;
 

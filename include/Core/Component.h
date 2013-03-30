@@ -50,15 +50,18 @@ class Component : public RefCounted
         //accessors
         std::string getName(){return mName;}
         std::string getTypeName(){return mTypeName;}
+        bool getShouldSerialize(){return mShouldSerialize;}
 
         //mutators
         void setName(std::string name){mName=name;}
         void getTypeName(std::string typeName){mTypeName=typeName;}
+        void setShouldSerialize(bool serialize){mShouldSerialize=serialize;}
 
     protected:
         GameObject *mGameObject;
         std::string mName;
         std::string mTypeName;
+        bool mShouldSerialize;
 
     private:
 };

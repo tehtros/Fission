@@ -7,7 +7,6 @@
 #include <ctime>
 #include <fstream>
 #include <string>
-#include <LTBL/Constructs/Vec2f.h>
 
 #include <Fission.h>
 
@@ -15,7 +14,7 @@
 
 GameState::GameState(Game *game, int netType)
 {
-    srand(time(NULL));
+    srand(45454);
     mGame = game;
     mChat = new Chat(PacketType::CHAT, "Wobble");
 
@@ -25,6 +24,8 @@ GameState::GameState(Game *game, int netType)
         mPlayerDatabase = new PlayerDatabase;
     else
         mPlayerDatabase = NULL;
+
+    mPlanetGenerator = new PlanetGenerator;
 
     mHero = NULL;
 }
@@ -38,13 +39,7 @@ void GameState::initialize()
 {
     SceneManager::get()->registerComponentCreationFunction("HeroControlComponent", HeroControlComponent::createComponent);
 
-    GameObject *ground = SceneManager::get()->createGameObject();
-    ground->addComponent(new GlowingShapeComponent(ground, "shape", "Content/groundShape.txt"));
-    ground->addComponent(new RigidBodyComponent(ground, "body", "Content/groundBody.txt"));
-    ground->setPosition(sf::Vector2f(5,-5));
-    PhysicsManager::get()->setGroundBody(ground->getComponent<RigidBodyComponent>()->getBody());
-
-    RenderingManager::get()->setCameraPosition(sf::Vector2f(0.f,0.f));
+    RenderingManager::get()->setCameraPosition(sf::Vector2f(0.f,38.f));
 
     // Ambient light
     RenderingManager::get()->getLightSystem()->m_ambientColor = sf::Color(255,255,255);
@@ -57,6 +52,17 @@ void GameState::initialize()
         NetworkManager::get()->connectClient("127.0.0.1", 50000);
 
     mChat->initialize();
+
+    //if (NetworkManager::get()->getType() == NetworkType::SERVER)
+    {
+        GameObject *planet = SceneManager::get()->loadGameObject("planet.fobj");
+        //GameObject *planet = mPlanetGenerator->generatePlanet();
+        //SceneManager::get()->saveGameObject(planet, "planet.fobj");
+
+        PhysicsManager::get()->setGroundBody(planet->getComponent<RigidBodyComponent>()->getBody());
+    }
+
+    RenderingManager::get()->setCameraPosition(sf::Vector2f(0.f, 65.f));
 }
 
 bool GameState::update(float dt)
@@ -79,19 +85,16 @@ void GameState::onConnect(int ID)
 {
     GameObject *player;
     player = SceneManager::get()->createGameObject();
-    player->addComponent(new SpriteComponent(player, "sprite", "Content/Textures/averysprite.png", 36, 6));
-    player->addComponent(new RigidBodyComponent(player, "body", "Content/beingBody.txt"));
-    player->addComponent(new DragComponent(player, "drag"));
+    player->addComponent(new SpriteComponent(player, "sprite", "Content/Textures/robot.png", 1, 1));
+    player->addComponent(new RigidBodyComponent(player, "body", ""));
     player->addComponent(new HeroControlComponent(player, "control", ID));
-    player->setPosition(sf::Vector2f(0,5.f));
+    player->setPosition(sf::Vector2f(0,70.f));
     player->getComponent<SpriteComponent>()->setAnimDelay(100);
     player->getComponent<RigidBodyComponent>()->getBody()->SetFixedRotation(true);
     player->getComponent<RigidBodyComponent>()->setCollisionGroup(1);
 
-    sf::Packet packet;
-    packet << PacketType::CREATE_OBJECT;
-    player->serialize(packet);
-    NetworkManager::get()->send(packet);
+    NetworkManager::get()->sendSceneCreation(ID); // Send the scene to the new connector
+    NetworkManager::get()->sendGameObject(player, 0, ID); // Send the player to everyone except the connector
 }
 
 void GameState::onDisconnect(int ID)
@@ -150,13 +153,6 @@ void GameState::handlePacket(sf::Packet &packet, int connectorID)
     {
         switch (packetID)
         {
-            case PacketType::CREATE_OBJECT:
-            {
-                GameObject *object = SceneManager::get()->createGameObject();
-                object->deserialize(packet);
-                break;
-            }
-
             case PacketType::CREATE_PLAYER:
             {
                 int objID, playerID;

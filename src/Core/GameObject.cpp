@@ -14,8 +14,9 @@ GameObject::GameObject()
 {
     mAlive = true;
 
+    mSyncNetwork = false; // By default, don't sync over the network
+
     mRotation = 0;
-    mTeam = -1;
 }
 
 GameObject::~GameObject()
@@ -33,11 +34,21 @@ void GameObject::serialize(sf::Packet &packet)
 {
     packet << mID;
 
-    packet << (int)mComponents.size();
+    int componentCount = 0; // Get number of serializeable components
     for (unsigned int c = 0; c < mComponents.size(); c++)
     {
-        packet << mComponents[c]->getTypeName();
-        mComponents[c]->serialize(packet);
+        if (mComponents[c]->getShouldSerialize())
+            componentCount++;
+    }
+
+    packet << componentCount;
+    for (unsigned int c = 0; c < mComponents.size(); c++)
+    {
+        if (mComponents[c]->getShouldSerialize())
+        {
+            packet << mComponents[c]->getTypeName();
+            mComponents[c]->serialize(packet);
+        }
     }
 }
 
@@ -117,9 +128,10 @@ void GameObject::onContactEnd(GameObject *object)
     }
 }
 
-void GameObject::addComponent(Component *component)
+Component *GameObject::addComponent(Component *component)
 {
     mComponents.push_back(component);
+    return component;
 }
 
 void GameObject::removeComponent(Component *component)

@@ -12,6 +12,8 @@ PhysicsManager::PhysicsManager()
     mWorld = new b2World(b2Vec2(0, -10)); //gravity = 10
     mWorld->SetContactListener(this);
 
+    mTime = 0;
+
     mGroundBody = NULL;
 
     mDragger = NULL;
@@ -25,6 +27,7 @@ PhysicsManager::~PhysicsManager()
 bool PhysicsManager::update(float dt)
 {
     mWorld->Step(dt, 8, 3);
+    mTime++;
 
     return true;
 }

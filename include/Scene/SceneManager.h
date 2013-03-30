@@ -34,6 +34,9 @@ class SceneManager : public Manager
         ComponentCreationFunction getComponentCreationFunction(std::string name);
         void removeComponentCreationFunction(std::string name);
 
+        void saveGameObject(GameObject *object, std::string fileName);
+        GameObject *loadGameObject(std::string fileName);
+
         // Accessors
         Scene *getCurrentScene(){return mCurrentScene;}
 

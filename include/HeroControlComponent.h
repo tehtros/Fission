@@ -1,9 +1,7 @@
 #ifndef HEROCONTROLCOMPONENT_H
 #define HEROCONTROLCOMPONENT_H
 
-#include <Core/Component.h>
-#include <Core/InputManager.h>
-#include <Network/NetworkManager.h>
+#include <Fission.h>
 
 class HeroControlComponent : public Component
 {
@@ -34,11 +32,21 @@ class HeroControlComponent : public Component
         void setNetworkID(int ID){mNetworkID=ID;}
 
     protected:
-        /// My player's network ID, whether this is on a server or a client
+        // My player's network ID, whether this is on a server or a client
         int mNetworkID;
 
-        /// Key states for networked input
+        // Key states for networked input
         int mKeyStates[sf::Keyboard::KeyCount];
+
+        // Mouse stuff for networked input
+        sf::Vector2f mMousePosition;
+        int mLMBState, mMMBState, mRMBState;
+
+        // Components to store
+        SpriteComponent *mSpriteComponent;
+        RigidBodyComponent *mBodyComponent;
+
+        SpriteComponent *mLeftArm, *mRightArm;
 
     private:
 };

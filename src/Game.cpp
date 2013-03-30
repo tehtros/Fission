@@ -20,6 +20,8 @@ Game::Game()
     mPhysicsManager = new PhysicsManager;
     mInputManager = new InputManager(mRenderingManager->getRenderWindow());
     mNetworkManager = new NetworkManager;
+
+    mLockStep = 1.f/30.f;
 }
 
 Game::~Game()
@@ -36,24 +38,43 @@ void Game::run(State *state)
 
     while (mRunning)
     {
+        while (InputManager::get()->getTime()-lastFrameTime < 1); // Cap framerate at 1000 FPS
+
         deltaTime = (InputManager::get()->getTime()-lastFrameTime)/1000.f;
         lastFrameTime = InputManager::get()->getTime();
 
         //calculate framerate
         mFrameRate = 1.f/deltaTime;
 
-        if (mRunning && !mPhysicsManager->getPaused())
-            mRunning = mPhysicsManager->update(deltaTime);
-        if (mRunning && !mInputManager->getPaused())
-            mRunning = mInputManager->update(deltaTime);
+        // Calculate fixed time step accumulator stuff
+        mLockStepAccumulator += deltaTime; //add the frame time to the accumulator
+        int physicsSteps = floorf(mLockStepAccumulator / mLockStep); //calculate physics steps needed this frame
+
+        if (physicsSteps > 0) //insure that there are no rounding errors
+            mLockStepAccumulator -= physicsSteps * mLockStep;
+
+        mLockStepAccumulatorRatio = mLockStepAccumulator / mLockStep;
+
+        for (int s = 0; s < physicsSteps; s++)
+        {
+            float timeStep = mLockStep;
+
+            // Update the managers
+            if (mRunning && !mPhysicsManager->getPaused())
+                mRunning = mPhysicsManager->update(timeStep);
+            if (mRunning && !mInputManager->getPaused())
+                mRunning = mInputManager->update(timeStep);
+            if (mRunning && !mSceneManager->getPaused())
+                mRunning = mSceneManager->update(timeStep);
+            if (mRunning && !mStateManager->getPaused())
+                mRunning = mStateManager->update(timeStep);
+            if (mRunning && !mRenderingManager->getPaused())
+                mRunning = mRenderingManager->update(timeStep);
+        }
+
+        // Update network manager disregarding lockstep
         if (mRunning && !mNetworkManager->getPaused())
             mRunning = mNetworkManager->update(deltaTime);
-        if (mRunning && !mSceneManager->getPaused())
-            mRunning = mSceneManager->update(deltaTime);
-        if (mRunning && !mStateManager->getPaused())
-            mRunning = mStateManager->update(deltaTime);
-        if (mRunning && !mRenderingManager->getPaused())
-            mRunning = mRenderingManager->update(deltaTime);
 
         //start rendering
         mRenderingManager->beginRender();

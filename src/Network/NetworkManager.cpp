@@ -84,8 +84,7 @@ void NetworkManager::connectClient(std::string ipAddress, int port)
         packet.append(event.packet->data+0, event.packet->dataLength-0);
         packet >> mNetworkID;
         packet.clear();
-        std::cout << "Connection to " << ipAddress << " succeeded.\n";
-        std::cout << "My ID: " << mNetworkID << std::endl;
+        std::cout << "Connection to " << ipAddress << " with ID " << mNetworkID <<  " succeeded.\n";
     }
     else
     {
@@ -171,6 +170,18 @@ bool NetworkManager::update(float dt)
                         break;
                     }
 
+                    case PacketType::SCENE_CREATION:
+                    {
+                        SceneManager::get()->getCurrentScene()->deserializeCreationPacket(packet);
+                        break;
+                    }
+
+                    case PacketType::CREATE_OBJECT:
+                    {
+                        SceneManager::get()->createGameObject()->deserialize(packet);
+                        break;
+                    }
+
                     default:
                     {
                         packet.reset();
@@ -253,6 +264,24 @@ void NetworkManager::send(sf::Packet packet, int connectorID, int excludeID, boo
 
     enet_host_flush(mHost);
     finalPacket.clear();
+}
+
+void NetworkManager::sendSceneCreation(int connectorID, int excludeID, bool reliable)
+{
+    sf::Packet packet;
+    packet << PacketType::SCENE_CREATION;
+    SceneManager::get()->getCurrentScene()->serializeCreationPacket(packet);
+
+    send(packet, connectorID, excludeID, reliable);
+}
+
+void NetworkManager::sendGameObject(GameObject *object, int connectorID, int excludeID, bool reliable)
+{
+    sf::Packet packet;
+    packet << PacketType::CREATE_OBJECT;
+    object->serialize(packet);
+
+    send(packet, connectorID, excludeID, reliable);
 }
 
 void NetworkManager::sendToComponent(sf::Packet packet, GameObject *object, Component *component, int connectorID, int excludeID, bool reliable)

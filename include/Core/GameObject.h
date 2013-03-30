@@ -40,7 +40,7 @@ class GameObject : public RefCounted
         /// Called when this object stops colliding with another GameObject
         virtual void onContactEnd(GameObject *object);
 
-        void addComponent(Component *component);
+        Component *addComponent(Component *component);
         void removeComponent(Component *component);
 
         /// Getting components by type
@@ -62,15 +62,15 @@ class GameObject : public RefCounted
         // Accessors
         int getID(){return mID;}
         bool getAlive(){return mAlive;}
+        bool getSyncNetwork(){return mSyncNetwork;}
         sf::Vector2f getPosition(){return mPosition;}
         float getRotation(){return mRotation;}
-        int getTeam(){return mTeam;}
 
         // Mutators
         void setID(int ID){mID=ID;}
+        void setSyncNetwork(bool sync){mSyncNetwork=sync;}
         void setPosition(sf::Vector2f position, Component *caller = NULL);
         void setRotation(float rotation, Component *caller = NULL);
-        void setTeam(int team){mTeam=team;}
 
     protected:
         /// Generic type for users to give this object
@@ -81,6 +81,9 @@ class GameObject : public RefCounted
 
         /// Whether or not the object should live to see another frame
         bool mAlive;
+
+        /// Whether or not to sync over the network
+        bool mSyncNetwork;
 
         /// Object's world position
         sf::Vector2f mPosition;
@@ -93,9 +96,6 @@ class GameObject : public RefCounted
 
         /// This is the render target for all components
         sf::Texture *mRenderTarget;
-
-        /// This object's team, if any. Default is -1 for no team.
-        int mTeam;
 
     private:
 };

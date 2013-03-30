@@ -38,6 +38,8 @@ SpriteComponent::SpriteComponent(GameObject *object, std::string name, std::stri
     mStartFrame = 0;
     mEndFrame = mFrames-1;
 
+    mRelativeRotation = 0;
+
     mKillOnAnimFinish = false;
 
     mTypeName = "SpriteComponent";
@@ -125,12 +127,13 @@ void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states
     mSprite->setTextureRect(sf::IntRect(frameX, frameY, mFrameDim.x, mFrameDim.y));
 
     //calculate pixel position from GameObject position
-    sf::Vector2f newPos = (mGameObject->getPosition()*RenderingManager::get()->getPTU());
+    sf::Vector2f newPos = ((mGameObject->getPosition()+mRelativePosition)*RenderingManager::get()->getPTU());
     newPos.y *= -1;
     newPos += RenderingManager::get()->getCameraScreenOffset();
 
-    mSprite->setPosition(newPos-sf::Vector2f(mFrameDim.x/2, mFrameDim.y/2));
-    mSprite->setRotation(-mGameObject->getRotation());
+    mSprite->setOrigin(sf::Vector2f(mFrameDim.x/2, mFrameDim.y/2));
+    mSprite->setPosition(newPos);
+    mSprite->setRotation(-mGameObject->getRotation()-mRelativeRotation);
     target->draw(*mSprite, states); //rendahhh!!!!
 }
 
@@ -143,7 +146,14 @@ void SpriteComponent::setTexture(sf::Texture *texture)
 {
     if (mSprite)
         delete mSprite;
-    mSprite = new sf::Sprite(*texture);
+
+    if (texture)
+    {
+        texture->setRepeated(false);
+        mSprite = new sf::Sprite(*texture);
+    }
+    else
+        mSprite = NULL;
 }
 
 void SpriteComponent::setTexture(std::string path)

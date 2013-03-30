@@ -4,6 +4,7 @@
 #include <Fission.h>
 
 #include "PlayerDatabase.h"
+#include "PlanetGenerator.h"
 
 namespace PacketType
 {
@@ -11,7 +12,6 @@ namespace PacketType
     {
         LOGIN = USER_MESSAGE,
         LOGOUT,
-        CREATE_OBJECT,
         CREATE_PLAYER,
         PLAYER_INPUT,
         CHAT
@@ -39,6 +39,7 @@ class GameState : public State
         Game *mGame;
         Chat *mChat;
         PlayerDatabase *mPlayerDatabase;
+        PlanetGenerator *mPlanetGenerator;
 
         /// The network type we want
         int mNetworkType;

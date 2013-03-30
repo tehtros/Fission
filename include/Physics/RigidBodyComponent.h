@@ -9,6 +9,7 @@ class RigidBodyComponent : public Component
 {
     public:
         RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile);
+        RigidBodyComponent(GameObject *object, std::string name, b2Body *body);
         virtual ~RigidBodyComponent();
 
         virtual void serialize(sf::Packet &packet);

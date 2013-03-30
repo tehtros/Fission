@@ -5,6 +5,8 @@
 #include <Core/Math.h>
 #include <Core/GameObject.h>
 #include <Physics/PhysicsManager.h>
+#include <Rendering/RenderingManager.h>
+#include <Rendering/SpriteComponent.h>
 
 RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile) : Component(object, name)
 {
@@ -12,69 +14,101 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
     mBody = NULL;
     mTypeName = "RigidBodyComponent";
 
-    if (bodyFile == "") // If a path wasn't specified, we don't want to try to load anything
-        return;
-
-    //load the body file
-    std::ifstream file(bodyFile.c_str(), std::ios::in);
-
-    if (!file.is_open())
+    if (bodyFile != "") // If a path wasn't specified, we don't want to try to load anything
     {
-        std::cout << "Error: Body file couldn't be loaded on " << object->getID() << std::endl;
-        return;
-    }
+        //load the body file
+        std::ifstream file(bodyFile.c_str(), std::ios::in);
 
-    b2BodyDef def;
-
-    int bodyType;
-    file >> bodyType;
-    def.type = (b2BodyType)bodyType;
-    def.fixedRotation = false;
-
-    mBody = PhysicsManager::get()->getWorld()->CreateBody(&def);
-    mBody->SetUserData(mGameObject); //set the user data to this component's object
-
-    //get the fixture count
-    int fixtureCount = 0;
-    file >> fixtureCount;
-
-    for (int f = 0; f < fixtureCount; f++)
-    {
-        b2FixtureDef fixtureDef;
-        b2Shape *shape;
-        int isSensor;
-
-        file >> fixtureDef.density;
-        file >> fixtureDef.friction;
-        file >> fixtureDef.restitution;
-        file >> isSensor;
-        fixtureDef.isSensor = isSensor;
-        int shapeType;
-        file >> shapeType;
-        if (shapeType == b2Shape::e_circle)
+        if (!file.is_open())
         {
-            b2CircleShape* circleShape = new b2CircleShape;
-            shape = circleShape;
-            file >> circleShape->m_radius;
+            std::cout << "Error: Body file couldn't be loaded on " << object->getID() << std::endl;
+            return;
         }
-        else if (shapeType == b2Shape::e_polygon)
+
+        b2BodyDef def;
+
+        int bodyType;
+        file >> bodyType;
+        def.type = (b2BodyType)bodyType;
+        def.fixedRotation = false;
+
+        mBody = PhysicsManager::get()->getWorld()->CreateBody(&def);
+        mBody->SetUserData(mGameObject); //set the user data to this component's object
+
+        //get the fixture count
+        int fixtureCount = 0;
+        file >> fixtureCount;
+
+        for (int f = 0; f < fixtureCount; f++)
         {
-            b2PolygonShape *polygonShape = new b2PolygonShape;
-            shape = polygonShape;
-            int vertexCount;
-            file >> vertexCount;
-            b2Vec2 *vecs = new b2Vec2[vertexCount];
-            for (int v = 0; v < vertexCount; v++)
+            b2FixtureDef fixtureDef;
+            b2Shape *shape;
+            int isSensor;
+
+            file >> fixtureDef.density;
+            file >> fixtureDef.friction;
+            file >> fixtureDef.restitution;
+            file >> isSensor;
+            fixtureDef.isSensor = isSensor;
+            int shapeType;
+            file >> shapeType;
+            if (shapeType == b2Shape::e_circle)
             {
-                file >> vecs[v].x >> vecs[v].y;
+                b2CircleShape* circleShape = new b2CircleShape;
+                shape = circleShape;
+                file >> circleShape->m_radius;
             }
-            polygonShape->Set(vecs, vertexCount);
-            delete[] vecs;
+            else if (shapeType == b2Shape::e_polygon)
+            {
+                b2PolygonShape *polygonShape = new b2PolygonShape;
+                shape = polygonShape;
+                int vertexCount;
+                file >> vertexCount;
+                b2Vec2 *vecs = new b2Vec2[vertexCount];
+                for (int v = 0; v < vertexCount; v++)
+                {
+                    file >> vecs[v].x >> vecs[v].y;
+                }
+                polygonShape->Set(vecs, vertexCount);
+                delete[] vecs;
+            }
+            fixtureDef.shape = shape;
+            mBody->CreateFixture(&fixtureDef);
+            delete shape;
         }
-        fixtureDef.shape = shape;
-        mBody->CreateFixture(&fixtureDef);
-        delete shape;
     }
+    else // Create box body from texture
+    {
+        SpriteComponent *sprite = mGameObject->getComponent<SpriteComponent>();
+
+        b2BodyDef def;
+        def.type = b2_dynamicBody;
+
+        mBody = PhysicsManager::get()->getWorld()->CreateBody(&def);
+        mBody->SetUserData(mGameObject); //set the user data to this component's object
+
+        b2PolygonShape *shape = new b2PolygonShape;
+        shape->SetAsBox(((sprite->getFrameSize().x/RenderingManager::get()->getPTU())/2), //Multiply by 0.98 since box2D makes it slightly too large
+                        ((sprite->getFrameSize().y/RenderingManager::get()->getPTU())/2));
+
+        b2FixtureDef fixtureDef;
+        fixtureDef.shape = shape;
+        fixtureDef.friction = 0.3f;
+        fixtureDef.density = 1.f;
+
+        mBody->CreateFixture(&fixtureDef);
+        delete shape; //delete the shape - we're done with it
+    }
+}
+
+RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, b2Body *body) : Component(object, name)
+{
+    mCollisionGroup = 0; // Everything collides with everything to begin with
+    mBody = NULL;
+    mTypeName = "RigidBodyComponent";
+
+    mBody = body;
+    mBody->SetUserData(mGameObject); //set the user data to this component's object
 }
 
 RigidBodyComponent::~RigidBodyComponent()
@@ -94,6 +128,8 @@ void RigidBodyComponent::serialize(sf::Packet &packet)
 
     packet << sf::Int8(mBody->IsFixedRotation());
     packet << sf::Int8(mBody->IsSleepingAllowed());
+
+    packet << mCollisionGroup;
 
     //get the fixture count
     int fixtureCount = 0;
@@ -128,6 +164,9 @@ void RigidBodyComponent::serialize(sf::Packet &packet)
 
 void RigidBodyComponent::deserialize(sf::Packet &packet)
 {
+    if (mBody)
+        PhysicsManager::get()->getWorld()->DestroyBody(mBody);
+
     Component::deserialize(packet);
 
     b2BodyDef bodyDef;
@@ -149,6 +188,8 @@ void RigidBodyComponent::deserialize(sf::Packet &packet)
 
     mBody = PhysicsManager::get()->getWorld()->CreateBody(&bodyDef);
     mBody->SetUserData(mGameObject); //set the user data to this object
+
+    packet >> mCollisionGroup;
 
     //get the fixture count
     int fixtureCount = 0;

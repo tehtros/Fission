@@ -1,17 +1,12 @@
 #include "HeroControlComponent.h"
 
-#include <Core/InputManager.h>
-#include <Core/GameObject.h>
-#include <Network/NetworkManager.h>
-#include <Rendering/SpriteComponent.h>
-#include <Physics/RigidBodyComponent.h>
-
 #include "GameState.h"
 
 enum
 {
     KEYBOARD,
-    MOUSE
+    MOUSE_MOVE,
+    MOUSE_BUTTON
 };
 
 HeroControlComponent::HeroControlComponent(GameObject *object, std::string name, int networkID) : Component(object, name)
@@ -22,6 +17,17 @@ HeroControlComponent::HeroControlComponent(GameObject *object, std::string name,
     }
 
     mNetworkID = networkID;
+
+    mSpriteComponent = mGameObject->getComponent<SpriteComponent>();
+    mBodyComponent = mGameObject->getComponent<RigidBodyComponent>();
+
+    // Add the arms
+    mLeftArm = (SpriteComponent*)mGameObject->addComponent(new SpriteComponent(mGameObject, "left", "Content/Textures/left.png", 1, 1));
+    mRightArm = (SpriteComponent*)mGameObject->addComponent(new SpriteComponent(mGameObject, "right", "Content/Textures/right.png", 1, 1));
+    mLeftArm->setShouldSerialize(false);
+    mRightArm->setShouldSerialize(false);
+
+    mGameObject->setSyncNetwork(true); // Sync over the network
 
     mTypeName = "HeroControlComponent";
 }
@@ -62,9 +68,29 @@ bool HeroControlComponent::update(float dt)
                 NetworkManager::get()->sendToComponent(packet, mGameObject, this);
             }
         }
+
+        // Get the mouse input
+        if (InputManager::get()->getMouseMove().getLength() > 0)
+        {
+            mMousePosition.x = InputManager::get()->getMousePosition().x;
+            mMousePosition.y = InputManager::get()->getMousePosition().y;
+            mMousePosition = screenToWorld(mMousePosition-RenderingManager::get()->getCameraScreenOffset());
+
+            // Tell the server about our input
+            sf::Packet packet;
+            packet << MOUSE_MOVE << (float)mMousePosition.x << (float)mMousePosition.y;
+            NetworkManager::get()->sendToComponent(packet, mGameObject, this, 0, mNetworkID);
+        }
+
+        // Update the camera
+        RenderingManager::get()->setCameraPosition(mGameObject->getPosition());
     }
 
     processInput();
+
+    // Move the arms for pretty arm visuals
+    mLeftArm->setPosition(sf::Vector2f(-1.f, 0));
+    mRightArm->setPosition(sf::Vector2f(1.f, 0));
 
     return true;
 }
@@ -73,7 +99,9 @@ void HeroControlComponent::processInput()
 {
     if (mKeyStates[sf::Keyboard::W])
     {
-        std::cout << "W";
+        sf::Vector2f dir = (mMousePosition-mGameObject->getPosition()).normalize();
+
+        mBodyComponent->getBody()->SetLinearVelocity(b2Vec2(dir.x*10.f, dir.y*10.f));
     }
 
     // Finish the key states
@@ -107,8 +135,10 @@ void HeroControlComponent::handlePacket(sf::Packet &packet)
             break;
         }
 
-        case MOUSE:
+        case MOUSE_MOVE:
         {
+            packet >> mMousePosition.x >> mMousePosition.y;
+
             break;
         }
 
@@ -131,6 +161,5 @@ void HeroControlComponent::onContactEnd(GameObject *object)
 
 Component *HeroControlComponent::createComponent(GameObject *object)
 {
-    std::cout << "Woah\n";
     return new HeroControlComponent(object, "control", -1);
 }
