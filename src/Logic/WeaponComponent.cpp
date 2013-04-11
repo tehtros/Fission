@@ -5,6 +5,7 @@
 #include <Scene/SceneManager.h>
 #include <Physics/PhysicsManager.h>
 #include <Logic/ProjectileComponent.h>
+#include <Rendering/SpriteComponent.h>
 
 //subclass b2QueryCallback
 class MeleeQueryCallback : public b2QueryCallback
@@ -56,7 +57,7 @@ void WeaponComponent::fire(float rotation)
     direction.y = sin(degToRad(rotation));
 
     sf::Vector2f firePoint = mFirePoint;
-    firePoint.rotateBy(rotation); //orient the fire point to the rotation of the object
+    firePoint.rotateBy(rotation, mRotatePoint); //orient the fire point to the rotation of the object
 
     //create the start end finish points of the bullet
     sf::Vector2f start = mGameObject->getPosition() + firePoint;
@@ -98,8 +99,9 @@ void WeaponComponent::fire(float rotation)
 
             // Create the projectile
             GameObject *proj = SceneManager::get()->createGameObject();
-
+            proj->addComponent(new SpriteComponent(proj, "sprite", "Content/Textures/bullet.png"));
             ProjectileComponent *pcomp = new ProjectileComponent(proj, "projectile", mDamage, closestFraction*mRange, mVisibleBullets);
+            pcomp->setTeam(mTeam);
             proj->addComponent(pcomp);
 
             proj->setPosition(start);

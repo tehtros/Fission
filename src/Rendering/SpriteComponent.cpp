@@ -56,6 +56,7 @@ void SpriteComponent::serialize(sf::Packet &packet)
 
     packet << mTexturePath;
     packet << mCurFrame << mFrameDir << mAnimDelay << sf::Int8(mLoopAnim) << mFrames << mFramesPerRow << sf::Int8(mKillOnAnimFinish);
+    packet << mRelativePosition.x << mRelativePosition.y << mRelativeRotation;
 }
 
 void SpriteComponent::deserialize(sf::Packet &packet)
@@ -91,6 +92,8 @@ void SpriteComponent::deserialize(sf::Packet &packet)
     sf::Int8 kill;
     packet >> kill;
     mKillOnAnimFinish = kill;
+
+    packet >> mRelativePosition.x >> mRelativePosition.y >> mRelativeRotation;
 }
 
 bool SpriteComponent::update(float dt)
@@ -135,6 +138,19 @@ void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states
     mSprite->setPosition(newPos);
     mSprite->setRotation(-mGameObject->getRotation()-mRelativeRotation);
     target->draw(*mSprite, states); //rendahhh!!!!
+}
+
+bool SpriteComponent::pointInSprite(sf::Vector2f point)
+{
+    int left = mGameObject->getPosition().x-((mSprite->getTextureRect().width/PTU)/2);
+    int top = mGameObject->getPosition().y-((mSprite->getTextureRect().height/PTU)/2);
+    int right = mGameObject->getPosition().x+((mSprite->getTextureRect().width/PTU)/2);
+    int bottom = mGameObject->getPosition().y+((mSprite->getTextureRect().height/PTU)/2);
+
+    if (point.x >= left && point.x <= right && point.y >= top && point.y <= bottom)
+        return true;
+
+    return false;
 }
 
 Component *SpriteComponent::createComponent(GameObject *object)

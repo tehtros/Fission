@@ -18,6 +18,8 @@ class SpriteComponent : public Component
         virtual bool update(float dt);
         virtual void onRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
 
+        bool pointInSprite(sf::Vector2f point);
+
         static Component *createComponent(GameObject *object);
 
         //accessors

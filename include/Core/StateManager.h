@@ -17,7 +17,7 @@ class StateManager : public Manager
         void pushState(State *state);
         void popState();
 
-        State *getCurrentState(){return mStates.top();}
+        State *getCurrentState(){if (mStates.size() > 0) return mStates.top(); else return NULL;}
 
         static StateManager *get(){return Instance;}
 

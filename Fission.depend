@@ -31,11 +31,11 @@
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Network.hpp>
 
-1360219385 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
+1365122921 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
 	"Core/StateManager.h"
 	"Core/State.h"
 
-1360216640 c:\users\teddy\programming\fission\include\core\statemanager.h
+1365123217 c:\users\teddy\programming\fission\include\core\statemanager.h
 	<stack>
 	<Core/Manager.h>
 	<Core/State.h>
@@ -534,10 +534,10 @@
 1346494012 c:\users\teddy\programming\fission\box2d\rope\b2rope.h
 	<Box2D/Common/b2Math.h>
 
-1360045100 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
+1365580027 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
 	"Rendering/RenderingManager.h"
 
-1364518507 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
+1365579682 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
 	<SFML/Graphics.hpp>
 	<LTBL/Light/LightSystem.h>
 	<LTBL/Light/Light_Point.h>
@@ -545,58 +545,58 @@
 	<Core/Manager.h>
 	<Core/Math.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\alcheck.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\alcheck.cpp
 	<SFML/Audio/ALCheck.hpp>
 	<SFML/Audio/AudioDevice.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\alcheck.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\alcheck.hpp
 	<SFML/Config.hpp>
 	<iostream>
 	<string>
 	<al.h>
 	<alc.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\config.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\config.hpp
 
 1354657168 c:\users\teddy\programming\fission\extlibs\headers\al\al.h
 
 1354657168 c:\users\teddy\programming\fission\extlibs\headers\al\alc.h
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\audiodevice.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\audiodevice.hpp
 	<set>
 	<string>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\err.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\err.hpp
 	<SFML/System/Export.hpp>
 	<ostream>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\export.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\export.hpp
 	<SFML/Config.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\audiodevice.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\audiodevice.cpp
 	<SFML/Audio/AudioDevice.hpp>
 	<SFML/Audio/ALCheck.hpp>
 	<SFML/Audio/Listener.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\listener.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\listener.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Vector3.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\export.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\export.hpp
 	<SFML/Config.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\vector3.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\vector3.hpp
 	<SFML/System/Vector3.inl>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\vector3.inl
+1363342380 c:\users\teddy\programming\fission\sfml\system\vector3.inl
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\listener.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\listener.cpp
 	<SFML/Audio/Listener.hpp>
 	<SFML/Audio/ALCheck.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\music.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\music.cpp
 	<SFML/Audio/Music.hpp>
 	<SFML/Audio/ALCheck.hpp>
 	<SFML/Audio/SoundFile.hpp>
@@ -604,7 +604,7 @@
 	<SFML/System/Err.hpp>
 	<fstream>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\music.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\music.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundStream.hpp>
 	<SFML/System/Mutex.hpp>
@@ -612,36 +612,36 @@
 	<string>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\soundstream.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\soundstream.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundSource.hpp>
 	<SFML/System/Thread.hpp>
 	<SFML/System/Time.hpp>
 	<cstdlib>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\soundsource.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\soundsource.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Vector3.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\thread.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\thread.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 	<SFML/System/Thread.inl>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\noncopyable.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\noncopyable.hpp
 	<SFML/System/Export.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\thread.inl
+1363342380 c:\users\teddy\programming\fission\sfml\system\thread.inl
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\time.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\time.hpp
 	<SFML/System/Export.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\mutex.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\mutex.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\soundfile.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\soundfile.hpp
 	<SFML/System/NonCopyable.hpp>
 	<SFML/System/Time.hpp>
 	<sndfile.h>
@@ -651,29 +651,29 @@
 	<stdio.h>
 	<sys/types.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\lock.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\lock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\sound.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\sound.cpp
 	<SFML/Audio/Sound.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 	<SFML/Audio/ALCheck.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\sound.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\sound.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundSource.hpp>
 	<SFML/System/Time.hpp>
 	<cstdlib>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\soundbuffer.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\soundbuffer.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Time.hpp>
 	<string>
 	<vector>
 	<set>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundbuffer.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\soundbuffer.cpp
 	<SFML/Audio/SoundBuffer.hpp>
 	<SFML/Audio/SoundFile.hpp>
 	<SFML/Audio/Sound.hpp>
@@ -682,106 +682,106 @@
 	<SFML/System/Err.hpp>
 	<memory>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundbufferrecorder.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\soundbufferrecorder.cpp
 	<SFML/Audio/SoundBufferRecorder.hpp>
 	<algorithm>
 	<iterator>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\soundbufferrecorder.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\soundbufferrecorder.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/Audio/SoundBuffer.hpp>
 	<SFML/Audio/SoundRecorder.hpp>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\audio\soundrecorder.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\audio\soundrecorder.hpp
 	<SFML/Audio/Export.hpp>
 	<SFML/System/Thread.hpp>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundfile.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\soundfile.cpp
 	<SFML/Audio/SoundFile.hpp>
 	<SFML/System/InputStream.hpp>
 	<SFML/System/Err.hpp>
 	<cstring>
 	<cctype>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\inputstream.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\inputstream.hpp
 	<SFML/Config.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundrecorder.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\soundrecorder.cpp
 	<SFML/Audio/SoundRecorder.hpp>
 	<SFML/Audio/AudioDevice.hpp>
 	<SFML/Audio/ALCheck.hpp>
 	<SFML/System/Sleep.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\sleep.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\sleep.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundsource.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\soundsource.cpp
 	<SFML/Audio/SoundSource.hpp>
 	<SFML/Audio/ALCheck.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\audio\soundstream.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\audio\soundstream.cpp
 	<SFML/Audio/SoundStream.hpp>
 	<SFML/Audio/AudioDevice.hpp>
 	<SFML/Audio/ALCheck.hpp>
 	<SFML/System/Sleep.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\circleshape.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\circleshape.cpp
 	<SFML/Graphics/CircleShape.hpp>
 	<cmath>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\circleshape.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\circleshape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\export.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\export.hpp
 	<SFML/Config.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\shape.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\shape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/System/Vector2.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\drawable.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\drawable.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderStates.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\renderstates.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\renderstates.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/BlendMode.hpp>
 	<SFML/Graphics/Transform.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\blendmode.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\blendmode.hpp
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\transform.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\transform.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/System/Vector2.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rect.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rect.hpp
 	<SFML/System/Vector2.hpp>
 	<algorithm>
 	<SFML/Graphics/Rect.inl>
 
-1355690291 c:\users\teddy\programming\fission\sfml\system\vector2.hpp
+1365093565 c:\users\teddy\programming\fission\sfml\system\vector2.hpp
 	<cmath>
 	<SFML/System/Vector2.inl>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\vector2.inl
+1363342380 c:\users\teddy\programming\fission\sfml\system\vector2.inl
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rect.inl
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rect.inl
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\transformable.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\transformable.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Transform.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\vertexarray.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\vertexarray.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/Graphics/PrimitiveType.hpp>
@@ -789,17 +789,17 @@
 	<SFML/Graphics/Drawable.hpp>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\vertex.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\vertex.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/System/Vector2.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\color.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\color.hpp
 	<SFML/Graphics/Export.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\primitivetype.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\primitivetype.hpp
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics.hpp
 	<SFML/Window.hpp>
 	<SFML/Graphics/BlendMode.hpp>
 	<SFML/Graphics/Color.hpp>
@@ -822,7 +822,7 @@
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/Graphics/View.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window.hpp
 	<SFML/System.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/Window/ContextSettings.hpp>
@@ -834,7 +834,7 @@
 	<SFML/Window/Window.hpp>
 	<SFML/Window/WindowStyle.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Clock.hpp>
 	<SFML/System/Err.hpp>
@@ -850,27 +850,27 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/System/Vector3.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\clock.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\clock.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\string.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\string.hpp
 	<SFML/System/Export.hpp>
 	<locale>
 	<string>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\threadlocal.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\threadlocal.hpp
 	<SFML/System/Export.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<cstdlib>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\threadlocalptr.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\threadlocalptr.hpp
 	<SFML/System/ThreadLocal.hpp>
 	<SFML/System/ThreadLocalPtr.inl>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\threadlocalptr.inl
+1363342380 c:\users\teddy\programming\fission\sfml\system\threadlocalptr.inl
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\utf.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\utf.hpp
 	<SFML/Config.hpp>
 	<algorithm>
 	<locale>
@@ -878,43 +878,43 @@
 	<cstdlib>
 	<SFML/System/Utf.inl>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\utf.inl
+1363342380 c:\users\teddy\programming\fission\sfml\system\utf.inl
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\context.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\context.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/Window/GlResource.hpp>
 	<SFML/Window/ContextSettings.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\export.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\export.hpp
 	<SFML/Config.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\glresource.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\glresource.hpp
 	<SFML/Window/Export.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\contextsettings.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\contextsettings.hpp
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\event.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\event.hpp
 	<SFML/Config.hpp>
 	<SFML/Window/Joystick.hpp>
 	<SFML/Window/Keyboard.hpp>
 	<SFML/Window/Mouse.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\joystick.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\joystick.hpp
 	<SFML/Window/Export.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\keyboard.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\keyboard.hpp
 	<SFML/Window/Export.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\mouse.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\mouse.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/System/Vector2.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\videomode.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\videomode.hpp
 	<SFML/Window/Export.hpp>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\window.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\window.hpp
 	<SFML/Window/Export.hpp>
 	<SFML/Window/ContextSettings.hpp>
 	<SFML/Window/VideoMode.hpp>
@@ -924,14 +924,14 @@
 	<SFML/System/Clock.hpp>
 	<SFML/System/Vector2.hpp>
 	<SFML/System/NonCopyable.hpp>
-	<string>
+	<SFML/System/String.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\windowhandle.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\windowhandle.hpp
 	<SFML/Config.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\windowstyle.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\windowstyle.hpp
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\font.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\font.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Glyph.hpp>
 	<SFML/Graphics/Texture.hpp>
@@ -942,28 +942,28 @@
 	<string>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\glyph.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\glyph.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\texture.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\texture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\image.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\image.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<string>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertexture.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rendertexture.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertarget.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rendertarget.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Color.hpp>
 	<SFML/Graphics/Rect.hpp>
@@ -975,20 +975,20 @@
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\view.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\view.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Rect.hpp>
 	<SFML/Graphics/Transform.hpp>
 	<SFML/System/Vector2.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\renderwindow.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\renderwindow.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Window/Window.hpp>
 	<string>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\shader.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\shader.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Transform.hpp>
 	<SFML/Graphics/Color.hpp>
@@ -999,23 +999,23 @@
 	<map>
 	<string>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rectangleshape.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rectangleshape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\convexshape.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\convexshape.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Shape.hpp>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\sprite.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\sprite.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/Graphics/Rect.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\text.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\text.hpp
 	<SFML/Graphics/Export.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Transformable.hpp>
@@ -1026,14 +1026,14 @@
 	<string>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\color.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\color.cpp
 	<SFML/Graphics/Color.hpp>
 	<algorithm>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\convexshape.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\convexshape.cpp
 	<SFML/Graphics/ConvexShape.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\font.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\font.cpp
 	<SFML/Graphics/Font.hpp>
 	<SFML/System/InputStream.hpp>
 	<SFML/System/Err.hpp>
@@ -1046,11 +1046,11 @@
 
 1354657168 c:\users\teddy\programming\fission\extlibs\headers\freetype\config\ftheader.h
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\glcheck.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\glcheck.cpp
 	<SFML/Graphics/GLCheck.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\glcheck.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\glcheck.hpp
 	<SFML/Config.hpp>
 	<GL/glew.h>
 	<string>
@@ -1063,20 +1063,20 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\image.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\image.cpp
 	<SFML/Graphics/Image.hpp>
 	<SFML/Graphics/ImageLoader.hpp>
 	<SFML/System/Err.hpp>
 	<algorithm>
 	<cstring>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\imageloader.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\imageloader.hpp
 	<SFML/System/NonCopyable.hpp>
 	<SFML/System/Vector2.hpp>
 	<string>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\imageloader.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\imageloader.cpp
 	<SFML/Graphics/ImageLoader.hpp>
 	<SFML/System/InputStream.hpp>
 	<SFML/System/Err.hpp>
@@ -1086,7 +1086,7 @@
 	<jerror.h>
 	<cctype>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\stb_image\stb_image.h
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\stb_image\stb_image.h
 	<stdio.h>
 	<math.h>
 	<string.h>
@@ -1096,7 +1096,7 @@
 	<assert.h>
 	<stdarg.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\stb_image\stb_image_write.h
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\stb_image\stb_image_write.h
 	<stdarg.h>
 	<stdlib.h>
 	<stdio.h>
@@ -1115,15 +1115,15 @@
 
 1354657168 c:\users\teddy\programming\fission\extlibs\headers\jpeg\jerror.h
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rectangleshape.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\rectangleshape.cpp
 	<SFML/Graphics/RectangleShape.hpp>
 	<cmath>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\renderstates.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\renderstates.cpp
 	<SFML/Graphics/RenderStates.hpp>
 	<cstddef>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertarget.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\rendertarget.cpp
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Graphics/Shader.hpp>
@@ -1132,49 +1132,49 @@
 	<SFML/Graphics/GLCheck.hpp>
 	<iostream>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertexture.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\rendertexture.cpp
 	<SFML/Graphics/RenderTexture.hpp>
 	<SFML/Graphics/RenderTextureImplFBO.hpp>
 	<SFML/Graphics/RenderTextureImplDefault.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimplfbo.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimplfbo.hpp
 	<SFML/Graphics/RenderTextureImpl.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpl.hpp
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpldefault.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpldefault.hpp
 	<SFML/Graphics/RenderTextureImpl.hpp>
 	<SFML/Window/GlResource.hpp>
 	<SFML/Window/Context.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpl.cpp
 	<SFML/Graphics/RenderTextureImpl.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpldefault.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimpldefault.cpp
 	<SFML/Graphics/RenderTextureImplDefault.hpp>
 	<SFML/Graphics/GLCheck.hpp>
 	<SFML/Graphics/TextureSaver.hpp>
 	<SFML/Window/Context.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\graphics\texturesaver.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\graphics\texturesaver.hpp
 	<SFML/Graphics/GLCheck.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimplfbo.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\rendertextureimplfbo.cpp
 	<SFML/Graphics/RenderTextureImplFBO.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/GLCheck.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\renderwindow.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\renderwindow.cpp
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Graphics/GLCheck.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\shader.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\shader.cpp
 	<SFML/Graphics/Shader.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/GLCheck.hpp>
@@ -1183,26 +1183,26 @@
 	<fstream>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\shape.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\shape.cpp
 	<SFML/Graphics/Shape.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/System/Err.hpp>
 	<cmath>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\sprite.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\sprite.cpp
 	<SFML/Graphics/Sprite.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<cstdlib>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\text.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\text.cpp
 	<SFML/Graphics/Text.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 	<cassert>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\texture.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\texture.cpp
 	<SFML/Graphics/Texture.hpp>
 	<SFML/Graphics/Image.hpp>
 	<SFML/Graphics/GLCheck.hpp>
@@ -1214,32 +1214,32 @@
 	<cassert>
 	<cstring>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\texturesaver.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\texturesaver.cpp
 	<SFML/Graphics/TextureSaver.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\transform.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\transform.cpp
 	<SFML/Graphics/Transform.hpp>
 	<cmath>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\transformable.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\transformable.cpp
 	<SFML/Graphics/Transformable.hpp>
 	<cmath>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\vertex.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\vertex.cpp
 	<SFML/Graphics/Vertex.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\vertexarray.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\vertexarray.cpp
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/Graphics/RenderTarget.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\graphics\view.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\graphics\view.cpp
 	<SFML/Graphics/View.hpp>
 	<cmath>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\main\sfml_main.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\main\sfml_main.cpp
 	<windows.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\ftp.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\ftp.cpp
 	<SFML/Network/Ftp.hpp>
 	<SFML/Network/IpAddress.hpp>
 	<algorithm>
@@ -1247,7 +1247,7 @@
 	<iterator>
 	<sstream>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\ftp.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\ftp.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/Network/TcpSocket.hpp>
 	<SFML/System/NonCopyable.hpp>
@@ -1255,39 +1255,39 @@
 	<string>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\export.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\export.hpp
 	<SFML/Config.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\tcpsocket.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\tcpsocket.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/Network/Socket.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\socket.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\socket.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/Network/SocketHandle.hpp>
 	<SFML/System/NonCopyable.hpp>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\sockethandle.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\sockethandle.hpp
 	<SFML/Config.hpp>
 	<basetsd.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\ipaddress.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\ipaddress.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/System/Time.hpp>
 	<istream>
 	<ostream>
 	<string>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\http.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\http.cpp
 	<SFML/Network/Http.hpp>
 	<cctype>
 	<algorithm>
 	<iterator>
 	<sstream>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\http.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\http.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/Network/IpAddress.hpp>
 	<SFML/Network/TcpSocket.hpp>
@@ -1296,21 +1296,21 @@
 	<map>
 	<string>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\ipaddress.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\ipaddress.cpp
 	<SFML/Network/IpAddress.hpp>
 	<SFML/Network/Http.hpp>
 	<SFML/Network/SocketImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\socketimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\socketimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/Network/Win32/SocketImpl.hpp>
 	<SFML/Network/Unix/SocketImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\win32\socketimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\win32\socketimpl.hpp
 	<SFML/Network/Socket.hpp>
 	<winsock2.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\unix\socketimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\unix\socketimpl.hpp
 	<SFML/Network/Socket.hpp>
 	<sys/types.h>
 	<sys/socket.h>
@@ -1320,44 +1320,44 @@
 	<netdb.h>
 	<unistd.h>
 
-1364334191 source:c:\users\teddy\programming\fission\sfml\network\packet.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\packet.cpp
 	<SFML/Network/Packet.hpp>
 	<SFML/Network/SocketImpl.hpp>
 	<SFML/System/String.hpp>
 	<cstring>
 
-1364334130 c:\users\teddy\programming\fission\sfml\network\packet.hpp
+1365096435 c:\users\teddy\programming\fission\sfml\network\packet.hpp
 	<SFML/Network/Export.hpp>
 	<string>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\socket.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\socket.cpp
 	<SFML/Network/Socket.hpp>
 	<SFML/Network/SocketImpl.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\socketselector.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\socketselector.cpp
 	<SFML/Network/SocketSelector.hpp>
 	<SFML/Network/Socket.hpp>
 	<SFML/Network/SocketImpl.hpp>
 	<SFML/System/Err.hpp>
 	<utility>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\socketselector.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\socketselector.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\tcplistener.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\tcplistener.cpp
 	<SFML/Network/TcpListener.hpp>
 	<SFML/Network/TcpSocket.hpp>
 	<SFML/Network/SocketImpl.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\tcplistener.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\tcplistener.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/Network/Socket.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\tcpsocket.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\tcpsocket.cpp
 	<SFML/Network/TcpSocket.hpp>
 	<SFML/Network/IpAddress.hpp>
 	<SFML/Network/Packet.hpp>
@@ -1366,7 +1366,7 @@
 	<algorithm>
 	<cstring>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\udpsocket.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\udpsocket.cpp
 	<SFML/Network/UdpSocket.hpp>
 	<SFML/Network/IpAddress.hpp>
 	<SFML/Network/Packet.hpp>
@@ -1374,129 +1374,129 @@
 	<SFML/System/Err.hpp>
 	<algorithm>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network\udpsocket.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network\udpsocket.hpp
 	<SFML/Network/Export.hpp>
 	<SFML/Network/Socket.hpp>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\network\win32\socketimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\network\win32\socketimpl.cpp
 	<SFML/Network/Win32/SocketImpl.hpp>
 	<cstring>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\clock.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\clock.cpp
 	<SFML/System/Clock.hpp>
 	<SFML/System/Win32/ClockImpl.hpp>
 	<SFML/System/Unix/ClockImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\win32\clockimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\win32\clockimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\unix\clockimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\unix\clockimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\err.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\err.cpp
 	<SFML/System/Err.hpp>
 	<streambuf>
 	<cstdio>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\lock.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\lock.cpp
 	<SFML/System/Lock.hpp>
 	<SFML/System/Mutex.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\mutex.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\mutex.cpp
 	<SFML/System/Mutex.hpp>
 	<SFML/System/Win32/MutexImpl.hpp>
 	<SFML/System/Unix/MutexImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\win32\muteximpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\win32\muteximpl.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\unix\muteximpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\unix\muteximpl.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\sleep.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\sleep.cpp
 	<SFML/System/Sleep.hpp>
 	<SFML/System/Win32/SleepImpl.hpp>
 	<SFML/System/Unix/SleepImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\win32\sleepimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\win32\sleepimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\unix\sleepimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\unix\sleepimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/System/Time.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\string.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\string.cpp
 	<SFML/System/String.hpp>
 	<SFML/System/Utf.hpp>
 	<iterator>
 	<cstring>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\thread.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\thread.cpp
 	<SFML/System/Thread.hpp>
 	<SFML/System/Win32/ThreadImpl.hpp>
 	<SFML/System/Unix/ThreadImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\win32\threadimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\win32\threadimpl.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\unix\threadimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\unix\threadimpl.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\threadlocal.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\threadlocal.cpp
 	<SFML/System/ThreadLocal.hpp>
 	<SFML/System/Win32/ThreadLocalImpl.hpp>
 	<SFML/System/Unix/ThreadLocalImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\win32\threadlocalimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\win32\threadlocalimpl.hpp
 	<SFML/System/NonCopyable.hpp>
 	<windows.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\system\unix\threadlocalimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\system\unix\threadlocalimpl.hpp
 	<SFML/System/NonCopyable.hpp>
 	<pthread.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\time.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\time.cpp
 	<SFML/System/Time.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\clockimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\win32\clockimpl.cpp
 	<SFML/System/Win32/ClockImpl.hpp>
 	<windows.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\muteximpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\win32\muteximpl.cpp
 	<SFML/System/Win32/MutexImpl.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\sleepimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\win32\sleepimpl.cpp
 	<SFML/System/Win32/SleepImpl.hpp>
 	<windows.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\threadimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\win32\threadimpl.cpp
 	<SFML/System/Win32/ThreadImpl.hpp>
 	<SFML/System/Thread.hpp>
 	<SFML/System/Err.hpp>
 	<cassert>
 	<process.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\system\win32\threadlocalimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\system\win32\threadlocalimpl.cpp
 	<SFML/System/Win32/ThreadLocalImpl.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\context.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\context.cpp
 	<SFML/Window/Context.hpp>
 	<SFML/Window/GlContext.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\glcontext.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\glcontext.hpp
 	<SFML/Config.hpp>
 	<SFML/Window/ContextSettings.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\glcontext.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\glcontext.cpp
 	<SFML/Window/GlContext.hpp>
 	<SFML/System/ThreadLocalPtr.hpp>
 	<SFML/System/Mutex.hpp>
@@ -1510,7 +1510,7 @@
 	<SFML/Window/Linux/GlxContext.hpp>
 	<SFML/Window/OSX/SFContext.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\opengl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\opengl.hpp
 	<SFML/Config.hpp>
 	<windows.h>
 	<GL/gl.h>
@@ -1520,7 +1520,7 @@
 	<OpenGL/gl.h>
 	<OpenGL/glu.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\glext\glext.h
+1363342380 c:\users\teddy\programming\fission\sfml\window\glext\glext.h
 	<windows.h>
 	<stddef.h>
 	<inttypes.h>
@@ -1530,35 +1530,35 @@
 	<stdint.h>
 	<inttypes.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\win32\wglcontext.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\win32\wglcontext.hpp
 	<SFML/Window/GlContext.hpp>
 	<SFML/OpenGL.hpp>
 	<windows.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\linux\glxcontext.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\linux\glxcontext.hpp
 	<SFML/Window/GlContext.hpp>
 	<X11/Xlib.h>
 	<GL/glx.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\osx\sfcontext.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\osx\sfcontext.hpp
 	<SFML/Window/GlContext.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\glresource.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\glresource.cpp
 	<SFML/Window/GlResource.hpp>
 	<SFML/Window/GlContext.hpp>
 	<SFML/System/Mutex.hpp>
 	<SFML/System/Lock.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\joystick.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\joystick.cpp
 	<SFML/Window/Joystick.hpp>
 	<SFML/Window/JoystickManager.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\joystickmanager.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\joystickmanager.hpp
 	<SFML/Window/Joystick.hpp>
 	<SFML/Window/JoystickImpl.hpp>
 	<SFML/System/NonCopyable.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\joystickimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\joystickimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/Window/Joystick.hpp>
 	<algorithm>
@@ -1566,78 +1566,78 @@
 	<SFML/Window/Linux/JoystickImpl.hpp>
 	<SFML/Window/OSX/JoystickImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\win32\joystickimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\win32\joystickimpl.hpp
 	<SFML/Window/JoystickImpl.hpp>
 	<windows.h>
 	<mmsystem.h>
 	<cmath>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\linux\joystickimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\linux\joystickimpl.hpp
 	<linux/joystick.h>
 	<fcntl.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\osx\joystickimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\osx\joystickimpl.hpp
 	<SFML/Window/JoystickImpl.hpp>
 	<IOKit/hid/IOHIDDevice.h>
 	<map>
 	<vector>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\joystickmanager.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\joystickmanager.cpp
 	<SFML/Window/JoystickManager.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\keyboard.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\keyboard.cpp
 	<SFML/Window/Keyboard.hpp>
 	<SFML/Window/InputImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\inputimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\inputimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/Window/Win32/InputImpl.hpp>
 	<SFML/Window/Linux/InputImpl.hpp>
 	<SFML/Window/OSX/InputImpl.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\win32\inputimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\win32\inputimpl.hpp
 	<SFML/Window/Keyboard.hpp>
 	<SFML/Window/Mouse.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\linux\inputimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\linux\inputimpl.hpp
 	<SFML/Window/Keyboard.hpp>
 	<SFML/Window/Mouse.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\osx\inputimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\osx\inputimpl.hpp
 	<SFML/Window/Keyboard.hpp>
 	<SFML/Window/Mouse.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\mouse.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\mouse.cpp
 	<SFML/Window/Mouse.hpp>
 	<SFML/Window/InputImpl.hpp>
 	<SFML/Window/Window.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\videomode.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\videomode.cpp
 	<SFML/Window/VideoMode.hpp>
 	<SFML/Window/VideoModeImpl.hpp>
 	<algorithm>
 	<functional>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\videomodeimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\videomodeimpl.hpp
 	<SFML/Window/VideoMode.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\inputimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\win32\inputimpl.cpp
 	<SFML/Window/Window.hpp>
 	<SFML/Window/Win32/InputImpl.hpp>
 	<windows.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\joystickimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\win32\joystickimpl.cpp
 	<SFML/Window/JoystickImpl.hpp>
 	<SFML/System/Clock.hpp>
 	<windows.h>
 	<cmath>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\videomodeimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\win32\videomodeimpl.cpp
 	<SFML/Window/VideoModeImpl.hpp>
 	<windows.h>
 	<algorithm>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\wglcontext.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\win32\wglcontext.cpp
 	<SFML/Window/WindowImpl.hpp>
 	<SFML/Window/Win32/WglContext.hpp>
 	<SFML/Window/glext/wglext.h>
@@ -1645,9 +1645,10 @@
 	<SFML/System/Mutex.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\windowimpl.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\windowimpl.hpp
 	<SFML/Config.hpp>
 	<SFML/System/NonCopyable.hpp>
+	<SFML/System/String.hpp>
 	<SFML/Window/Event.hpp>
 	<SFML/Window/Joystick.hpp>
 	<SFML/Window/JoystickImpl.hpp>
@@ -1655,34 +1656,32 @@
 	<SFML/Window/WindowHandle.hpp>
 	<queue>
 	<set>
-	<string>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\glext\wglext.h
+1363342380 c:\users\teddy\programming\fission\sfml\window\glext\wglext.h
 	<windows.h>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\win32\windowimplwin32.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\win32\windowimplwin32.cpp
 	<SFML/Window/Win32/WindowImplWin32.hpp>
 	<SFML/Window/WindowStyle.hpp>
 	<GL/gl.h>
-	<SFML/Window/glext/wglext.h>
-	<SFML/Window/glext/glext.h>
 	<SFML/System/Err.hpp>
+	<SFML/System/Utf.hpp>
 	<vector>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\win32\windowimplwin32.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\win32\windowimplwin32.hpp
 	<SFML/Window/Event.hpp>
 	<SFML/Window/WindowImpl.hpp>
+	<SFML/System/String.hpp>
 	<windows.h>
-	<string>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\window.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\window.cpp
 	<SFML/Window/Window.hpp>
 	<SFML/Window/GlContext.hpp>
 	<SFML/Window/WindowImpl.hpp>
 	<SFML/System/Sleep.hpp>
 	<SFML/System/Err.hpp>
 
-1354657168 source:c:\users\teddy\programming\fission\sfml\window\windowimpl.cpp
+1363342380 source:c:\users\teddy\programming\fission\sfml\window\windowimpl.cpp
 	<SFML/Window/WindowImpl.hpp>
 	<SFML/Window/Event.hpp>
 	<SFML/Window/JoystickManager.hpp>
@@ -1693,20 +1692,21 @@
 	<SFML/Window/Linux/WindowImplX11.hpp>
 	<SFML/Window/OSX/WindowImplCocoa.hpp>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\linux\windowimplx11.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\linux\windowimplx11.hpp
 	<SFML/Window/Event.hpp>
 	<SFML/Window/WindowImpl.hpp>
+	<SFML/System/String.hpp>
 	<X11/Xlib.h>
 	<set>
-	<string>
 
-1354657168 c:\users\teddy\programming\fission\sfml\window\osx\windowimplcocoa.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\window\osx\windowimplcocoa.hpp
 	<SFML/Window/Event.hpp>
 	<SFML/Window/WindowImpl.hpp>
+	<SFML/System/String.hpp>
 
-1364542115 c:\users\teddy\programming\fission\include\game.h
+1365142741 c:\users\teddy\programming\fission\include\game.h
 
-1364542131 source:c:\users\teddy\programming\fission\src\game.cpp
+1365152006 source:c:\users\teddy\programming\fission\src\game.cpp
 	"Game.h"
 	<Core/Math.h>
 	<Core/ResourceManager.h>
@@ -1715,6 +1715,7 @@
 	<Rendering/RenderingManager.h>
 	<Physics/PhysicsManager.h>
 	<Scene/SceneManager.h>
+	<GUI/GUIManager.h>
 	<Network/NetworkManager.h>
 
 1344286748 c:\users\teddy\programming\fission\glew\gl\glew.h
@@ -1766,11 +1767,12 @@
 	<AGL/agl.h>
 	<GL/glxew.h>
 
-1355525564 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
+1365495065 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
 	"Core/InputManager.h"
 	<iostream>
+	"GUI/GUIManager.h"
 
-1355515181 c:\users\teddy\programming\fission\include\core\inputmanager.h
+1365494930 c:\users\teddy\programming\fission\include\core\inputmanager.h
 	<SFML/Window.hpp>
 	"Core/Manager.h"
 
@@ -1882,7 +1884,7 @@
 	<sstream>
 	<cmath>
 
-1343985297 source:c:\users\teddy\programming\fission\ltbl\light\emissivelight.cpp
+1365057607 source:c:\users\teddy\programming\fission\ltbl\light\emissivelight.cpp
 	<LTBL/Light/EmissiveLight.h>
 	<math.h>
 
@@ -1890,7 +1892,7 @@
 	<LTBL/Light/Light.h>
 	<assert.h>
 
-1355384652 source:c:\users\teddy\programming\fission\ltbl\light\lightsystem.cpp
+1365057727 source:c:\users\teddy\programming\fission\ltbl\light\lightsystem.cpp
 	<GL/glew.h>
 	<LTBL/QuadTree/QuadTreeOccupant.h>
 	<LTBL/Light/LightSystem.h>
@@ -1945,7 +1947,7 @@
 	<SFML/Graphics/RenderWindow.hpp>
 	"Core/RefCounted.h"
 
-1364676409 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
+1365495370 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
 	"Rendering/SpriteComponent.h"
 	<SFML/Graphics/Sprite.hpp>
 	<iostream>
@@ -1953,7 +1955,7 @@
 	<Core/GameObject.h>
 	<Rendering/RenderingManager.h>
 
-1364675719 c:\users\teddy\programming\fission\include\rendering\spritecomponent.h
+1365495292 c:\users\teddy\programming\fission\include\rendering\spritecomponent.h
 	<SFML/System/Time.hpp>
 	<SFML/Graphics/Sprite.hpp>
 	"Core/Component.h"
@@ -1968,25 +1970,25 @@
 	<SFML/Graphics/Texture.hpp>
 	<Core/Manager.h>
 
-1364670253 source:c:\users\teddy\programming\fission\src\scene\scene.cpp
+1365125344 source:c:\users\teddy\programming\fission\src\scene\scene.cpp
 	"Scene/Scene.h"
 	"Core/GameObject.h"
 	"Rendering/RenderingManager.h"
 	"Scene/SceneManager.h"
 	"Physics/RigidBodyComponent.h"
 
-1364670267 c:\users\teddy\programming\fission\include\scene\scene.h
+1365578570 c:\users\teddy\programming\fission\include\scene\scene.h
 	<vector>
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Network/Packet.hpp>
 
-1364539563 c:\users\teddy\programming\fission\include\scene\scenemanager.h
+1364890338 c:\users\teddy\programming\fission\include\scene\scenemanager.h
 	<string>
 	<vector>
 	"Core/Manager.h"
 	"Scene.h"
 
-1364540320 source:c:\users\teddy\programming\fission\src\scene\scenemanager.cpp
+1364870190 source:c:\users\teddy\programming\fission\src\scene\scenemanager.cpp
 	"Scene/SceneManager.h"
 	<fstream>
 	"Scene/SceneManager.h"
@@ -1997,7 +1999,7 @@
 	"Physics/DragComponent.h"
 	"Logic/WeaponComponent.h"
 
-1362173059 c:\users\teddy\programming\fission\include\fission.h
+1365112632 c:\users\teddy\programming\fission\include\fission.h
 	<Core/Math.h>
 	<Core/GameObject.h>
 	<Core/Component.h>
@@ -2014,15 +2016,16 @@
 	<Rendering/RenderingManager.h>
 	<Physics/PhysicsManager.h>
 	<Scene/SceneManager.h>
+	<GUI/GUIManager.h>
 	<Network/NetworkManager.h>
 	<Network/Chat.h>
 	<Game.h>
 
-1364520729 c:\users\teddy\programming\fission\include\physics\rigidbodycomponent.h
+1364721368 c:\users\teddy\programming\fission\include\physics\rigidbodycomponent.h
 	<Box2D/Box2D.h>
 	"Core/Component.h"
 
-1364637840 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
+1364721457 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
 	"Physics/RigidBodyComponent.h"
 	<iostream>
 	<fstream>
@@ -2032,7 +2035,7 @@
 	<Rendering/RenderingManager.h>
 	<Rendering/SpriteComponent.h>
 
-1364675974 c:\users\teddy\programming\fission\include\core\component.h
+1364802326 c:\users\teddy\programming\fission\include\core\component.h
 	<string>
 	<Box2D/Dynamics/Contacts/b2Contact.h>
 	<SFML/System/Vector2.hpp>
@@ -2043,11 +2046,11 @@
 1364675935 source:c:\users\teddy\programming\fission\src\core\component.cpp
 	"Core/Component.h"
 
-1364676142 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
+1365127558 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
 	"Core/GameObject.h"
 	<Scene/SceneManager.h>
 
-1364674891 c:\users\teddy\programming\fission\include\core\gameobject.h
+1365124963 c:\users\teddy\programming\fission\include\core\gameobject.h
 	<vector>
 	<SFML/System/Vector2.hpp>
 	<SFML/Network/Packet.hpp>
@@ -2083,7 +2086,7 @@
 	<Box2D/Dynamics/Joints/b2RopeJoint.h>
 	<Box2D/Dynamics/Joints/b2WeldJoint.h>
 
-1364542205 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
+1364984271 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
 	"Physics/PhysicsManager.h"
 	<Core/GameObject.h>
 	<Physics/RigidBodyComponent.h>
@@ -2103,14 +2106,16 @@
 	<LTBL/Light/ConvexHull.h>
 	<Core/Component.h>
 
-1360045107 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
+1364683154 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
 	"Rendering/ShapeComponent.h"
 	<fstream>
 	<Core/Math.h>
 	<Core/GameObject.h>
 	<Rendering/RenderingManager.h>
 
-1364518612 c:\users\teddy\programming\fission\include\core\math.h
+1365582598 c:\users\teddy\programming\fission\include\core\math.h
+	<cmath>
+	<vector>
 	<SFML/System/Vector2.hpp>
 
 1364578196 source:c:\users\teddy\programming\fission\src\physics\dragcomponent.cpp
@@ -2151,7 +2156,7 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 
-1360045112 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
+1364683145 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
 	"Rendering/GlowingShapeComponent.h"
 	<SFML/Graphics.hpp>
 	<Core/ResourceManager.h>
@@ -2162,18 +2167,19 @@
 	<LTBL/Light/EmissiveLight.h>
 	<Rendering/ShapeComponent.h>
 
-1364285770 c:\users\teddy\programming\fission\include\logic\weaponcomponent.h
+1365377418 c:\users\teddy\programming\fission\include\logic\weaponcomponent.h
 	<Core/Component.h>
 
-1364513086 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
+1365377464 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
 	"Logic/WeaponComponent.h"
 	<Core/Math.h>
 	<Core/GameObject.h>
 	<Scene/SceneManager.h>
 	<Physics/PhysicsManager.h>
 	<Logic/ProjectileComponent.h>
+	<Rendering/SpriteComponent.h>
 
-1355685455 source:c:\users\teddy\programming\fission\src\logic\projectilecomponent.cpp
+1365377443 source:c:\users\teddy\programming\fission\src\logic\projectilecomponent.cpp
 	"Logic/ProjectileComponent.h"
 	<GL/gl.h>
 	<Core/ResourceManager.h>
@@ -2181,7 +2187,7 @@
 	<Rendering/RenderingManager.h>
 	<iostream>
 
-1355649355 c:\users\teddy\programming\fission\include\logic\projectilecomponent.h
+1365377342 c:\users\teddy\programming\fission\include\logic\projectilecomponent.h
 	<LTBL/Light/EmissiveLight.h>
 	<Core/Component.h>
 
@@ -2209,11 +2215,12 @@
 	"AirplaneComponent.h"
 	"PillComponent.h"
 
-1355630582 source:c:\users\teddy\programming\fission\src\hpcomponent.cpp
+1365487471 source:c:\users\teddy\programming\fission\src\hpcomponent.cpp
 	"HPComponent.h"
+	"GameState.h"
 
-1355630597 c:\users\teddy\programming\fission\include\hpcomponent.h
-	<Core/Component.h>
+1365487453 c:\users\teddy\programming\fission\include\hpcomponent.h
+	<Fission.h>
 
 1355747989 source:c:\users\teddy\programming\fission\src\airplanecomponent.cpp
 	"AirplaneComponent.h"
@@ -2248,12 +2255,10 @@
 1360710753 c:\users\teddy\programming\fission\include\enemycomponent.h
 	<Core/Component.h>
 
-1364548280 c:\users\teddy\programming\fission\include\gamestate.h
+1365658428 c:\users\teddy\programming\fission\include\gamestate.h
 	<Fission.h>
-	"PlayerDatabase.h"
-	"PlanetGenerator.h"
 
-1364670413 source:c:\users\teddy\programming\fission\src\gamestate.cpp
+1365655673 source:c:\users\teddy\programming\fission\src\gamestate.cpp
 	"GameState.h"
 	<iostream>
 	<assert.h>
@@ -2263,6 +2268,13 @@
 	<string>
 	<Fission.h>
 	"HeroControlComponent.h"
+	"GravityComponent.h"
+	"PlanetComponent.h"
+	"HQComponent.h"
+	"TurretComponent.h"
+	"DroneComponent.h"
+	"HPComponent.h"
+	"ResourceComponent.h"
 
 1360224847 source:c:\users\teddy\programming\fission\src\dialoguestate.cpp
 	"DialogueState.h"
@@ -2285,7 +2297,7 @@
 	<SFML/Network.hpp>
 	<Core/Manager.h>
 
-1354657168 c:\users\teddy\programming\fission\sfml\network.hpp
+1363342380 c:\users\teddy\programming\fission\sfml\network.hpp
 	<SFML/System.hpp>
 	<SFML/Network/Ftp.hpp>
 	<SFML/Network/Http.hpp>
@@ -2296,12 +2308,12 @@
 	<SFML/Network/TcpSocket.hpp>
 	<SFML/Network/UdpSocket.hpp>
 
-1364670072 c:\users\teddy\programming\fission\include\network\networkmanager.h
+1365121028 c:\users\teddy\programming\fission\include\network\networkmanager.h
 	<enet/enet.h>
 	<SFML/Network.hpp>
 	<Core/Manager.h>
 
-1364670325 source:c:\users\teddy\programming\fission\src\network\networkmanager.cpp
+1365151106 source:c:\users\teddy\programming\fission\src\network\networkmanager.cpp
 	<Network/NetworkManager.h>
 	<iostream>
 	<Core/StateManager.h>
@@ -2326,7 +2338,7 @@
 	<Core/ResourceManager.h>
 	<Rendering/RenderingManager.h>
 
-1364539158 source:c:\users\teddy\programming\fission\src\network\chat.cpp
+1365097250 source:c:\users\teddy\programming\fission\src\network\chat.cpp
 	"Network/Chat.h"
 	<Core/InputManager.h>
 	<Network/NetworkManager.h>
@@ -2415,7 +2427,18 @@
 	<time.h>
 	"enet/enet.h"
 
-1364153913 source:c:\users\teddy\programming\fission\mainclient.cpp
+1365658448 source:c:\users\teddy\programming\fission\mainclient.cpp
+	<iostream>
+	<assert.h>
+	<cstdlib>
+	<ctime>
+	<fstream>
+	<string>
+	<LTBL/Constructs/Vec2f.h>
+	<Fission.h>
+	"GameState.h"
+
+1365145479 source:c:\users\teddy\programming\fission\mainserver.cpp
 	<iostream>
 	<assert.h>
 	<cstdlib>
@@ -2428,31 +2451,29 @@
 	"PlayerControlComponent.h"
 	"EnemyComponent.h"
 
-1364153902 source:c:\users\teddy\programming\fission\mainserver.cpp
-	<iostream>
-	<assert.h>
-	<cstdlib>
-	<ctime>
-	<fstream>
-	<string>
-	<LTBL/Constructs/Vec2f.h>
-	<Fission.h>
-	"GameState.h"
-	"PlayerControlComponent.h"
-	"EnemyComponent.h"
-
-1364675118 c:\users\teddy\programming\fission\include\herocontrolcomponent.h
+1365385712 c:\users\teddy\programming\fission\include\herocontrolcomponent.h
 	<Fission.h>
 
-1364678308 source:c:\users\teddy\programming\fission\src\herocontrolcomponent.cpp
+1365655666 source:c:\users\teddy\programming\fission\src\herocontrolcomponent.cpp
 	"HeroControlComponent.h"
 	"GameState.h"
+	"GravityComponent.h"
+	"HPComponent.h"
+	"DroneComponent.h"
+	"ResourceComponent.h"
 
-1364281893 source:c:\users\teddy\programming\fission\src\playerdatabase.cpp
+1365492465 source:c:\users\teddy\programming\fission\src\playerdatabase.cpp
 	"PlayerDatabase.h"
+	"GameState.h"
 	"HeroControlComponent.h"
+	"GravityComponent.h"
+	"PlanetComponent.h"
+	"StructureComponent.h"
+	"DroneComponent.h"
+	"HPComponent.h"
+	"ResourceComponent.h"
 
-1364281733 c:\users\teddy\programming\fission\include\playerdatabase.h
+1365492132 c:\users\teddy\programming\fission\include\playerdatabase.h
 	<string>
 	<vector>
 	<Fission.h>
@@ -2465,11 +2486,1049 @@
 
 1347281087 c:\users\teddy\programming\fission\perlin\perlin.h
 
-1364637685 source:c:\users\teddy\programming\fission\src\planetgenerator.cpp
+1365484185 source:c:\users\teddy\programming\fission\src\planetgenerator.cpp
 	"PlanetGenerator.h"
 	"Box2D/ConvexDecomposition/b2Polygon.h"
 	"perlin/perlin.h"
+	"PlanetComponent.h"
 
-1364519916 c:\users\teddy\programming\fission\include\planetgenerator.h
+1365370511 c:\users\teddy\programming\fission\include\planetgenerator.h
+	<Fission.h>
+
+1364778555 c:\users\teddy\programming\fission\include\gravitycomponent.h
+	<Fission.h>
+
+1365491321 source:c:\users\teddy\programming\fission\src\gravitycomponent.cpp
+	"GravityComponent.h"
+	"PlanetGenerator.h"
+	"PlanetComponent.h"
+
+1365389075 c:\users\teddy\programming\fission\include\structuremanager.h
+	<Fission.h>
+
+1365493718 source:c:\users\teddy\programming\fission\src\structuremanager.cpp
+	"StructureManager.h"
+	"HPComponent.h"
+	"HQComponent.h"
+	"TurretComponent.h"
+
+1365367040 c:\users\teddy\programming\fission\include\towercomponent.h
+	<Fission.h>
+
+1365367304 source:c:\users\teddy\programming\fission\src\towercomponent.cpp
+	"TowerComponent.h"
+	"GameState.h"
+
+1365485972 source:c:\users\teddy\programming\fission\src\planetcomponent.cpp
+	"PlanetComponent.h"
+	<iostream>
+
+1365484150 c:\users\teddy\programming\fission\include\planetcomponent.h
+	<Fission.h>
+
+1365621939 source:c:\users\teddy\programming\fission\src\dronecomponent.cpp
+	"DroneComponent.h"
+	"GameState.h"
+	"PlayerDatabase.h"
+	"GravityComponent.h"
+	"HPComponent.h"
+	"ResourceComponent.h"
+	"PlanetComponent.h"
+	"HQComponent.h"
+
+1365590481 c:\users\teddy\programming\fission\include\dronecomponent.h
+	<Fission.h>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\adjustment.cpp
+	<SFGUI/Adjustment.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\adjustment.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Object.hpp>
+	<SFGUI/Signal.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1365054358 c:\users\teddy\programming\fission\sfgui\config.hpp
+	<iostream>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\object.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Signal.hpp>
+	<SFGUI/NonCopyable.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\signal.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/FastDelegate.hpp>
+	<map>
+	"Signal.inl"
+
+1356571301 c:\users\teddy\programming\fission\sfgui\fastdelegate.hpp
+	<memory.h>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\signal.inl
+
+1356571301 c:\users\teddy\programming\fission\sfgui\noncopyable.hpp
+	<SFGUI/Config.hpp>
+
+1365055259 c:\users\teddy\programming\fission\sfgui\sharedptr.hpp
+	<SFGUI/NonCopyable.hpp>
+	<cassert>
+	<functional>
+	"SharedPtr.inl"
+
+1365055281 c:\users\teddy\programming\fission\sfgui\sharedptr.inl
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\alignment.cpp
+	<SFGUI/Alignment.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\alignment.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Misc.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\bin.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\container.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<vector>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\widget.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Object.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFGUI/RenderQueue.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/Window/Event.hpp>
+	<map>
+	<string>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\renderqueue.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Primitive.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/OpenGL.hpp>
+	<vector>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\primitive.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFGUI/Signal.hpp>
+	<SFML/Graphics.hpp>
+	<SFML/OpenGL.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\misc.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\engine.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Selector.hpp>
+	<SFGUI/ResourceManager.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<string>
+	<map>
+	<list>
+	<stdexcept>
+	"Engine.inl"
+
+1356571301 c:\users\teddy\programming\fission\sfgui\selector.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<string>
+	<stdexcept>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\resourcemanager.hpp
+	<SFGUI/Config.hpp>
+	<map>
+	<string>
+	"ResourceManager.inl"
+
+1356571301 c:\users\teddy\programming\fission\sfgui\resourcemanager.inl
+
+1356571301 c:\users\teddy\programming\fission\sfgui\engine.inl
+	<sstream>
+	<iomanip>
+	<typeinfo>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\bin.cpp
+	<SFGUI/Bin.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\box.cpp
+	<SFGUI/Box.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\box.hpp
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<list>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\context.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Engines/BREW.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\engines\brew.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\button.cpp
+	<SFGUI/Button.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\button.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Image.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\image.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Misc.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Texture.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\checkbutton.cpp
+	<SFGUI/CheckButton.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\checkbutton.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/ToggleButton.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\togglebutton.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Button.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\combobox.cpp
+	<SFGUI/ComboBox.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Renderer.hpp>
+	<limits>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\combobox.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Scrollbar.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+	<vector>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\scrollbar.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Range.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/Clock.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\range.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Adjustment.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\renderer.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFGUI/Primitive.hpp>
+	<SFML/Graphics.hpp>
+	<SFML/OpenGL.hpp>
+	<vector>
+	<map>
+	<list>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\container.cpp
+	<SFGUI/Container.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\context.cpp
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Engines/BREW.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\dejavusansfont.cpp
+	<SFGUI/DejaVuSansFont.hpp>
+	<SFML/Graphics/Font.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\dejavusansfont.hpp
+	<SFML/Graphics/Font.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\desktop.cpp
+	<SFGUI/Desktop.hpp>
+	<SFGUI/Container.hpp>
+	<SFML/Window.hpp>
+	<limits>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\desktop.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFML/Graphics/Rect.hpp>
+	<SFML/Graphics/View.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<string>
+	<deque>
+	"Desktop.inl"
+
+1356571301 c:\users\teddy\programming\fission\sfgui\desktop.inl
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\engine.cpp
+	<SFGUI/Engine.hpp>
+	<SFGUI/Parsers/ThemeParser/Parse.hpp>
+	<SFML/Graphics/Text.hpp>
+	<fstream>
+	<sstream>
+	<cmath>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\parsers\themeparser\parse.hpp
+	<SFGUI/Config.hpp>
+	<string>
+	<vector>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\engines\brew.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/RenderQueue.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<cmath>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\button.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Button.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\checkbutton.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/CheckButton.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\combobox.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/ComboBox.hpp>
+	<SFML/Graphics/Text.hpp>
+	<cmath>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\entry.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Entry.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\entry.hpp
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Clock.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\frame.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Frame.hpp>
+	<SFML/Graphics/Text.hpp>
+	<cmath>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\frame.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Misc.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\image.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Image.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\label.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Label.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\label.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/Misc.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\notebook.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Notebook.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\notebook.hpp
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<deque>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\progressbar.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/ProgressBar.hpp>
+	<cmath>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\progressbar.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\scale.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Scale.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\scale.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Range.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\scrollbar.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Scrollbar.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\scrolledwindow.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/ScrolledWindow.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\scrolledwindow.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Adjustment.hpp>
+	<SFGUI/Scrollbar.hpp>
+	<SFGUI/Viewport.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\viewport.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Bin.hpp>
+	<SFGUI/Adjustment.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\separator.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Separator.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\separator.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\engines\brew\spinbutton.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/SpinButton.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\spinbutton.hpp
+	<SFGUI/Entry.hpp>
+	<SFGUI/Adjustment.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System/String.hpp>
+	<SFML/System/Clock.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\spinner.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Spinner.hpp>
+	<cmath>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\spinner.hpp
+	<SFGUI/Widget.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/System.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\togglebutton.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/ToggleButton.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\engines\brew\window.cpp
+	<SFGUI/Engines/BREW.hpp>
+	<SFGUI/Window.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Context.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\window.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Bin.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics/Drawable.hpp>
+	<SFML/System/String.hpp>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\entry.cpp
+	<SFGUI/Entry.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Engines/BREW.hpp>
+	<SFML/Graphics/Font.hpp>
+	<cmath>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\fileresourceloader.cpp
+	<SFGUI/FileResourceLoader.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Image.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\fileresourceloader.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/ResourceLoader.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\resourceloader.hpp
+	<SFGUI/Config.hpp>
+	<string>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\fixed.cpp
+	<SFGUI/Fixed.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\fixed.hpp
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<map>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\frame.cpp
+	<SFGUI/Frame.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\glcanvas.cpp
+	<SFGUI/GLCanvas.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Container.hpp>
+	<cmath>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\glcanvas.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/Widget.hpp>
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/SharedPtr.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\rendererviewport.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<SFML/Graphics.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\image.cpp
+	<SFGUI/Image.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFML/Graphics/Image.hpp>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\label.cpp
+	<SFGUI/Label.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFML/Graphics/Font.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\misc.cpp
+	<SFGUI/Misc.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\noncopyable.cpp
+	<SFGUI/NonCopyable.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\notebook.cpp
+	<SFGUI/Notebook.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\object.cpp
+	<SFGUI/Object.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammar.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammar.hpp
+	<ciso646>
+	<ell/Grammar.h>
+	<ell/Parser.h>
+	<ell/Grammar.h>
+	<ell/Parser.h>
+	<ell/Grammar.h>
+	<ell/Parser.h>
+	<SFGUI/Parsers/ThemeParser/Parse.hpp>
+	<string>
+	<stack>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\grammar.h
+	<ell/Node.h>
+	<ell/Rule.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\node.h
+	<ell/Utils.h>
+	<ell/Storage.h>
+	<ell/UnaryNodes.h>
+	<ell/BinaryNodes.h>
+	<ell/Primitives.h>
+	<ell/Numerics.h>
+	<ell/Dump.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\utils.h
+	<iostream>
+	<string>
+	<sstream>
+	<stdexcept>
+	<algorithm>
+	<wchar.h>
+	<stdlib.h>
+	<string.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\storage.h
+	<vector>
+	<list>
+	<set>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\unarynodes.h
+	<ell/UnaryNode.h>
+	<ell/Parser.h>
+	"RepeatMatchTpl.h"
+	"RepeatMatchTpl.h"
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\unarynode.h
+	<ell/Rule.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\rule.h
+	<ell/Node.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\parser.h
+	<ell/Utils.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\repeatmatchtpl.h
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\binarynodes.h
+	<ell/BinaryNode.h>
+	<ell/Parser.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\binarynode.h
+	<ell/Rule.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\primitives.h
+	<ell/Node.h>
+	<ell/Parser.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\numerics.h
+	<ell/Node.h>
+	<ell/Parser.h>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\libell\include\ell\dump.h
+	<ell/Node.h>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammarpredicates.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+	<algorithm>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammarselector.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammarsimpleselector.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammarstatement.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\grammartoken.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\parsers\themeparser\parse.cpp
+	<SFGUI/Parsers/ThemeParser/Grammar.hpp>
+	<SFGUI/Parsers/ThemeParser/Parse.hpp>
+	<vector>
+	<string>
+	<fstream>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\primitive.cpp
+	<SFGUI/Primitive.hpp>
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/Renderer.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\progressbar.cpp
+	<SFGUI/ProgressBar.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\radiobutton.cpp
+	<SFGUI/RadioButton.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\radiobutton.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/CheckButton.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<set>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\range.cpp
+	<SFGUI/Range.hpp>
+
+1365056994 source:c:\users\teddy\programming\fission\sfgui\renderer.cpp
+	<SFGUI/Config.hpp>
+	<GLee.h>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/Engine.hpp>
+	<cmath>
+	<cstring>
+
+1356571301 c:\users\teddy\programming\fission\extlibs\headers\glee\include\glee.h
+	<windows.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	<stddef.h>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\rendererviewport.cpp
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/Renderer.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\renderqueue.cpp
+	<SFGUI/RenderQueue.hpp>
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFML/Graphics/RenderTarget.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\resourceloader.cpp
+	<SFGUI/ResourceLoader.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\resourcemanager.cpp
+	<SFGUI/ResourceManager.hpp>
+	<SFGUI/FileResourceLoader.hpp>
+	<SFGUI/DejaVuSansFont.hpp>
+	<SFML/Graphics/Font.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\scale.cpp
+	<SFGUI/Scale.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Engines/BREW.hpp>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\scrollbar.cpp
+	<SFGUI/Scrollbar.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<limits>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\scrolledwindow.cpp
+	<SFGUI/Config.hpp>
+	<SFGUI/ScrolledWindow.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\selector.cpp
+	<SFGUI/Selector.hpp>
+	<SFGUI/Container.hpp>
+	<cctype>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\separator.cpp
+	<SFGUI/Separator.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\sfgui.cpp
+	<SFGUI/SFGUI.hpp>
+
+1360677494 c:\users\teddy\programming\fission\sfgui\sfgui.hpp
+	<SFGUI/Bin.hpp>
+	<SFGUI/Box.hpp>
+	<SFGUI/Button.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Desktop.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Entry.hpp>
+	<SFGUI/Fixed.hpp>
+	<SFGUI/Label.hpp>
+	<SFGUI/Range.hpp>
+	<SFGUI/Scale.hpp>
+	<SFGUI/Scrollbar.hpp>
+	<SFGUI/ScrolledWindow.hpp>
+	<SFGUI/Table.hpp>
+	<SFGUI/Window.hpp>
+	<SFGUI/ToggleButton.hpp>
+	<SFGUI/CheckButton.hpp>
+	<SFGUI/RadioButton.hpp>
+	<SFGUI/Viewport.hpp>
+	<SFGUI/ProgressBar.hpp>
+	<SFGUI/Separator.hpp>
+	<SFGUI/Frame.hpp>
+	<SFGUI/Image.hpp>
+	<SFGUI/Alignment.hpp>
+	<SFGUI/Notebook.hpp>
+	<SFGUI/Spinner.hpp>
+	<SFGUI/ComboBox.hpp>
+	<SFGUI/GLCanvas.hpp>
+	<SFGUI/SpinButton.hpp>
+	<SFGUI/Renderer.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\table.hpp
+	<SFGUI/Config.hpp>
+	<SFGUI/TableCell.hpp>
+	<SFGUI/TableOptions.hpp>
+	<SFGUI/Container.hpp>
+	<SFGUI/SharedPtr.hpp>
+	<list>
+	<vector>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\tablecell.hpp
+	<SFGUI/Widget.hpp>
+	<SFGUI/Container.hpp>
+	<SFML/Graphics/Rect.hpp>
+
+1356571301 c:\users\teddy\programming\fission\sfgui\tableoptions.hpp
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\signal.cpp
+	<SFGUI/Signal.hpp>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\spinbutton.cpp
+	<SFGUI/SpinButton.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Engines/BREW.hpp>
+	<SFML/Graphics/Font.hpp>
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\spinner.cpp
+	<SFGUI/Spinner.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/Engine.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<cassert>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\table.cpp
+	<SFGUI/Table.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+	<set>
+	<cassert>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\tablecell.cpp
+	<SFGUI/TableCell.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\tableoptions.cpp
+	<SFGUI/TableOptions.hpp>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\togglebutton.cpp
+	<SFGUI/ToggleButton.hpp>
+	<SFGUI/Context.hpp>
+	<SFGUI/Engine.hpp>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\viewport.cpp
+	<SFGUI/Viewport.hpp>
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/Renderer.hpp>
+	<cmath>
+
+1360677494 source:c:\users\teddy\programming\fission\sfgui\widget.cpp
+	<SFGUI/Widget.hpp>
+	<SFGUI/Container.hpp>
+	<SFGUI/Renderer.hpp>
+	<SFGUI/RendererViewport.hpp>
+	<SFGUI/Context.hpp>
+	<cmath>
+	<limits>
+
+1356571301 source:c:\users\teddy\programming\fission\sfgui\window.cpp
+	<SFGUI/Window.hpp>
+	<SFGUI/Engine.hpp>
+	<SFGUI/Context.hpp>
+
+1365146474 c:\users\teddy\programming\fission\include\gui\guimanager.h
+	<SFGUI/SFGUI.hpp>
+	<SFML/Graphics.hpp>
+	<Core/Manager.h>
+
+1365146492 source:c:\users\teddy\programming\fission\src\gui\guimanager.cpp
+	"GUI/GUIManager.h"
+
+1356571301 source:c:\users\teddy\programming\fission\extlibs\headers\glee\src\glee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"GLee.h"
+	<Carbon/Carbon.h>
+
+1365444924 source:c:\users\teddy\programming\fission\src\gameinterface.cpp
+	"GameInterface.h"
+	<sstream>
+	"GameState.h"
+	"StructureManager.h"
+
+1365390336 c:\users\teddy\programming\fission\include\gameinterface.h
+	<Fission.h>
+
+1365490882 source:c:\users\teddy\programming\fission\src\resourcecomponent.cpp
+	"ResourceComponent.h"
+	"DroneComponent.h"
+
+1365490862 c:\users\teddy\programming\fission\include\resourcecomponent.h
+	<Fission.h>
+
+1365391537 c:\users\teddy\programming\fission\include\structurecomponent.h
+	<Fission.h>
+
+1365495799 source:c:\users\teddy\programming\fission\src\structurecomponent.cpp
+	"StructureComponent.h"
+	"GameState.h"
+	"HPComponent.h"
+
+1365371689 source:c:\users\teddy\programming\fission\src\minimap.cpp
+	"MiniMap.h"
+
+1365371675 c:\users\teddy\programming\fission\include\minimap.h
+	<Fission.h>
+
+1365392457 c:\users\teddy\programming\fission\include\turretcomponent.h
+	"StructureComponent.h"
+
+1365414137 source:c:\users\teddy\programming\fission\src\turretcomponent.cpp
+	"TurretComponent.h"
+	"HPComponent.h"
+
+1365391604 source:c:\users\teddy\programming\fission\src\hqcomponent.cpp
+	"HQComponent.h"
+	"GameState.h"
+
+1365655499 c:\users\teddy\programming\fission\include\hqcomponent.h
+	"StructureComponent.h"
+
+1096922984 source:c:\users\teddy\programming\fission\opensteer\camera.cpp
+	"OpenSteer/Camera.h"
+	"OpenSteer/OpenSteerDemo.h"
+
+1096922984 c:\users\teddy\programming\fission\opensteer\camera.h
+	"LocalSpace.h"
+	"AbstractVehicle.h"
+
+1096922984 c:\users\teddy\programming\fission\opensteer\localspace.h
+	"Vec3.h"
+
+1096922984 c:\users\teddy\programming\fission\opensteer\vec3.h
+	"Utilities.h"
+
+1096940226 c:\users\teddy\programming\fission\opensteer\utilities.h
+	<iostream>
+	<cstdlib>
+	<cfloat>
+	<cmath>
+
+1096922984 c:\users\teddy\programming\fission\opensteer\abstractvehicle.h
+	"LocalSpace.h"
+	<vector>
+
+1096922984 c:\users\teddy\programming\fission\opensteer\opensteerdemo.h
+	"OpenSteer/Vec3.h"
+	"OpenSteer/Clock.h"
+	"OpenSteer/PlugIn.h"
+	"OpenSteer/Camera.h"
+	"OpenSteer/Utilities.h"
+	"Draw.h"
+
+1096922984 c:\users\teddy\programming\fission\opensteer\clock.h
+	"OpenSteer/Utilities.h"
+	<windows.h>
+
+1096922984 c:\users\teddy\programming\fission\opensteer\plugin.h
+	<iostream>
+	"AbstractVehicle.h"
+
+1096922984 c:\users\teddy\programming\fission\opensteer\draw.h
+	"Vec3.h"
+	"AbstractVehicle.h"
+
+1096922984 source:c:\users\teddy\programming\fission\opensteer\clock.cpp
+	"OpenSteer/Clock.h"
+	"OpenSteer/OpenSteerDemo.h"
+	<windows.h>
+	<sys/time.h>
+
+1094825014 source:c:\users\teddy\programming\fission\opensteer\lq.c
+	<stdlib.h>
+	<float.h>
+	"OpenSteer/lq.h"
+	"debuglq.c"
+
+1064628154 c:\users\teddy\programming\fission\opensteer\lq.h
+
+1096922984 source:c:\users\teddy\programming\fission\opensteer\main.cpp
+	"OpenSteer/OpenSteerDemo.h"
+	"OpenSteer/Draw.h"
+	<cstdlib>
+
+1096922984 source:c:\users\teddy\programming\fission\opensteer\opensteerdemo.cpp
+	<algorithm>
+	<sstream>
+	"OpenSteer/OpenSteerDemo.h"
+
+1096922984 source:c:\users\teddy\programming\fission\opensteer\pathway.cpp
+	"OpenSteer/Pathway.h"
+
+1096922984 c:\users\teddy\programming\fission\opensteer\pathway.h
+	"Vec3.h"
+
+1365481235 source:c:\users\teddy\programming\fission\opensteer\plugin.cpp
+	"OpenSteer/PlugIn.h"
+	<cstring>
+
+1365480999 source:c:\users\teddy\programming\fission\src\aimanager.cpp
+	"AIManager.h"
+
+1365480999 c:\users\teddy\programming\fission\include\aimanager.h
+
+1365653260 source:c:\users\teddy\programming\fission\src\dronemanager.cpp
+	"DroneManager.h"
+	"GameState.h"
+	"PlayerDatabase.h"
+	"GravityComponent.h"
+	"HPComponent.h"
+	"DroneComponent.h"
+	"ResourceComponent.h"
+
+1365653238 c:\users\teddy\programming\fission\include\dronemanager.h
 	<Fission.h>
 

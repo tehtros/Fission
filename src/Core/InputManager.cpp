@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "GUI/GUIManager.h"
+
 InputManager *InputManager::Instance = NULL;
 
 InputManager::InputManager(sf::Window *window)
@@ -9,6 +11,7 @@ InputManager::InputManager(sf::Window *window)
     Instance = this;
 
     mWindow = window;
+    mWindow->setKeyRepeatEnabled(false);
 
     // All the keys are up by default
     for (int k = 0; k < sf::Keyboard::KeyCount; k++)
@@ -58,6 +61,8 @@ bool InputManager::update(float dt)
     //while there are pending events...
     while (mWindow->pollEvent(event))
     {
+        GUIManager::get()->getDesktop()->HandleEvent(event);
+
         //check the type of the event...
         switch (event.type)
         {
@@ -122,7 +127,7 @@ bool InputManager::update(float dt)
             case sf::Event::MouseMoved:
             {
                 mMouseState.mMove.x = event.mouseMove.x-mMouseState.mPosition.x;
-                mMouseState.mMove.y = event.mouseMove.x-mMouseState.mPosition.y;
+                mMouseState.mMove.y = event.mouseMove.y-mMouseState.mPosition.y;
                 mMouseState.mPosition.x = event.mouseMove.x;
                 mMouseState.mPosition.y = event.mouseMove.y;
                 break;

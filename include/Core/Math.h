@@ -1,6 +1,8 @@
 #ifndef MATH_H_INCLUDED
 #define MATH_H_INCLUDED
 
+#include <cmath>
+#include <vector>
 #include <SFML/System/Vector2.hpp>
 
 /// Pixels to units ratio
@@ -49,6 +51,54 @@ inline float radToDeg(float radians)
 inline float degToRad(float degrees)
 {
     return DEGTORAD * degrees;
+}
+
+/// Returns the shortest angle between two angles
+inline float getShortestAngle(float a1, float a2)
+{
+    float shortestAngle = fabs(a1 - a2);
+    while (shortestAngle > 360.f) shortestAngle -= 360.f;
+
+    if(shortestAngle > 180)
+        shortestAngle = 360 - shortestAngle;
+
+    // Calculate direction
+    int moveDir = 0;
+    float behindMe = a1 - 180;
+    if (behindMe < 0)
+        behindMe += 360;
+
+    if (a2 == behindMe)
+        moveDir = 1; // or randomly choose
+    else if ((a2 > behindMe && a2 < a1) ||
+             (a1 < 180 && (a2 > behindMe ||
+                                      a2 < a1)))
+        moveDir = -1;
+    else if ((a2 < behindMe && a2 > a1) ||
+             (a1 > 180 && (a2 < behindMe ||
+                                      a2 > a1)))
+        moveDir= 1;
+
+    return moveDir*shortestAngle;
+}
+
+/// Returns whether or not the supplied point is within the polygon
+inline bool pointInPolygon(sf::Vector2f point, std::vector <sf::Vector2f> coords)
+{
+    for (unsigned int i=0;i<coords.size()-2;i+=2)
+    {
+        if (((point.y-coords[i+1].y)*(coords[i+2].y-coords[i].y) - (point.x-coords[i].x)*(coords[i+3].x-coords[i+1].x))<0)
+        {
+            return false;
+        }
+    }
+    //The last test is special
+    unsigned int j = coords.size();
+    if (((point.y-coords[j-1].y)*(coords[0].y-coords[j-2].y) - (point.x-coords[j-2].x)*(coords[1].x-coords[j-1].x))<0)
+    {
+        return false;
+    }
+    return true;
 }
 
 #endif // MATH_H_INCLUDED

@@ -9,13 +9,12 @@
 
 #include <Fission.h>
 #include "GameState.h"
-#include "PlayerControlComponent.h"
-#include "EnemyComponent.h"
 
 int main()
 {
-    Game *game = new Game;
-    game->run(new GameState(game, NetworkType::SERVER));
+    Game *game = new Game(800, 600);
+    game->run(new GameState(game));
+    delete game;
 
     return 0;
 }

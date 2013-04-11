@@ -27,7 +27,6 @@
 
 #include <cmath>
 
-
 namespace sf
 {
 ////////////////////////////////////////////////////////////
@@ -70,6 +69,7 @@ public :
     ////////////////////////////////////////////////////////////
     template <typename U>
     explicit Vector2(const Vector2<U>& vector);
+
 
     //! Normalize the vector.
 	/** The null vector is left untouched.

@@ -12,7 +12,11 @@ GameObject implementation
 
 GameObject::GameObject()
 {
+    mID = -1;
+
     mAlive = true;
+
+    mRenderLayer = 0;
 
     mSyncNetwork = false; // By default, don't sync over the network
 
@@ -33,6 +37,10 @@ GameObject::~GameObject()
 void GameObject::serialize(sf::Packet &packet)
 {
     packet << mID;
+    packet << sf::Int8(mSyncNetwork);
+
+    packet << mPosition.x << mPosition.y << mRotation;
+    packet << mRenderLayer;
 
     int componentCount = 0; // Get number of serializeable components
     for (unsigned int c = 0; c < mComponents.size(); c++)
@@ -55,6 +63,16 @@ void GameObject::serialize(sf::Packet &packet)
 void GameObject::deserialize(sf::Packet &packet)
 {
     packet >> mID;
+
+    if (mID >= SceneManager::get()->getLastID())
+        SceneManager::get()->setNextID(mID+1);
+
+    sf::Int8 syncNetwork;
+    packet >> syncNetwork;
+    mSyncNetwork = syncNetwork;
+
+    packet >> mPosition.x >> mPosition.y >> mRotation;
+    packet >> mRenderLayer;
 
     // Get all the components
     int componentCount;
@@ -163,6 +181,9 @@ void GameObject::setPosition(sf::Vector2f position, Component *caller)
 
 void GameObject::setRotation(float rotation, Component *caller)
 {
+    while (rotation < 0.f) rotation += 360.f;
+    while (rotation > 360.f) rotation -= 360.f;
+
     mRotation = rotation;
 
     for (unsigned int c = 0; c < mComponents.size(); c++)

@@ -24,6 +24,8 @@ SceneManager::SceneManager()
     registerComponentCreationFunction("RigidBodyComponent", RigidBodyComponent::createComponent);
     registerComponentCreationFunction("DragComponent", DragComponent::createComponent);
     registerComponentCreationFunction("WeaponComponent", WeaponComponent::createComponent);
+
+    mNextID = 0;
 }
 
 SceneManager::~SceneManager()
@@ -37,9 +39,10 @@ bool SceneManager::update(float deltaTime)
     return mCurrentScene->update(deltaTime);
 }
 
-GameObject *SceneManager::createGameObject()
+GameObject *SceneManager::createGameObject(bool giveID)
 {
     GameObject *object = new GameObject;
+    if (giveID) object->setID(getNextID());
     addGameObject(object);
     return object;
 }

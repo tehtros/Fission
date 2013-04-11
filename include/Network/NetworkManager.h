@@ -44,16 +44,17 @@ class NetworkManager : public Manager
 
         void hostServer(int port);
         void connectClient(std::string ipAddress, int port);
+        void disconnect(int connectorID = 0);
 
         virtual bool update(float dt);
 
         void send(sf::Packet packet, int connectorID = 0, int excludeID = 0, bool reliable = true); // connectorID is only relevant to server. It is 0 to send to all clients
         void sendSceneCreation(int connectorID = 0, int excludeID = 0, bool reliable = true);
         void sendGameObject(GameObject *object, int connectorID = 0, int excludeID = 0, bool reliable = true);
-        void sendToComponent(sf::Packet packet, GameObject *object, Component *component, int connectorID = 0, int excludeID = 0, bool reliable = true);
+        void sendToComponent(sf::Packet packet, Component *component, int connectorID = 0, int excludeID = 0, bool reliable = true);
 
         int findConnectorID(std::string IP);
-        Connector findConnector(int ID);
+        Connector *findConnector(int ID);
         void removeConnector(int ID);
 
         // Accessors
@@ -87,7 +88,7 @@ class NetworkManager : public Manager
         ENetAddress mServerAddress;
 
         /// The list of clients if I'm a server
-        std::vector <Connector> mConnectors;
+        std::vector <Connector*> mConnectors;
 
         /// The ID for the next connector
         int mNextID;

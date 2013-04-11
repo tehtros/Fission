@@ -19,6 +19,7 @@
 #include <Rendering/RenderingManager.h>
 #include <Physics/PhysicsManager.h>
 #include <Scene/SceneManager.h>
+#include <GUI/GUIManager.h>
 #include <Network/NetworkManager.h>
 
 #include <Network/Chat.h>

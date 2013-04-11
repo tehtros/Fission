@@ -14,9 +14,17 @@ class ProjectileComponent : public Component
         virtual void onRender(sf::RenderTarget *target, sf::RenderStates states);
 
         // Accessors
+        int getTeam(){return mTeam;}
         int getDamage(){return mDamage;}
 
+        // Mutators
+        void setDamage(int damage){mDamage=damage;}
+        void setTeam(int team){mTeam=team;}
+
     protected:
+        /// The team this projectile fights for
+        int mTeam;
+
         /// Amount of damage to deal on a collision
         int mDamage;
 

@@ -62,12 +62,14 @@ class GameObject : public RefCounted
         // Accessors
         int getID(){return mID;}
         bool getAlive(){return mAlive;}
+        int getRenderLayer(){return mRenderLayer;}
         bool getSyncNetwork(){return mSyncNetwork;}
         sf::Vector2f getPosition(){return mPosition;}
         float getRotation(){return mRotation;}
 
         // Mutators
         void setID(int ID){mID=ID;}
+        void setRenderLayer(int layer){mRenderLayer=layer;}
         void setSyncNetwork(bool sync){mSyncNetwork=sync;}
         void setPosition(sf::Vector2f position, Component *caller = NULL);
         void setRotation(float rotation, Component *caller = NULL);
@@ -81,6 +83,9 @@ class GameObject : public RefCounted
 
         /// Whether or not the object should live to see another frame
         bool mAlive;
+
+        /// This GameObject's render layer
+        int mRenderLayer;
 
         /// Whether or not to sync over the network
         bool mSyncNetwork;

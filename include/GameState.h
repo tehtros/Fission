@@ -3,25 +3,10 @@
 
 #include <Fission.h>
 
-#include "PlayerDatabase.h"
-#include "PlanetGenerator.h"
-
-namespace PacketType
-{
-    enum
-    {
-        LOGIN = USER_MESSAGE,
-        LOGOUT,
-        CREATE_PLAYER,
-        PLAYER_INPUT,
-        CHAT
-    };
-}
-
 class GameState : public State
 {
     public:
-        GameState(Game *game, int netType);
+        GameState(Game *game);
         virtual ~GameState();
 
         virtual void initialize();
@@ -36,16 +21,8 @@ class GameState : public State
         virtual void onDisconnect(int ID);
         virtual void handlePacket(sf::Packet &packet, int connectorID);
 
+    protected:
         Game *mGame;
-        Chat *mChat;
-        PlayerDatabase *mPlayerDatabase;
-        PlanetGenerator *mPlanetGenerator;
-
-        /// The network type we want
-        int mNetworkType;
-
-        /// This client's hero. Null if this is a server
-        GameObject *mHero;
 };
 
 #endif // GAMESTATE_H

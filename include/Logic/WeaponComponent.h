@@ -27,17 +27,25 @@ class WeaponComponent : public Component
         static Component *createComponent(GameObject *object);
 
         // Accessors
+        int getType(){return mType;}
+        int getTeam(){return mTeam;}
 
         // Mutators
+        void setType(int type){mType=type;}
+        void setTeam(int team){mTeam=team;}
         void setDamage(int dmg){mDamage=dmg;}
         void setRange(float range){mRange=range;}
         void setInaccuracy(float inaccuracy){mInaccuracy=inaccuracy;}
         void setFirePoint(sf::Vector2f firePoint){mFirePoint=firePoint;}
+        void setRotatePoint(sf::Vector2f rotatePoint){mRotatePoint=rotatePoint;}
         void setVisibleBullets(bool visible){mVisibleBullets=visible;}
 
     protected:
         /// Type of gun: Instant hit, projectile, or melee
         int mType;
+
+        /// The team this weapon fights for!
+        int mTeam;
 
         /// How much damage this gun does
         int mDamage;
@@ -53,6 +61,9 @@ class WeaponComponent : public Component
 
         /// Where the bullets come out
         sf::Vector2f mFirePoint;
+
+        /// Rotate point
+        sf::Vector2f mRotatePoint;
 
         /// The cool down clock
         sf::Clock mCoolDownClock;

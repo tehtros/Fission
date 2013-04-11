@@ -48,6 +48,7 @@ class Component : public RefCounted
         virtual void onContactEnd(GameObject *object){}
 
         //accessors
+        GameObject *getGameObject(){return mGameObject;}
         std::string getName(){return mName;}
         std::string getTypeName(){return mTypeName;}
         bool getShouldSerialize(){return mShouldSerialize;}

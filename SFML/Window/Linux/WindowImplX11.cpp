@@ -35,6 +35,8 @@
 #include <X11/extensions/Xrandr.h>
 #include <sstream>
 #include <vector>
+#include <string>
+#include <iterator>
 
 
 ////////////////////////////////////////////////////////////
@@ -91,7 +93,7 @@ m_keyRepeat   (true)
 
 
 ////////////////////////////////////////////////////////////
-WindowImplX11::WindowImplX11(VideoMode mode, const std::string& title, unsigned long style) :
+WindowImplX11::WindowImplX11(VideoMode mode, const String& title, unsigned long style) :
 m_window      (0),
 m_inputMethod (NULL),
 m_inputContext(NULL),
@@ -313,9 +315,23 @@ void WindowImplX11::setSize(const Vector2u& size)
 
 
 ////////////////////////////////////////////////////////////
-void WindowImplX11::setTitle(const std::string& title)
+void WindowImplX11::setTitle(const String& title)
 {
-    XStoreName(m_display, m_window, title.c_str());
+    // Bare X11 has no Unicode window title support.
+    // There is however an option to tell the window manager your unicode title via hints.
+    
+    // Convert to UTF-8 encoding.
+    std::basic_string<sf::Uint8> utf8Title;
+    sf::Utf32::toUtf8(title.begin(), title.end(), std::back_inserter(utf8Title));
+    
+    // Set the _NET_WM_NAME atom, which specifies a UTF-8 encoded window title.
+    Atom wmName = XInternAtom(m_display, "_NET_WM_NAME", False);
+    Atom useUtf8 = XInternAtom(m_display, "UTF8_STRING", False);
+    XChangeProperty(m_display, m_window, wmName, useUtf8, 8,
+                    PropModeReplace, utf8Title.c_str(), utf8Title.size());
+    
+    // Set the non-Unicode title as a fallback for window managers who don't support _NET_WM_NAME.
+    XStoreName(m_display, m_window, title.toAnsiString().c_str());
 }
 
 
@@ -558,38 +574,37 @@ bool WindowImplX11::processEvent(XEvent windowEvent)
     // system's key events policy doesn't match SFML's one: X server will generate
     // both repeated KeyPress and KeyRelease events when maintaining a key down, while
     // SFML only wants repeated KeyPress events. Thus, we have to:
-    // - Discard duplicated KeyRelease events when EnableKeyRepeat is true
-    // - Discard both duplicated KeyPress and KeyRelease events when EnableKeyRepeat is false
+    // - Discard duplicated KeyRelease events when KeyRepeatEnabled is true
+    // - Discard both duplicated KeyPress and KeyRelease events when KeyRepeatEnabled is false
 
     // Detect repeated key events
-    if ((windowEvent.type == KeyPress) || (windowEvent.type == KeyRelease))
+    if (((windowEvent.type == KeyPress) || (windowEvent.type == KeyRelease)) && (windowEvent.xkey.keycode < 256))
     {
-        if (windowEvent.xkey.keycode < 256)
-        {
-            // To detect if it is a repeated key event, we check the current state of the key.
-            // - If the state is "down", KeyReleased events must obviously be discarded.
-            // - KeyPress events are a little bit harder to handle: they depend on the EnableKeyRepeat state,
-            //   and we need to properly forward the first one.
-            char keys[32];
-            XQueryKeymap(m_display, keys);
-            if (keys[windowEvent.xkey.keycode / 8] & (1 << (windowEvent.xkey.keycode % 8)))
-            {
-                // KeyRelease event + key down = repeated event --> discard
-                if (windowEvent.type == KeyRelease)
-                {
-                    m_lastKeyReleaseEvent = windowEvent;
-                    return false;
-                }
+        // To detect if it is a repeated key event, we check the current state of the key:
+        // - If the state is "down", KeyReleased events must obviously be discarded
+        // - KeyPress events are a little bit harder to handle: they depend on the KeyRepeatEnabled state,
+        //   and we need to properly forward the first one
+        
+        // Check if the key is currently down
+        char keys[32];
+        XQueryKeymap(m_display, keys);
+        bool isDown = keys[windowEvent.xkey.keycode / 8] & (1 << (windowEvent.xkey.keycode % 8));
 
-                // KeyPress event + key repeat disabled + matching KeyRelease event = repeated event --> discard
-                if ((windowEvent.type == KeyPress) && !m_keyRepeat &&
-                    (m_lastKeyReleaseEvent.xkey.keycode == windowEvent.xkey.keycode) &&
-                    (m_lastKeyReleaseEvent.xkey.time == windowEvent.xkey.time))
-                {
-                    return false;
-                }
-            }
-        }
+        // Check if it's a duplicate event
+        bool isDuplicate = (windowEvent.xkey.keycode == m_lastKeyReleaseEvent.xkey.keycode) &&
+                           (windowEvent.xkey.time - m_lastKeyReleaseEvent.xkey.time <= 5);
+
+        // Keep track of the last KeyRelease event
+        if (windowEvent.type == KeyRelease)
+            m_lastKeyReleaseEvent = windowEvent;
+
+        // KeyRelease event + key down or duplicate event = repeated event --> discard
+        if ((windowEvent.type == KeyRelease) && (isDown || isDuplicate))
+            return false;
+
+        // KeyPress event + matching KeyRelease event = repeated event --> discard if key repeat is disabled
+        if ((windowEvent.type == KeyPress) && isDuplicate && !m_keyRepeat)
+            return false;
     }
 
     // Convert the X11 event to a sf::Event
@@ -802,18 +817,24 @@ bool WindowImplX11::processEvent(XEvent windowEvent)
         // Mouse entered
         case EnterNotify :
         {
-            Event event;
-            event.type = Event::MouseEntered;
-            pushEvent(event);
+            if (windowEvent.xcrossing.mode == NotifyNormal)
+            {
+                Event event;
+                event.type = Event::MouseEntered;
+                pushEvent(event);
+            }
             break;
         }
 
         // Mouse left
         case LeaveNotify :
         {
-            Event event;
-            event.type = Event::MouseLeft;
-            pushEvent(event);
+            if (windowEvent.xcrossing.mode == NotifyNormal)
+            {
+                Event event;
+                event.type = Event::MouseLeft;
+                pushEvent(event);
+            }
             break;
         }
     }

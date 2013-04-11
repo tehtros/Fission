@@ -9,9 +9,11 @@
 
 ProjectileComponent::ProjectileComponent(GameObject *object, std::string name, int dmg, float range, bool visual) : Component(object, name)
 {
+    mTeam = -1;
+
     mDamage = dmg;
     mDistanceLeft = range;
-    mVisual = visual;
+    mVisual = false;
 
     // Create an emissive light
     if (mVisual)
@@ -58,6 +60,7 @@ void ProjectileComponent::onRender(sf::RenderTarget *target, sf::RenderStates st
 
         sf::Vector2f newPos = mGameObject->getPosition()*RenderingManager::get()->getPTU();
         newPos.y *= -1;
+        newPos += RenderingManager::get()->getCameraScreenOffset();
 
         Vec2f lightPos = Vec2f(newPos.x, newPos.y);
 

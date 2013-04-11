@@ -2,12 +2,13 @@
 
 RenderingManager *RenderingManager::Instance = NULL;
 
-RenderingManager::RenderingManager()
+RenderingManager::RenderingManager(int width, int height)
 {
     Instance = this;
 
     // Create the window
-    mRenderWindow = new sf::RenderWindow(sf::VideoMode(800,600,32), "Test");
+    mRenderWindow = new sf::RenderWindow(sf::VideoMode(width,height,32), "EvoScroller");
+    mView = mRenderWindow->getView();
 
     // Create the light system
     mLightSystem = new ltbl::LightSystem(AABB(Vec2f(0.0f, 0.0f), Vec2f(mRenderWindow->getSize().x, mRenderWindow->getSize().y)),
@@ -15,6 +16,7 @@ RenderingManager::RenderingManager()
     mLightSystem->m_useBloom = true;
 
     mPTU = 32.f; //32 pixels per unit
+    mCameraRotation = 0.f;
 }
 
 RenderingManager::~RenderingManager()
@@ -32,6 +34,20 @@ bool RenderingManager::update(float dt)
 void RenderingManager::beginRender()
 {
     mRenderWindow->clear(); //clear the window
+}
+
+void RenderingManager::initializeView()
+{
+    mView.setRotation(-mCameraRotation);
+    mRenderWindow->setView(mView);
+
+    mLightSystem->SetView(mRenderWindow->getView());
+}
+
+void RenderingManager::deinitializeView()
+{
+    mView = mRenderWindow->getDefaultView();
+    mRenderWindow->setView(mView);
 
     mLightSystem->SetView(mRenderWindow->getView());
 }
@@ -48,4 +64,25 @@ void RenderingManager::renderLights()
 void RenderingManager::endRender()
 {
     mRenderWindow->display(); //display the window
+}
+
+sf::Vector2f RenderingManager::screenToWorld(sf::Vector2f screenPos)
+{
+    sf::Vector2f worldPos = screenPos-getCameraScreenOffset();
+    worldPos.x = worldPos.x/mPTU;
+    worldPos.y = -worldPos.y/mPTU;
+    worldPos.rotateBy(RenderingManager::get()->getCameraRotation(), RenderingManager::get()->getCameraPosition());
+
+    return worldPos;
+}
+
+sf::Vector2f RenderingManager::worldToScreen(sf::Vector2f worldPos)
+{
+    sf::Vector2f screenPos = worldPos;
+    screenPos.rotateBy(-RenderingManager::get()->getCameraRotation(), RenderingManager::get()->getCameraPosition());
+    screenPos.x *= mPTU;
+    screenPos.y *= -mPTU;
+    screenPos += getCameraScreenOffset();
+
+    return screenPos;
 }

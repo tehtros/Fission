@@ -16,7 +16,7 @@ class Scene
 
         void initialize();
         bool update(float deltaTime);
-        virtual void onRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
+        void render(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
 
         //void save(std::string fileName);
         //void load(std::string fileName);

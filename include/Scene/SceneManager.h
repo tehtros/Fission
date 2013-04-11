@@ -23,7 +23,7 @@ class SceneManager : public Manager
         //void saveScene(std::string fileName){mCurrentScene->save(fileName);}
         //void loadScene(std::string fileName){mCurrentScene->load(fileName);}
 
-        GameObject *createGameObject();
+        GameObject *createGameObject(bool giveID = false);
         void addGameObject(GameObject *object){mCurrentScene->addGameObject(object);}
         void destroyGameObject(GameObject *object){mCurrentScene->destroyGameObject(object);}
         GameObject *findGameObject(int ID){return mCurrentScene->findGameObject(ID);}
@@ -39,8 +39,11 @@ class SceneManager : public Manager
 
         // Accessors
         Scene *getCurrentScene(){return mCurrentScene;}
+        int getNextID(){return mNextID++;}
+        int getLastID(){return mNextID-1;}
 
         // Mutators
+        void setNextID(int ID){mNextID=ID;}
 
         static SceneManager *get(){return Instance;}
 
@@ -53,6 +56,8 @@ class SceneManager : public Manager
 
         std::vector <ComponentCreationFunction> mComponentCreationFunctions;
         std::vector <std::string> mComponentCreationFunctionNames;
+
+        int mNextID; // Next GameObject's ID
 
     private:
         static SceneManager *Instance;

@@ -26,8 +26,8 @@ bool StateManager::update(float dt)
 
 void StateManager::pushState(State *state)
 {
-    state->initialize();
     mStates.push(state);
+    state->initialize();
 }
 
 void StateManager::popState()

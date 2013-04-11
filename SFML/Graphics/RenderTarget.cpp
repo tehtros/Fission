@@ -344,9 +344,10 @@ void RenderTarget::applyBlendMode(BlendMode mode)
 {
     switch (mode)
     {
-        // Alpha blending
         // glBlendFuncSeparateEXT is used when available to avoid an incorrect alpha value when the target
         // is a RenderTexture -- in this case the alpha value must be written directly to the target buffer
+
+        // Alpha blending
         default :
         case BlendAlpha :
             if (GLEW_EXT_blend_func_separate)
@@ -357,7 +358,10 @@ void RenderTarget::applyBlendMode(BlendMode mode)
 
         // Additive blending
         case BlendAdd :
-            glCheck(glBlendFunc(GL_SRC_ALPHA, GL_ONE));
+            if (GLEW_EXT_blend_func_separate)
+                glCheck(glBlendFuncSeparateEXT(GL_SRC_ALPHA, GL_ONE, GL_ONE, GL_ONE));
+            else
+                glCheck(glBlendFunc(GL_SRC_ALPHA, GL_ONE));
             break;
 
         // Multiplicative blending
@@ -387,10 +391,7 @@ void RenderTarget::applyTransform(const Transform& transform)
 ////////////////////////////////////////////////////////////
 void RenderTarget::applyTexture(const Texture* texture)
 {
-    if (texture)
-        texture->bind(Texture::Pixels);
-    else
-        glCheck(glBindTexture(GL_TEXTURE_2D, 0));
+    Texture::bind(texture, Texture::Pixels);
 
     m_cache.lastTextureId = texture ? texture->m_cacheId : 0;
 }
@@ -399,10 +400,7 @@ void RenderTarget::applyTexture(const Texture* texture)
 ////////////////////////////////////////////////////////////
 void RenderTarget::applyShader(const Shader* shader)
 {
-    if (shader)
-        shader->bind();
-    else
-        glCheck(glUseProgramObjectARB(0));
+    Shader::bind(shader);
 }
 
 } // namespace sf

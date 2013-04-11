@@ -24,8 +24,8 @@ class InputManager : public Manager
             int mLMBState;
             int mMMBState;
             int mRMBState;
-            sf::Vector2i mPosition;
-            sf::Vector2i mMove;
+            sf::Vector2f mPosition;
+            sf::Vector2f mMove;
         };
 
     public:
@@ -55,8 +55,8 @@ class InputManager : public Manager
         bool getRMBDown(){return mMouseState.mRMBState==ButtonState::DOWN||mMouseState.mRMBState==ButtonState::PRESSED;}
         bool getRMBUp(){return mMouseState.mRMBState==ButtonState::UP||mMouseState.mRMBState==ButtonState::RELEASED;}
 
-        sf::Vector2i getMousePosition(){return mMouseState.mPosition;}
-        sf::Vector2i getMouseMove(){return mMouseState.mMove;}
+        sf::Vector2f getMousePosition(){return mMouseState.mPosition;}
+        sf::Vector2f getMouseMove(){return mMouseState.mMove;}
 
         static InputManager *get(){return Instance;}
 

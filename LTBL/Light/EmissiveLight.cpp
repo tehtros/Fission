@@ -55,7 +55,7 @@ void EmissiveLight::Render()
 
 	const Vec2f &center = m_aabb.GetCenter();
 
-	m_texture->bind();
+	m_texture->bind(m_texture);
 
 	glTranslatef(center.x, center.y, 0.0f);
 	glRotatef(m_angleDegs, 0.0f, 0.0f, 1.0f);
@@ -100,7 +100,7 @@ void EmissiveLight::SetDims(const Vec2f &newDims)
 
 	// Set AABB
 	m_aabb.SetHalfDims(m_halfRenderDims);
-	
+
 	// Re-rotate AABB if it is rotated
 	if(m_angleDegs != 0.0f)
 		SetRotation(m_angleDegs);

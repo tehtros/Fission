@@ -35,11 +35,19 @@ bool Scene::update(float deltaTime)
     return true;
 }
 
-void Scene::onRender(sf::RenderTarget *target, sf::RenderStates states)
+void Scene::render(sf::RenderTarget *target, sf::RenderStates states)
 {
+    int topLayer = 0;
     for (unsigned int o = 0; o < mGameObjects.size(); o++)
+        topLayer = std::max(topLayer, mGameObjects[o]->getRenderLayer());
+
+    for (int l = 0; l <= topLayer; l++)
     {
-        mGameObjects[o]->onRender(target, states);
+        for (unsigned int o = 0; o < mGameObjects.size(); o++)
+        {
+            if (mGameObjects[o]->getRenderLayer() == l)
+                mGameObjects[o]->onRender(target, states);
+        }
     }
 }
 
@@ -68,7 +76,13 @@ void Scene::deserializeCreationPacket(sf::Packet &packet)
 
     for (int o = 0; o < objectCount; o++)
     {
-        SceneManager::get()->createGameObject()->deserialize(packet);
+        GameObject *object = SceneManager::get()->createGameObject();
+        object->deserialize(packet);
+
+        if (object->getID() != -1 && object != findGameObject(object->getID()))
+        {
+            object->kill();
+        }
     }
 }
 

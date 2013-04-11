@@ -37,8 +37,14 @@ void PhysicsManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
     GameObject *objectA = static_cast <GameObject*> (contact->GetFixtureA()->GetBody()->GetUserData()); //grab the first object
     GameObject *objectB = static_cast <GameObject*> (contact->GetFixtureB()->GetBody()->GetUserData()); //grab the second object
 
-    if (objectA->getComponent<RigidBodyComponent>()->getCollisionGroup()&
-        objectB->getComponent<RigidBodyComponent>()->getCollisionGroup()) // These objects get to pass through each other
+    RigidBodyComponent *bodyA = objectA->getComponent<RigidBodyComponent>();
+    RigidBodyComponent *bodyB = objectB->getComponent<RigidBodyComponent>();
+
+    if (!objectA || !objectB || !bodyA || !bodyB)
+        return;
+
+    if (bodyA->getCollisionGroup()&
+        bodyB->getCollisionGroup()) // These objects get to pass through each other
     {
         contact->SetEnabled(false);
         return;
@@ -57,8 +63,13 @@ void PhysicsManager::BeginContact(b2Contact* contact)
     GameObject *objectA = static_cast <GameObject*> (contact->GetFixtureA()->GetBody()->GetUserData()); //grab the first object
     GameObject *objectB = static_cast <GameObject*> (contact->GetFixtureB()->GetBody()->GetUserData()); //grab the second object
 
-    if (objectA->getComponent<RigidBodyComponent>()->getCollisionGroup()&
-        objectB->getComponent<RigidBodyComponent>()->getCollisionGroup()) // These objects get to pass through each other
+    RigidBodyComponent *bodyA = objectA->getComponent<RigidBodyComponent>();
+    RigidBodyComponent *bodyB = objectB->getComponent<RigidBodyComponent>();
+
+    if (!objectA || !objectB || !bodyA || !bodyB)
+        return;
+    if (bodyA->getCollisionGroup()&
+        bodyB->getCollisionGroup()) // These objects get to pass through each other
     {
         contact->SetEnabled(false);
         return;
@@ -73,8 +84,14 @@ void PhysicsManager::EndContact(b2Contact* contact)
     GameObject *objectA = static_cast <GameObject*> (contact->GetFixtureA()->GetBody()->GetUserData()); //grab the first object
     GameObject *objectB = static_cast <GameObject*> (contact->GetFixtureB()->GetBody()->GetUserData()); //grab the second object
 
-    if (objectA->getComponent<RigidBodyComponent>()->getCollisionGroup()&
-        objectB->getComponent<RigidBodyComponent>()->getCollisionGroup()) // These objects get to pass through each other
+    RigidBodyComponent *bodyA = objectA->getComponent<RigidBodyComponent>();
+    RigidBodyComponent *bodyB = objectB->getComponent<RigidBodyComponent>();
+
+    if (!objectA || !objectB || !bodyA || !bodyB)
+        return;
+
+    if (bodyA->getCollisionGroup()&
+        bodyB->getCollisionGroup()) // These objects get to pass through each other
     {
         contact->SetEnabled(false);
         return;

@@ -85,6 +85,7 @@ void NetworkManager::connectClient(std::string ipAddress, int port)
         packet >> mNetworkID;
         packet.clear();
         std::cout << "Connection to " << ipAddress << " with ID " << mNetworkID <<  " succeeded.\n";
+        StateManager::get()->getCurrentState()->onConnect(mNetworkID);
     }
     else
     {
@@ -98,6 +99,19 @@ void NetworkManager::connectClient(std::string ipAddress, int port)
     mType = NetworkType::CLIENT;
 }
 
+void NetworkManager::disconnect(int connectorID)
+{
+    if (mType == NetworkType::CLIENT)
+    {
+        enet_peer_disconnect(mPeer, 0);
+    }
+    else if (mType == NetworkType::SERVER)
+    {
+        if (connectorID > 0)
+            enet_peer_disconnect(findConnector(connectorID)->mPeer, 0);
+    }
+}
+
 bool NetworkManager::update(float dt)
 {
     if (!mConnected)
@@ -108,7 +122,7 @@ bool NetworkManager::update(float dt)
     std::string IP;
 
     // Check for events, but don't wait
-    for (int netIteration = 0; netIteration < 10000; netIteration++)
+    for (int netIteration = 0; netIteration < 1000; netIteration++)
     {
         if (!(enet_host_service(mHost, &event, 1) > 0))
             break;
@@ -123,23 +137,23 @@ bool NetworkManager::update(float dt)
                 std::cout << "New connector " << mNextID << " from " << IP << ":" << event.peer->address.port << std::endl;
 
                 // Add the new connector
-                Connector connector;
-                connector.mID = mNextID;
-                connector.mIPAddress = IP;
-                connector.mPeer = event.peer;
+                Connector *connector = new Connector;
+                connector->mID = mNextID;
+                connector->mIPAddress = IP;
+                connector->mPeer = event.peer;
                 mConnectors.push_back(connector);
                 mNextID++;
 
-                event.peer->data = &mConnectors.back();
+                event.peer->data = connector;
 
                 // Send the client its ID
                 sf::Packet idPacket;
-                idPacket << connector.mID;
-                send(idPacket, connector.mID);
+                idPacket << connector->mID;
+                send(idPacket, connector->mID);
                 enet_host_flush(mHost);
                 idPacket.clear();
 
-                StateManager::get()->getCurrentState()->onConnect(connector.mID);
+                StateManager::get()->getCurrentState()->onConnect(connector->mID);
 
                 break;
             }
@@ -178,7 +192,14 @@ bool NetworkManager::update(float dt)
 
                     case PacketType::CREATE_OBJECT:
                     {
-                        SceneManager::get()->createGameObject()->deserialize(packet);
+                        GameObject *object = SceneManager::get()->createGameObject();
+                        object->deserialize(packet);
+
+                        if (object->getID() != -1 && object != SceneManager::get()->findGameObject(object->getID()))
+                        {
+                            object->kill();
+                        }
+
                         break;
                     }
 
@@ -203,15 +224,23 @@ bool NetworkManager::update(float dt)
             {
                 if (mType == NetworkType::CLIENT)
                 {
-                    std::cout << "Disconnected from server\n";
+                    std::cout << "Disconnected from server.\n";
                     mConnected = false;
+                    StateManager::get()->getCurrentState()->onDisconnect(mNetworkID);
+                    mNetworkID = -1;
                 }
                 else if (mType == NetworkType::SERVER)
                 {
-                    std::cout << "Connector " << ((Connector*)event.peer->data)->mID << " has disconnected.\n";
-                    StateManager::get()->getCurrentState()->onDisconnect(((Connector*)event.peer->data)->mID);
-                    removeConnector(((Connector*)event.peer->data)->mID);
-                    event.peer->data = NULL;
+                    Connector *connector = reinterpret_cast<Connector*>(event.peer->data);
+
+                    if(connector)
+                    {
+                        std::cout << "Connector " << connector->mID << " has disconnected.\n";
+                        StateManager::get()->getCurrentState()->onDisconnect(connector->mID);
+                        connector->mPeer = NULL;
+                        removeConnector(connector->mID);
+                        event.peer->data = NULL;
+                    }
                 }
 
                 break;
@@ -246,7 +275,7 @@ void NetworkManager::send(sf::Packet packet, int connectorID, int excludeID, boo
     }
     else if (connectorID > 0) // It's a server and the client is specified. Tell only that client!
     {
-        enet_peer_send(findConnector(connectorID).mPeer, 0, enetPacket);
+        enet_peer_send(findConnector(connectorID)->mPeer, 0, enetPacket);
     }
     else // It's a server and the client is unspecified. Broadcast to everyone
     {
@@ -254,8 +283,8 @@ void NetworkManager::send(sf::Packet packet, int connectorID, int excludeID, boo
         {
             for (unsigned int i = 0; i < mConnectors.size(); i++)
             {
-                if (mConnectors[i].mID != excludeID)
-                    enet_peer_send(findConnector(connectorID).mPeer, 0, enetPacket);
+                if (mConnectors[i]->mID != excludeID && mConnectors[i]->mPeer)
+                    enet_peer_send(mConnectors[i]->mPeer, 0, enetPacket);
             }
         }
         else
@@ -284,11 +313,11 @@ void NetworkManager::sendGameObject(GameObject *object, int connectorID, int exc
     send(packet, connectorID, excludeID, reliable);
 }
 
-void NetworkManager::sendToComponent(sf::Packet packet, GameObject *object, Component *component, int connectorID, int excludeID, bool reliable)
+void NetworkManager::sendToComponent(sf::Packet packet, Component *component, int connectorID, int excludeID, bool reliable)
 {
     sf::Packet finalPacket;
     finalPacket << PacketType::COMPONENT_MESSAGE;
-    finalPacket << object->getID();
+    finalPacket << component->getGameObject()->getID();
     finalPacket << component->getName();
     finalPacket.append(packet.getData(), packet.getDataSize());
 
@@ -299,30 +328,31 @@ int NetworkManager::findConnectorID(std::string IP)
 {
     for (unsigned int i = 0; i < mConnectors.size(); i++)
     {
-        if (mConnectors[i].mIPAddress == IP)
-            return mConnectors[i].mID;
+        if (mConnectors[i]->mIPAddress == IP)
+            return mConnectors[i]->mID;
     }
 
     return -1;
 }
 
-Connector NetworkManager::findConnector(int ID)
+Connector *NetworkManager::findConnector(int ID)
 {
     for (unsigned int i = 0; i < mConnectors.size(); i++)
     {
-        if (mConnectors[i].mID == ID)
+        if (mConnectors[i]->mID == ID)
             return mConnectors[i];
     }
 
-    return Connector(); // Return the default invalid connector
+    return NULL; // Return invalid connector
 }
 
 void NetworkManager::removeConnector(int ID)
 {
     for (unsigned int i = 0; i < mConnectors.size(); i++)
     {
-        if (mConnectors[i].mID == ID)
+        if (mConnectors[i]->mID == ID)
         {
+            delete mConnectors[i];
             mConnectors.erase(mConnectors.begin()+i);
             return;
         }

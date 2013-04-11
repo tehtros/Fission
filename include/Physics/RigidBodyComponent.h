@@ -8,7 +8,7 @@
 class RigidBodyComponent : public Component
 {
     public:
-        RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile);
+        RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile = "", float density = 1.f);
         RigidBodyComponent(GameObject *object, std::string name, b2Body *body);
         virtual ~RigidBodyComponent();
 

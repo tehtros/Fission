@@ -8,7 +8,7 @@
 #include <Rendering/RenderingManager.h>
 #include <Rendering/SpriteComponent.h>
 
-RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile) : Component(object, name)
+RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std::string bodyFile, float density) : Component(object, name)
 {
     mCollisionGroup = 0; // Everything collides with everything to begin with
     mBody = NULL;
@@ -82,7 +82,11 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
         SpriteComponent *sprite = mGameObject->getComponent<SpriteComponent>();
 
         b2BodyDef def;
-        def.type = b2_dynamicBody;
+        if (density <= 0)
+            def.type = b2_staticBody;
+        else
+            def.type = b2_dynamicBody;
+        def.fixedRotation = false;
 
         mBody = PhysicsManager::get()->getWorld()->CreateBody(&def);
         mBody->SetUserData(mGameObject); //set the user data to this component's object
@@ -94,7 +98,7 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
         b2FixtureDef fixtureDef;
         fixtureDef.shape = shape;
         fixtureDef.friction = 0.3f;
-        fixtureDef.density = 1.f;
+        fixtureDef.density = density;
 
         mBody->CreateFixture(&fixtureDef);
         delete shape; //delete the shape - we're done with it

@@ -8,12 +8,13 @@ class StateManager;
 class RenderingManager;
 class PhysicsManager;
 class SceneManager;
+class GUIManager;
 class NetworkManager;
 
 class Game
 {
     public:
-        Game();
+        Game(int width, int height);
         virtual ~Game();
 
         virtual void run(State *state);
@@ -30,6 +31,7 @@ class Game
         RenderingManager *mRenderingManager;
         PhysicsManager *mPhysicsManager;
         SceneManager *mSceneManager;
+        GUIManager *mGUIManager;
         NetworkManager *mNetworkManager;
 
         bool mRunning;

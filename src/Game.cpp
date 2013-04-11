@@ -7,16 +7,18 @@
 #include <Rendering/RenderingManager.h>
 #include <Physics/PhysicsManager.h>
 #include <Scene/SceneManager.h>
+#include <GUI/GUIManager.h>
 #include <Network/NetworkManager.h>
 
-Game::Game()
+Game::Game(int width, int height)
 {
     mRunning = true;
 
     mResourceManager = new ResourceManager;
     mStateManager = new StateManager;
     mSceneManager = new SceneManager;
-    mRenderingManager = new RenderingManager;
+    mGUIManager = new GUIManager;
+    mRenderingManager = new RenderingManager(width, height);
     mPhysicsManager = new PhysicsManager;
     mInputManager = new InputManager(mRenderingManager->getRenderWindow());
     mNetworkManager = new NetworkManager;
@@ -26,7 +28,14 @@ Game::Game()
 
 Game::~Game()
 {
-    //deltaTimeor
+    delete mResourceManager;
+    delete mStateManager;
+    delete mSceneManager;
+    delete mGUIManager;
+    delete mRenderingManager;
+    delete mPhysicsManager;
+    delete mInputManager;
+    delete mNetworkManager;
 }
 
 void Game::run(State *state)
@@ -35,6 +44,8 @@ void Game::run(State *state)
 
     int lastFrameTime = InputManager::get()->getTime();
     float deltaTime = 0;
+    mLockStepAccumulator = 0.f;
+    mLockStepAccumulatorRatio = 0.f;
 
     while (mRunning)
     {
@@ -64,6 +75,8 @@ void Game::run(State *state)
                 mRunning = mPhysicsManager->update(timeStep);
             if (mRunning && !mInputManager->getPaused())
                 mRunning = mInputManager->update(timeStep);
+            if (mRunning && !mGUIManager->getPaused())
+                mRunning = mGUIManager->update(timeStep);
             if (mRunning && !mSceneManager->getPaused())
                 mRunning = mSceneManager->update(timeStep);
             if (mRunning && !mStateManager->getPaused())
@@ -76,15 +89,25 @@ void Game::run(State *state)
         if (mRunning && !mNetworkManager->getPaused())
             mRunning = mNetworkManager->update(deltaTime);
 
+        if (!mRunning)
+            break;
+
         //start rendering
         mRenderingManager->beginRender();
 
         mStateManager->getCurrentState()->onPreRender(mRenderingManager->getRenderWindow());
-        mSceneManager->getCurrentScene()->onRender(mRenderingManager->getRenderWindow());
+
+        mRenderingManager->initializeView();
+
+        mSceneManager->getCurrentScene()->render(mRenderingManager->getRenderWindow());
 
         mRenderingManager->renderLights();
 
+        mRenderingManager->deinitializeView();
+
         mStateManager->getCurrentState()->onPostRender(mRenderingManager->getRenderWindow());
+
+        mGUIManager->render(mRenderingManager->getRenderWindow());
 
         //finish rendering
         mRenderingManager->endRender();
