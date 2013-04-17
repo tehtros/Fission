@@ -19,7 +19,7 @@ Chat::~Chat()
 void Chat::initialize()
 {
     //if (NetworkManager::get()->getType() == NetworkType::CLIENT)
-        mFont = ResourceManager::get()->getFont("Content/Fonts/font.ttf");
+        mFont = ResourceManager::get()->getFont("Content/Fonts/NeoGen.ttf");
 }
 
 void Chat::update()

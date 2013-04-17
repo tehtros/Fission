@@ -6,7 +6,21 @@
 #include <Core/Component.h>
 #include <Scene/SceneManager.h>
 
-NetworkManager *NetworkManager::Instance;
+class QueuedPacket
+{
+public:
+    QueuedPacket(sf::Packet packet, int connectorID, int excludeID, bool reliable){}
+    ~QueuedPacket(){}
+
+private:
+    sf::Packet mPacket;
+    int mConnectorID;
+    int mExcludeID;
+    bool mReliable;
+
+};
+
+NetworkManager *NetworkManager::Instance = NULL;
 
 NetworkManager::NetworkManager()
 {
@@ -14,6 +28,9 @@ NetworkManager::NetworkManager()
 
     mNextID = 1;
     mNetworkID = -1; // Set to -1 for no connection
+
+    mBandwidth = 10000;
+    mBandwidthLeft = 10000;
 
     enet_initialize();
 }
@@ -23,14 +40,14 @@ NetworkManager::~NetworkManager()
     enet_deinitialize();
 }
 
-void NetworkManager::hostServer(int port)
+void NetworkManager::hostServer(int port, int incomingBandwidth, int outgoingBandwidth)
 {
     mType = NetworkType::SERVER;
 
     mServerAddress.host = ENET_HOST_ANY;
     mServerAddress.port = port;
 
-    mHost = enet_host_create(&mServerAddress, 32, 2, 0, 0);
+    mHost = enet_host_create(&mServerAddress, 32, 2, incomingBandwidth, outgoingBandwidth);
 
     if (!mHost) // All servers have to do is bind the port
     {
@@ -45,13 +62,14 @@ void NetworkManager::hostServer(int port)
     }
 }
 
-void NetworkManager::connectClient(std::string ipAddress, int port)
+void NetworkManager::connectClient(std::string ipAddress, int port, int incomingBandwidth, int outgoingBandwidth)
 {
     enet_address_set_host(&mServerAddress, ipAddress.c_str());
     mServerAddress.port = port;
 
     // Create the enet host
-    mHost = enet_host_create(NULL, 1, 2, 57600 / 8, 14400 / 8);
+    //mHost = enet_host_create(NULL, 1, 2, 57600 / 8, 14400 / 8);
+    mHost = enet_host_create(NULL, 1, 2, incomingBandwidth, outgoingBandwidth);
     mPeer = enet_host_connect(mHost, &mServerAddress, 2, 0);
 
     // Send the connection request packet
@@ -184,12 +202,6 @@ bool NetworkManager::update(float dt)
                         break;
                     }
 
-                    case PacketType::SCENE_CREATION:
-                    {
-                        SceneManager::get()->getCurrentScene()->deserializeCreationPacket(packet);
-                        break;
-                    }
-
                     case PacketType::CREATE_OBJECT:
                     {
                         GameObject *object = SceneManager::get()->createGameObject();
@@ -256,14 +268,14 @@ bool NetworkManager::update(float dt)
     return true;
 }
 
-void NetworkManager::send(sf::Packet packet, int connectorID, int excludeID, bool reliable)
+void NetworkManager::send(sf::Packet &packet, int connectorID, int excludeID, bool reliable)
 {
     sf::Packet finalPacket;
     //finalPacket << sf::Int8(0);
     finalPacket.append(packet.getData(), packet.getDataSize());
 
     // Create the enet packet
-    unsigned int flags = ENET_PACKET_FLAG_NO_ALLOCATE;
+    unsigned int flags = 0;
     if (reliable)
         flags |= ENET_PACKET_FLAG_RELIABLE;
 
@@ -290,18 +302,15 @@ void NetworkManager::send(sf::Packet packet, int connectorID, int excludeID, boo
         else
             enet_host_broadcast(mHost, 0, enetPacket);
     }
-
-    enet_host_flush(mHost);
-    finalPacket.clear();
 }
 
 void NetworkManager::sendSceneCreation(int connectorID, int excludeID, bool reliable)
 {
-    sf::Packet packet;
-    packet << PacketType::SCENE_CREATION;
-    SceneManager::get()->getCurrentScene()->serializeCreationPacket(packet);
-
-    send(packet, connectorID, excludeID, reliable);
+    for (unsigned int i = 0; i < SceneManager::get()->getCurrentScene()->getGameObjects().size(); i++)
+    {
+        if (SceneManager::get()->getCurrentScene()->getGameObjects()[i]->getSyncNetwork())
+            sendGameObject(SceneManager::get()->getCurrentScene()->getGameObjects()[i], connectorID, excludeID, reliable);
+    }
 }
 
 void NetworkManager::sendGameObject(GameObject *object, int connectorID, int excludeID, bool reliable)
@@ -313,7 +322,7 @@ void NetworkManager::sendGameObject(GameObject *object, int connectorID, int exc
     send(packet, connectorID, excludeID, reliable);
 }
 
-void NetworkManager::sendToComponent(sf::Packet packet, Component *component, int connectorID, int excludeID, bool reliable)
+void NetworkManager::sendToComponent(sf::Packet &packet, Component *component, int connectorID, int excludeID, bool reliable)
 {
     sf::Packet finalPacket;
     finalPacket << PacketType::COMPONENT_MESSAGE;

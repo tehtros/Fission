@@ -7,7 +7,7 @@
 class ProjectileComponent : public Component
 {
     public:
-        ProjectileComponent(GameObject *object, std::string name, int dmg, float range, bool visual = true);
+        ProjectileComponent(GameObject *object, std::string name, int dmg, float range);
         virtual ~ProjectileComponent();
 
         virtual bool update(float dt);
@@ -16,10 +16,12 @@ class ProjectileComponent : public Component
         // Accessors
         int getTeam(){return mTeam;}
         int getDamage(){return mDamage;}
+        float getRange(){return mDistanceLeft;}
 
         // Mutators
-        void setDamage(int damage){mDamage=damage;}
         void setTeam(int team){mTeam=team;}
+        void setDamage(int damage){mDamage=damage;}
+        void setRange(float range){mDistanceLeft=range;}
 
     protected:
         /// The team this projectile fights for
@@ -30,12 +32,6 @@ class ProjectileComponent : public Component
 
         /// Distance left to travel
         float mDistanceLeft;
-
-        /// Whether or not to draw an effect
-        bool mVisual;
-
-        /// Emissive light for visual bullets
-        ltbl::EmissiveLight *mEmissiveLight;
 
     private:
 };

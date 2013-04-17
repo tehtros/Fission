@@ -9,6 +9,8 @@
 
 SpriteComponent::SpriteComponent(GameObject *object, std::string name, std::string imgPath, int frames, int framesPerRow) : Component(object, name)
 {
+    mTypeName = "SpriteComponent";
+
     mTexturePath = imgPath;
 
     if (mTexturePath == "") // If a path wasn't specified, we don't want to try to load anything
@@ -119,8 +121,8 @@ bool SpriteComponent::update(float dt)
 
 void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states)
 {
-    //invalid frame - don't render
-    if (!mSprite || mCurFrame < mStartFrame || mCurFrame > mEndFrame)
+    // Invalid frame - don't render
+    if (!mSprite || !mEnabled || mCurFrame < mStartFrame || mCurFrame > mEndFrame)
         return;
 
     //calculate frame position

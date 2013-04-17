@@ -47,7 +47,6 @@ void PhysicsManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
         bodyB->getCollisionGroup()) // These objects get to pass through each other
     {
         contact->SetEnabled(false);
-        return;
     }
 
     objectA->onPreSolve(objectB, contact, oldManifold);

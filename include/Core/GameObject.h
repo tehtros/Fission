@@ -28,6 +28,8 @@ class GameObject : public RefCounted
         void serialize(sf::Packet &packet);
         void deserialize(sf::Packet &packet);
 
+        GameObject *clone(bool giveID = false);
+
         virtual bool update(float dt);
         virtual void onRender(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
 
@@ -54,7 +56,19 @@ class GameObject : public RefCounted
                         return (T*)mComponents[c];
                 }
             }
-            return 0;
+            return NULL;
+        }
+
+        Component *getComponent(std::string name = "")
+        {
+            for (unsigned int c = 0; c < mComponents.size(); c++)
+            {
+                if (name == "" || mComponents[c]->getName() == name) //no name specified or matching name
+                {
+                    return mComponents[c];
+                }
+            }
+            return NULL;
         }
 
         void kill(){mAlive=false;}

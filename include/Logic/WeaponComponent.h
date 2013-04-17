@@ -38,7 +38,7 @@ class WeaponComponent : public Component
         void setInaccuracy(float inaccuracy){mInaccuracy=inaccuracy;}
         void setFirePoint(sf::Vector2f firePoint){mFirePoint=firePoint;}
         void setRotatePoint(sf::Vector2f rotatePoint){mRotatePoint=rotatePoint;}
-        void setVisibleBullets(bool visible){mVisibleBullets=visible;}
+        void setProjectile(GameObject *projectile){mProjectile=projectile;}
 
     protected:
         /// Type of gun: Instant hit, projectile, or melee
@@ -68,8 +68,8 @@ class WeaponComponent : public Component
         /// The cool down clock
         sf::Clock mCoolDownClock;
 
-        /// Visible bullets
-        bool mVisibleBullets;
+        /// The projectile GameObject. Should NOT actively be in the scene
+        GameObject *mProjectile;
 
     private:
 };

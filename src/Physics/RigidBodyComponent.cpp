@@ -77,7 +77,7 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
             delete shape;
         }
     }
-    else // Create box body from texture
+    else if (mGameObject->getComponent<SpriteComponent>()) // Create box body from texture
     {
         SpriteComponent *sprite = mGameObject->getComponent<SpriteComponent>();
 

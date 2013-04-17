@@ -19,7 +19,6 @@ namespace PacketType
 {
     enum
     {
-        SCENE_CREATION,
         CREATE_OBJECT,
         COMPONENT_MESSAGE,
         USER_MESSAGE
@@ -35,6 +34,7 @@ struct Connector
 
 class GameObject;
 class Component;
+class QueuedPacket;
 
 class NetworkManager : public Manager
 {
@@ -42,16 +42,16 @@ class NetworkManager : public Manager
         NetworkManager();
         virtual ~NetworkManager();
 
-        void hostServer(int port);
-        void connectClient(std::string ipAddress, int port);
+        void hostServer(int port, int incomingBandwidth = 0, int outgoingBandwidth = 0);
+        void connectClient(std::string ipAddress, int port, int incomingBandwidth = 57600 / 8, int outgoingBandwidth = 14400 / 8);
         void disconnect(int connectorID = 0);
 
         virtual bool update(float dt);
 
-        void send(sf::Packet packet, int connectorID = 0, int excludeID = 0, bool reliable = true); // connectorID is only relevant to server. It is 0 to send to all clients
+        void send(sf::Packet &packet, int connectorID = 0, int excludeID = 0, bool reliable = true); // connectorID is only relevant to server. It is 0 to send to all clients
         void sendSceneCreation(int connectorID = 0, int excludeID = 0, bool reliable = true);
         void sendGameObject(GameObject *object, int connectorID = 0, int excludeID = 0, bool reliable = true);
-        void sendToComponent(sf::Packet packet, Component *component, int connectorID = 0, int excludeID = 0, bool reliable = true);
+        void sendToComponent(sf::Packet &packet, Component *component, int connectorID = 0, int excludeID = 0, bool reliable = true);
 
         int findConnectorID(std::string IP);
         Connector *findConnector(int ID);
@@ -89,6 +89,13 @@ class NetworkManager : public Manager
 
         /// The list of clients if I'm a server
         std::vector <Connector*> mConnectors;
+
+        /// Packets in the queue that need to be sent
+        std::vector <QueuedPacket*> mQueuedPackets;
+
+        /// Bandwidth
+        int mBandwidth;
+        int mBandwidthLeft;
 
         /// The ID for the next connector
         int mNextID;

@@ -15,6 +15,7 @@ Component::Component(GameObject *object, std::string name)
     mTypeName = "Component";
 
     mShouldSerialize = true;
+    mEnabled = true;
 }
 
 Component::~Component()

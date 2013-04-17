@@ -8,6 +8,8 @@ GameObject implementation
 
 #include "Core/GameObject.h"
 
+#include <iostream>
+
 #include <Scene/SceneManager.h>
 
 GameObject::GameObject()
@@ -97,17 +99,29 @@ void GameObject::deserialize(sf::Packet &packet)
     }
 }
 
+GameObject *GameObject::clone(bool giveID)
+{
+    sf::Packet packet;
+    serialize(packet);
+    GameObject *clone = SceneManager::get()->createGameObject(giveID);
+    clone->deserialize(packet);
+    return clone;
+}
+
 bool GameObject::update(float dt)
 {
     for (unsigned int c = 0; c < mComponents.size(); c++)
     {
-        //update the components
-        if (!mComponents[c]->update(dt))
+        if (mComponents[c]->getEnabled())
         {
-            //if the component doesn't want to live, end his suffering
-            mComponents[c]->release();
-            mComponents.erase(mComponents.begin()+c);
-            c--;
+            //update the components
+            if (!mComponents[c]->update(dt))
+            {
+                //if the component doesn't want to live, end his suffering
+                mComponents[c]->release();
+                mComponents.erase(mComponents.begin()+c);
+                c--;
+            }
         }
     }
 

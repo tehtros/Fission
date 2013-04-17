@@ -1,5 +1,7 @@
 #include "Scene/Scene.h"
 
+#include <fstream>
+
 #include "Core/GameObject.h"
 #include "Rendering/RenderingManager.h"
 #include "Scene/SceneManager.h"
@@ -16,8 +18,39 @@ Scene::~Scene()
     clear();
 }
 
-void Scene::initialize()
+void Scene::save(std::string fileName)
 {
+    std::ofstream file(fileName.c_str(), std::ios::out|std::ios::binary);
+
+    sf::Packet packet;
+    serialize(packet);
+
+    file.write((const char*)packet.getData(), packet.getDataSize());
+
+    file.close();
+}
+
+void Scene::load(std::string fileName)
+{
+    std::ifstream file(fileName.c_str(), std::ios::in|std::ios::binary);
+
+    sf::Packet packet;
+
+    int size = file.tellg();
+    file.seekg(0, std::ios::end);
+    size = ((int)file.tellg()) - size;
+    file.seekg(0, std::ios::beg);
+
+    // Create the buffer and read file contents into it
+    char *buffer = new char[size];
+    file.read(buffer, size);
+    packet.append(buffer, size);
+    delete buffer;
+
+    deserialize(packet);
+
+    packet.clear();
+    file.close();
 }
 
 bool Scene::update(float deltaTime)
@@ -51,25 +84,16 @@ void Scene::render(sf::RenderTarget *target, sf::RenderStates states)
     }
 }
 
-void Scene::serializeCreationPacket(sf::Packet &packet)
+void Scene::serialize(sf::Packet &packet)
 {
-    // Get networked object count
-    int objectCount = 0;
+    packet << (int)mGameObjects.size();
     for (unsigned int o = 0; o < mGameObjects.size(); o++)
     {
-        if (mGameObjects[o]->getSyncNetwork())
-            objectCount++;
-    }
-
-    packet << objectCount;
-    for (unsigned int o = 0; o < mGameObjects.size(); o++)
-    {
-        if (mGameObjects[o]->getSyncNetwork())
-            mGameObjects[o]->serialize(packet);
+        mGameObjects[o]->serialize(packet);
     }
 }
 
-void Scene::deserializeCreationPacket(sf::Packet &packet)
+void Scene::deserialize(sf::Packet &packet)
 {
     int objectCount;
     packet >> objectCount;
@@ -135,6 +159,9 @@ void Scene::destroyGameObject(GameObject *object)
 
 GameObject *Scene::findGameObject(int ID)
 {
+    if (ID == -1)
+        return NULL;
+
     for (unsigned int o = 0; o < mGameObjects.size(); o++)
     {
         if (mGameObjects[o]->getID() == ID) //find the GameObject

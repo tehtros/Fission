@@ -28,14 +28,12 @@ WeaponComponent::WeaponComponent(GameObject *object, std::string name) : Compone
     mInaccuracy = 5;
     mCoolDown = 100;
     mFirePoint = sf::Vector2f(0.5f,0);
-    mVisibleBullets = true;
 
     mTypeName = "WeaponComponent";
 }
 
 WeaponComponent::~WeaponComponent()
 {
-    //dtor
 }
 
 void WeaponComponent::fire()
@@ -100,7 +98,7 @@ void WeaponComponent::fire(float rotation)
             // Create the projectile
             GameObject *proj = SceneManager::get()->createGameObject();
             proj->addComponent(new SpriteComponent(proj, "sprite", "Content/Textures/bullet.png"));
-            ProjectileComponent *pcomp = new ProjectileComponent(proj, "projectile", mDamage, closestFraction*mRange, mVisibleBullets);
+            ProjectileComponent *pcomp = new ProjectileComponent(proj, "projectile", mDamage, closestFraction*mRange);
             pcomp->setTeam(mTeam);
             proj->addComponent(pcomp);
 
@@ -111,7 +109,7 @@ void WeaponComponent::fire(float rotation)
             if (hitObject)
             {
                 // Tell the hit object that he just got hit
-                hitObject->onPreSolve(proj, NULL, NULL);
+                //hitObject->onPreSolve(proj, NULL, NULL);
                 hitObject->onContactBegin(proj);
                 hitObject->onContactEnd(proj);
             }
@@ -120,6 +118,20 @@ void WeaponComponent::fire(float rotation)
         }
         case WeaponType::PROJECTILE:
         {
+            // Create the projectile
+            if (mProjectile)
+            {
+                GameObject *projObj = mProjectile->clone();
+                ProjectileComponent *proj = projObj->getComponent<ProjectileComponent>();
+
+                if (proj)
+                {
+                    proj->setTeam(mTeam);
+                    proj->setRange(mRange);
+                    proj->setDamage(mDamage);
+                }
+            }
+
             break;
         }
     }
