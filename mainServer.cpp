@@ -16,5 +16,6 @@ int main()
     game->run(new GameState(game));
     delete game;
 
+    system("pause");
     return 0;
 }

@@ -11,7 +11,11 @@ StateManager::StateManager()
 
 StateManager::~StateManager()
 {
-    //dtor
+    while (mStates.size() > 0)
+    {
+        delete mStates.top();
+        mStates.pop();
+    }
 }
 
 bool StateManager::update(float dt)

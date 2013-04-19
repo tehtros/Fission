@@ -69,6 +69,7 @@ bool InputManager::update(float dt)
             // window closed
             case sf::Event::Closed:
                 mWindow->close();
+                return false;
                 break;
 
             // key pressed

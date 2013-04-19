@@ -31,7 +31,7 @@
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Network.hpp>
 
-1365122921 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
+1366347983 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
 	"Core/StateManager.h"
 	"Core/State.h"
 
@@ -1767,7 +1767,7 @@
 	<AGL/agl.h>
 	<GL/glxew.h>
 
-1365495065 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
+1366348684 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
 	"Core/InputManager.h"
 	<iostream>
 	"GUI/GUIManager.h"
@@ -2172,7 +2172,7 @@
 1366159436 c:\users\teddy\programming\fission\include\logic\weaponcomponent.h
 	<Core/Component.h>
 
-1366159400 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
+1366159650 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
 	"Logic/WeaponComponent.h"
 	<Core/Math.h>
 	<Core/GameObject.h>
@@ -2189,7 +2189,7 @@
 	<Rendering/RenderingManager.h>
 	<iostream>
 
-1366159287 c:\users\teddy\programming\fission\include\logic\projectilecomponent.h
+1366348110 c:\users\teddy\programming\fission\include\logic\projectilecomponent.h
 	<LTBL/Light/EmissiveLight.h>
 	<Core/Component.h>
 
@@ -2260,7 +2260,7 @@
 1365658428 c:\users\teddy\programming\fission\include\gamestate.h
 	<Fission.h>
 
-1365655673 source:c:\users\teddy\programming\fission\src\gamestate.cpp
+1366348080 source:c:\users\teddy\programming\fission\src\gamestate.cpp
 	"GameState.h"
 	<iostream>
 	<assert.h>
@@ -2269,14 +2269,6 @@
 	<fstream>
 	<string>
 	<Fission.h>
-	"HeroControlComponent.h"
-	"GravityComponent.h"
-	"PlanetComponent.h"
-	"HQComponent.h"
-	"TurretComponent.h"
-	"DroneComponent.h"
-	"HPComponent.h"
-	"ResourceComponent.h"
 
 1360224847 source:c:\users\teddy\programming\fission\src\dialoguestate.cpp
 	"DialogueState.h"
@@ -2440,7 +2432,7 @@
 	<Fission.h>
 	"GameState.h"
 
-1365145479 source:c:\users\teddy\programming\fission\mainserver.cpp
+1366348459 source:c:\users\teddy\programming\fission\mainserver.cpp
 	<iostream>
 	<assert.h>
 	<cstdlib>
@@ -2450,8 +2442,6 @@
 	<LTBL/Constructs/Vec2f.h>
 	<Fission.h>
 	"GameState.h"
-	"PlayerControlComponent.h"
-	"EnemyComponent.h"
 
 1365385712 c:\users\teddy\programming\fission\include\herocontrolcomponent.h
 	<Fission.h>

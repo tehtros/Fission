@@ -11,7 +11,6 @@ class ProjectileComponent : public Component
         virtual ~ProjectileComponent();
 
         virtual bool update(float dt);
-        virtual void onRender(sf::RenderTarget *target, sf::RenderStates states);
 
         // Accessors
         int getTeam(){return mTeam;}
