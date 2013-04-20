@@ -12,10 +12,12 @@ Abstract base class for all game states.
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Network.hpp>
 
-class State
+#include "Core/GameRef.h"
+
+class State : public GameRef
 {
     public:
-        State();
+        State(Game *game);
         virtual ~State();
 
         virtual void initialize(){}

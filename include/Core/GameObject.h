@@ -17,12 +17,13 @@ Also, components can be attached for functionality.
 #include <SFML/Network/Packet.hpp>
 
 #include "Core/RefCounted.h"
+#include "Core/GameRef.h"
 #include "Core/Component.h"
 
-class GameObject : public RefCounted
+class GameObject : public RefCounted, public GameRef
 {
     public:
-        GameObject();
+        GameObject(Game *game);
         virtual ~GameObject();
 
         void serialize(sf::Packet &packet);

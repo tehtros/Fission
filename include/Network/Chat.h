@@ -13,10 +13,10 @@ struct ChatMessage
     int mTimeStamp; //when the message was sent
 };
 
-class Chat
+class Chat : public GameRef
 {
     public:
-        Chat(int chatPacketID, std::string userName);
+        Chat(Game *game, int chatPacketID, std::string userName);
         virtual ~Chat();
 
         void initialize();

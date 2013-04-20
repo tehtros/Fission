@@ -4,12 +4,8 @@
 
 #include "GUI/GUIManager.h"
 
-InputManager *InputManager::Instance = NULL;
-
-InputManager::InputManager(sf::Window *window)
+InputManager::InputManager(Game *game, sf::Window *window) : Manager(game)
 {
-    Instance = this;
-
     mWindow = window;
     mWindow->setKeyRepeatEnabled(false);
 
@@ -61,7 +57,7 @@ bool InputManager::update(float dt)
     //while there are pending events...
     while (mWindow->pollEvent(event))
     {
-        GUIManager::get()->getDesktop()->HandleEvent(event);
+        getGame()->getGUIManager()->getDesktop()->HandleEvent(event);
 
         //check the type of the event...
         switch (event.type)

@@ -9,7 +9,7 @@
 class StateManager : public Manager
 {
     public:
-        StateManager();
+        StateManager(Game *game);
         virtual ~StateManager();
 
         virtual bool update(float dt);
@@ -19,12 +19,9 @@ class StateManager : public Manager
 
         State *getCurrentState(){if (mStates.size() > 0) return mStates.top(); else return NULL;}
 
-        static StateManager *get(){return Instance;}
-
     protected:
         std::stack <State*> mStates; //stack of states
     private:
-        static StateManager *Instance;
 };
 
 #endif // STATEMANAGER_H

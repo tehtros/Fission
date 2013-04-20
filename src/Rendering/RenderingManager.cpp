@@ -1,11 +1,7 @@
 #include "Rendering/RenderingManager.h"
 
-RenderingManager *RenderingManager::Instance = NULL;
-
-RenderingManager::RenderingManager(int width, int height)
+RenderingManager::RenderingManager(Game *game, int width, int height) : Manager(game)
 {
-    Instance = this;
-
     // Create the window
     mRenderWindow = new sf::RenderWindow(sf::VideoMode(width,height,32), "EvoScroller");
     mView = mRenderWindow->getView();
@@ -71,7 +67,7 @@ sf::Vector2f RenderingManager::screenToWorld(sf::Vector2f screenPos)
     sf::Vector2f worldPos = screenPos-getCameraScreenOffset();
     worldPos.x = worldPos.x/mPTU;
     worldPos.y = -worldPos.y/mPTU;
-    worldPos.rotateBy(RenderingManager::get()->getCameraRotation(), RenderingManager::get()->getCameraPosition());
+    worldPos.rotateBy(getGame()->getRenderingManager()->getCameraRotation(), getGame()->getRenderingManager()->getCameraPosition());
 
     return worldPos;
 }
@@ -79,7 +75,7 @@ sf::Vector2f RenderingManager::screenToWorld(sf::Vector2f screenPos)
 sf::Vector2f RenderingManager::worldToScreen(sf::Vector2f worldPos)
 {
     sf::Vector2f screenPos = worldPos;
-    screenPos.rotateBy(-RenderingManager::get()->getCameraRotation(), RenderingManager::get()->getCameraPosition());
+    screenPos.rotateBy(-getGame()->getRenderingManager()->getCameraRotation(), getGame()->getRenderingManager()->getCameraPosition());
     screenPos.x *= mPTU;
     screenPos.y *= -mPTU;
     screenPos += getCameraScreenOffset();

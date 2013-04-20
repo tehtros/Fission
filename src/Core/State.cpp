@@ -8,7 +8,7 @@ State implementation
 
 #include "Core/State.h"
 
-State::State()
+State::State(Game *game) : GameRef(game)
 {
     mAlive = true;
 }

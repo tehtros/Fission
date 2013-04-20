@@ -16,7 +16,7 @@ SpriteComponent::SpriteComponent(GameObject *object, std::string name, std::stri
     if (mTexturePath == "") // If a path wasn't specified, we don't want to try to load anything
         return;
 
-    sf::Texture *texture = ResourceManager::get()->getTexture(mTexturePath);
+    sf::Texture *texture = getGame()->getResourceManager()->getTexture(mTexturePath);
     if (texture)
     {
         texture->setRepeated(false);
@@ -66,7 +66,7 @@ void SpriteComponent::deserialize(sf::Packet &packet)
     Component::deserialize(packet);
 
     packet >> mTexturePath;
-    sf::Texture *texture = ResourceManager::get()->getTexture(mTexturePath);
+    sf::Texture *texture = getGame()->getResourceManager()->getTexture(mTexturePath);
     if (texture)
     {
         texture->setRepeated(false);
@@ -132,9 +132,9 @@ void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states
     mSprite->setTextureRect(sf::IntRect(frameX, frameY, mFrameDim.x, mFrameDim.y));
 
     //calculate pixel position from GameObject position
-    sf::Vector2f newPos = ((mGameObject->getPosition()+mRelativePosition)*RenderingManager::get()->getPTU());
+    sf::Vector2f newPos = ((mGameObject->getPosition()+mRelativePosition)*getGame()->getRenderingManager()->getPTU());
     newPos.y *= -1;
-    newPos += RenderingManager::get()->getCameraScreenOffset();
+    newPos += getGame()->getRenderingManager()->getCameraScreenOffset();
 
     mSprite->setOrigin(sf::Vector2f(mFrameDim.x/2, mFrameDim.y/2));
     mSprite->setPosition(newPos);
@@ -176,5 +176,5 @@ void SpriteComponent::setTexture(sf::Texture *texture)
 
 void SpriteComponent::setTexture(std::string path)
 {
-    setTexture(ResourceManager::get()->getTexture(path));
+    setTexture(getGame()->getResourceManager()->getTexture(path));
 }

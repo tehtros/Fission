@@ -11,13 +11,9 @@
 #include "Physics/DragComponent.h"
 #include "Logic/WeaponComponent.h"
 
-SceneManager *SceneManager::Instance = NULL;
-
-SceneManager::SceneManager()
+SceneManager::SceneManager(Game *game) : Manager(game)
 {
-    Instance = this;
-
-    mCurrentScene = new Scene;
+    mCurrentScene = new Scene(getGame());
     mScenes.push_back(mCurrentScene);
 
     registerComponentCreationFunction("SpriteComponent", SpriteComponent::createComponent);
@@ -41,7 +37,7 @@ bool SceneManager::update(float deltaTime)
 
 GameObject *SceneManager::createGameObject(bool giveID)
 {
-    GameObject *object = new GameObject;
+    GameObject *object = new GameObject(getGame());
     if (giveID) object->setID(getNextID());
     addGameObject(object);
     return object;

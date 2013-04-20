@@ -9,13 +9,11 @@
 class GUIManager : public Manager
 {
     public:
-        GUIManager();
+        GUIManager(Game *game);
         virtual ~GUIManager();
 
         virtual bool update(float dt);
         void render(sf::RenderTarget *target, sf::RenderStates states = sf::RenderStates::Default);
-
-        static GUIManager *get(){return Instance;}
 
         // Accessors
         sfg::SFGUI *getSFGUI(){return mSFGUI;}
@@ -26,7 +24,6 @@ class GUIManager : public Manager
         sfg::Desktop *mDesktop;
 
     private:
-        static GUIManager *Instance;
 };
 
 #endif // GUIMANAGER_H

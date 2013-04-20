@@ -12,7 +12,7 @@
 class RenderingManager : public Manager
 {
     public:
-        RenderingManager(int width, int height);
+        RenderingManager(Game *game, int width, int height);
         virtual ~RenderingManager();
 
         virtual bool update(float dt);
@@ -39,8 +39,6 @@ class RenderingManager : public Manager
         void setCameraPosition(sf::Vector2f pos){mCameraPosition=pos;}
         void setCameraRotation(float rot){mCameraRotation=rot;}
 
-        static RenderingManager *get(){return Instance;}
-
     protected:
         sf::RenderWindow *mRenderWindow; //the sfml render window
         sf::View mView; // SFML view
@@ -56,7 +54,6 @@ class RenderingManager : public Manager
         float mCameraRotation;
 
     private:
-        static RenderingManager *Instance;
 };
 
 #endif // RENDERINGMANAGER_H

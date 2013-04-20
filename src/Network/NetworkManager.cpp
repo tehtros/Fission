@@ -6,26 +6,8 @@
 #include <Core/Component.h>
 #include <Scene/SceneManager.h>
 
-class QueuedPacket
+NetworkManager::NetworkManager(Game *game) : Manager(game)
 {
-public:
-    QueuedPacket(sf::Packet packet, int connectorID, int excludeID, bool reliable){}
-    ~QueuedPacket(){}
-
-private:
-    sf::Packet mPacket;
-    int mConnectorID;
-    int mExcludeID;
-    bool mReliable;
-
-};
-
-NetworkManager *NetworkManager::Instance = NULL;
-
-NetworkManager::NetworkManager()
-{
-    Instance = this;
-
     mNextID = 1;
     mNetworkID = -1; // Set to -1 for no connection
 
@@ -103,7 +85,7 @@ void NetworkManager::connectClient(std::string ipAddress, int port, int incoming
         packet >> mNetworkID;
         packet.clear();
         std::cout << "Connection to " << ipAddress << " with ID " << mNetworkID <<  " succeeded.\n";
-        StateManager::get()->getCurrentState()->onConnect(mNetworkID);
+        getGame()->getStateManager()->getCurrentState()->onConnect(mNetworkID);
     }
     else
     {
@@ -171,7 +153,7 @@ bool NetworkManager::update(float dt)
                 enet_host_flush(mHost);
                 idPacket.clear();
 
-                StateManager::get()->getCurrentState()->onConnect(connector->mID);
+                getGame()->getStateManager()->getCurrentState()->onConnect(connector->mID);
 
                 break;
             }
@@ -192,7 +174,7 @@ bool NetworkManager::update(float dt)
                         int objID; // GameObject's ID
                         std::string name; // Component name
                         packet >> objID >> name; // Get the essentials
-                        GameObject *object = SceneManager::get()->findGameObject(objID);
+                        GameObject *object = getGame()->getSceneManager()->findGameObject(objID);
                         if (object)
                         {
                             Component *component = object->getComponent<Component>(name);
@@ -204,10 +186,10 @@ bool NetworkManager::update(float dt)
 
                     case PacketType::CREATE_OBJECT:
                     {
-                        GameObject *object = SceneManager::get()->createGameObject();
+                        GameObject *object = getGame()->getSceneManager()->createGameObject();
                         object->deserialize(packet);
 
-                        if (object->getID() != -1 && object != SceneManager::get()->findGameObject(object->getID()))
+                        if (object->getID() != -1 && object != getGame()->getSceneManager()->findGameObject(object->getID()))
                         {
                             object->kill();
                         }
@@ -219,9 +201,9 @@ bool NetworkManager::update(float dt)
                     {
                         packet.reset();
                         if (mType == NetworkType::SERVER)
-                            StateManager::get()->getCurrentState()->handlePacket(packet, ((Connector*)event.peer->data)->mID);
+                            getGame()->getStateManager()->getCurrentState()->handlePacket(packet, ((Connector*)event.peer->data)->mID);
                         else if (mType == NetworkType::CLIENT)
-                            StateManager::get()->getCurrentState()->handlePacket(packet, 0);
+                            getGame()->getStateManager()->getCurrentState()->handlePacket(packet, 0);
                         break;
                     }
                 }
@@ -238,7 +220,7 @@ bool NetworkManager::update(float dt)
                 {
                     std::cout << "Disconnected from server.\n";
                     mConnected = false;
-                    StateManager::get()->getCurrentState()->onDisconnect(mNetworkID);
+                    getGame()->getStateManager()->getCurrentState()->onDisconnect(mNetworkID);
                     mNetworkID = -1;
                 }
                 else if (mType == NetworkType::SERVER)
@@ -248,7 +230,7 @@ bool NetworkManager::update(float dt)
                     if(connector)
                     {
                         std::cout << "Connector " << connector->mID << " has disconnected.\n";
-                        StateManager::get()->getCurrentState()->onDisconnect(connector->mID);
+                        getGame()->getStateManager()->getCurrentState()->onDisconnect(connector->mID);
                         connector->mPeer = NULL;
                         removeConnector(connector->mID);
                         event.peer->data = NULL;
@@ -306,10 +288,10 @@ void NetworkManager::send(sf::Packet &packet, int connectorID, int excludeID, bo
 
 void NetworkManager::sendSceneCreation(int connectorID, int excludeID, bool reliable)
 {
-    for (unsigned int i = 0; i < SceneManager::get()->getCurrentScene()->getGameObjects().size(); i++)
+    for (unsigned int i = 0; i < getGame()->getSceneManager()->getCurrentScene()->getGameObjects().size(); i++)
     {
-        if (SceneManager::get()->getCurrentScene()->getGameObjects()[i]->getSyncNetwork())
-            sendGameObject(SceneManager::get()->getCurrentScene()->getGameObjects()[i], connectorID, excludeID, reliable);
+        if (getGame()->getSceneManager()->getCurrentScene()->getGameObjects()[i]->getSyncNetwork())
+            sendGameObject(getGame()->getSceneManager()->getCurrentScene()->getGameObjects()[i], connectorID, excludeID, reliable);
     }
 }
 

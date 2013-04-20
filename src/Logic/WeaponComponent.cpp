@@ -75,7 +75,7 @@ void WeaponComponent::fire(float rotation)
             GameObject *hitObject = NULL; //the object we hit
             float closestFraction = 1; //start with end of line as p2
             sf::Vector2f normal; //the normal vector of this intersection
-            for (b2Body* b = PhysicsManager::get()->getWorld()->GetBodyList(); b; b = b->GetNext())
+            for (b2Body* b = getGame()->getPhysicsManager()->getWorld()->GetBodyList(); b; b = b->GetNext())
             {
                 if (!b->IsActive() || ((GameObject*)b->GetUserData()) == mGameObject) //skip inactive objects and this weapon's object
                     continue;
@@ -96,7 +96,7 @@ void WeaponComponent::fire(float rotation)
             sf::Vector2f intersectionPoint = start + (closestFraction * (end - start));
 
             // Create the projectile
-            GameObject *proj = SceneManager::get()->createGameObject();
+            GameObject *proj = getGame()->getSceneManager()->createGameObject();
             proj->addComponent(new SpriteComponent(proj, "sprite", "Content/Textures/bullet.png"));
             ProjectileComponent *pcomp = new ProjectileComponent(proj, "projectile", mDamage, closestFraction*mRange);
             pcomp->setTeam(mTeam);

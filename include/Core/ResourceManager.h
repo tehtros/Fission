@@ -17,13 +17,11 @@ struct Resource
 class ResourceManager : public Manager
 {
     public:
-        ResourceManager();
+        ResourceManager(Game *game);
         virtual ~ResourceManager();
 
         sf::Texture *getTexture(std::string name);
         sf::Font *getFont(std::string name);
-
-        static ResourceManager *get(){return Instance;}
 
     protected:
         Resource *findResource(std::string name);
@@ -32,7 +30,6 @@ class ResourceManager : public Manager
         std::vector <Resource> mResources;
 
     private:
-        static ResourceManager *Instance;
 };
 
 #endif // RESOURCEMANAGER_H

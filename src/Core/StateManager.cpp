@@ -2,11 +2,8 @@
 
 #include "Core/State.h"
 
-StateManager *StateManager::Instance = NULL;
-
-StateManager::StateManager()
+StateManager::StateManager(Game *game) : Manager(game)
 {
-    Instance = this;
 }
 
 StateManager::~StateManager()

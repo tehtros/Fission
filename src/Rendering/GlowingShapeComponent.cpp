@@ -24,14 +24,14 @@ GlowingShapeComponent::GlowingShapeComponent(GameObject *object, std::string nam
     render.create(mShape->getLocalBounds().width + 128, mShape->getLocalBounds().height + 128);
 
     mShape->setPosition(sf::Vector2f(mShape->getLocalBounds().width/2 + 64, mShape->getLocalBounds().height/2 + 64)+
-                        (mCenter*RenderingManager::get()->getPTU()));
+                        (mCenter*getGame()->getRenderingManager()->getPTU()));
     mShape->setScale(scale);
     render.draw(*mShape); //draw the shape
     render.display();
 
     //render that texture to another texture using a shader
     sf::Texture texture(render.getTexture());
-    //sf::Texture texture(*ResourceManager::get()->getTexture("lesserbeing.png"));
+    //sf::Texture texture(*ResourceManager()->getTexture("lesserbeing.png"));
     sf::Sprite tmpSprite(texture);
 
     sf::RenderStates renderStates = sf::RenderStates::Default;
@@ -48,7 +48,7 @@ GlowingShapeComponent::GlowingShapeComponent(GameObject *object, std::string nam
 
     mEmissiveLight->m_intensity = 1.1f;
 
-    RenderingManager::get()->getLightSystem()->AddEmissiveLight(mEmissiveLight);
+    getGame()->getRenderingManager()->getLightSystem()->AddEmissiveLight(mEmissiveLight);
 
     mAlpha = 1.1f;
     mAlphaDir = -1.f;
@@ -78,13 +78,13 @@ void GlowingShapeComponent::onRender(sf::RenderTarget *target, sf::RenderStates 
 {
     sf::Vector2u screenSize = target->getSize();
 
-    sf::Vector2f newPos = (mGameObject->getPosition()*RenderingManager::get()->getPTU());
+    sf::Vector2f newPos = (mGameObject->getPosition()*getGame()->getRenderingManager()->getPTU());
     newPos.y *= -1;
-    newPos += RenderingManager::get()->getCameraScreenOffset();
+    newPos += getGame()->getRenderingManager()->getCameraScreenOffset();
 
     Vec2f center(mCenter.x, mCenter.y);
     center.RotateBy(-mGameObject->getRotation());
-    Vec2f lightPos = Vec2f(newPos.x, newPos.y)-(center*RenderingManager::get()->getPTU());
+    Vec2f lightPos = Vec2f(newPos.x, newPos.y)-(center*getGame()->getRenderingManager()->getPTU());
 
     mEmissiveLight->SetCenter(Vec2f(lightPos.x, screenSize.y-lightPos.y));
     mEmissiveLight->SetRotation(mGameObject->getRotation());

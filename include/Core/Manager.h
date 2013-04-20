@@ -9,10 +9,16 @@ The abstract base class for all managers
 #ifndef MANAGER_H
 #define MANAGER_H
 
-class Manager
+#include "Core/GameRef.h"
+
+class Manager : public GameRef
 {
     public:
-        Manager(){mPaused=false;}
+        Manager(Game *game) : GameRef(game)
+        {
+            mPaused=false;
+        }
+
         virtual ~Manager(){}
 
         virtual bool update(float dt){return true;} //returns false if the manager needs to be closed

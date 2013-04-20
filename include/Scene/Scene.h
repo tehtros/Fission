@@ -5,13 +5,15 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Network/Packet.hpp>
 
+#include "Core/GameRef.h"
+
 class SceneManager;
 class GameObject;
 
-class Scene
+class Scene : public GameRef
 {
     public:
-        Scene();
+        Scene(Game *game);
         virtual ~Scene();
 
         void save(std::string filename);

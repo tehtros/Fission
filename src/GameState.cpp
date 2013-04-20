@@ -10,9 +10,8 @@
 
 #include <Fission.h>
 
-GameState::GameState(Game *game)
+GameState::GameState(Game *game) : State(game)
 {
-    mGame = game;
 }
 
 GameState::~GameState()
@@ -38,20 +37,20 @@ void GameState::onPostRender(sf::RenderTarget *target, sf::RenderStates states)
 
 void GameState::onConnect(int ID)
 {
-    if (NetworkManager::get()->getType() == NetworkType::SERVER)
+    if (getGame()->getNetworkManager()->getType() == NetworkType::SERVER)
     {
     }
-    else if (NetworkManager::get()->getType() == NetworkType::CLIENT)
+    else if (getGame()->getNetworkManager()->getType() == NetworkType::CLIENT)
     {
     }
 }
 
 void GameState::onDisconnect(int ID)
 {
-    if (NetworkManager::get()->getType() == NetworkType::SERVER)
+    if (getGame()->getNetworkManager()->getType() == NetworkType::SERVER)
     {
     }
-    else if (NetworkManager::get()->getType() == NetworkType::CLIENT)
+    else if (getGame()->getNetworkManager()->getType() == NetworkType::CLIENT)
     {
     }
 }
@@ -61,7 +60,7 @@ void GameState::handlePacket(sf::Packet &packet, int connectorID)
     int packetID;
     packet >> packetID;
 
-    if (NetworkManager::get()->getType() == NetworkType::SERVER)
+    if (getGame()->getNetworkManager()->getType() == NetworkType::SERVER)
     {
         switch (packetID)
         {
@@ -72,7 +71,7 @@ void GameState::handlePacket(sf::Packet &packet, int connectorID)
             }
         }
     }
-    else if (NetworkManager::get()->getType() == NetworkType::CLIENT)
+    else if (getGame()->getNetworkManager()->getType() == NetworkType::CLIENT)
     {
         switch (packetID)
         {

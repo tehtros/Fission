@@ -17,10 +17,11 @@ Defines a component of a GameObject. Derive from this to add functionality to a 
 #include <SFML/Network/Packet.hpp>
 
 #include "Core/RefCounted.h"
+#include "Core/GameRef.h"
 
 class GameObject;
 
-class Component : public RefCounted
+class Component : public RefCounted, public GameRef
 {
     public:
         Component(GameObject *object, std::string name);

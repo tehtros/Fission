@@ -8,7 +8,9 @@ Component implementation
 
 #include "Core/Component.h"
 
-Component::Component(GameObject *object, std::string name)
+#include "Core/GameObject.h"
+
+Component::Component(GameObject *object, std::string name) : GameRef(object->getGame())
 {
     mGameObject = object;
     mName = name;

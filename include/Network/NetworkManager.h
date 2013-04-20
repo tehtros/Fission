@@ -39,7 +39,7 @@ class QueuedPacket;
 class NetworkManager : public Manager
 {
     public:
-        NetworkManager();
+        NetworkManager(Game *game);
         virtual ~NetworkManager();
 
         void hostServer(int port, int incomingBandwidth = 0, int outgoingBandwidth = 0);
@@ -61,9 +61,6 @@ class NetworkManager : public Manager
         int getType(){return mType;} /// Returns the network role of this application - server or client
         bool getConnected(){return mConnected;}
         int getNetworkID(){return mNetworkID;}
-
-        /// The get function for this singleton
-        static NetworkManager *get(){return Instance;}
 
     protected:
         /// Server or client?
@@ -101,7 +98,6 @@ class NetworkManager : public Manager
         int mNextID;
 
     private:
-        static NetworkManager *Instance;
 };
 
 #endif // NETWORKMANAGER_H

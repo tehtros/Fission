@@ -7,7 +7,7 @@
 #include "Scene/SceneManager.h"
 #include "Physics/RigidBodyComponent.h"
 
-Scene::Scene()
+Scene::Scene(Game *game) : GameRef(game)
 {
     //ctor
 }
@@ -100,7 +100,7 @@ void Scene::deserialize(sf::Packet &packet)
 
     for (int o = 0; o < objectCount; o++)
     {
-        GameObject *object = SceneManager::get()->createGameObject();
+        GameObject *object = getGame()->getSceneManager()->createGameObject();
         object->deserialize(packet);
 
         if (object->getID() != -1 && object != findGameObject(object->getID()))

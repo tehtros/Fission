@@ -10,7 +10,7 @@ class DragComponent;
 class PhysicsManager : public Manager, b2ContactListener
 {
     public:
-        PhysicsManager();
+        PhysicsManager(Game *game);
         virtual ~PhysicsManager();
 
         virtual bool update(float dt);
@@ -33,8 +33,6 @@ class PhysicsManager : public Manager, b2ContactListener
         void setGroundBody(b2Body *body){mGroundBody=body;}
         void setDragger(DragComponent *dragger){mDragger=dragger;}
 
-        static PhysicsManager *get(){return Instance;}
-
     protected:
         b2World *mWorld;
 
@@ -47,7 +45,6 @@ class PhysicsManager : public Manager, b2ContactListener
         DragComponent *mDragger;
 
     private:
-        static PhysicsManager *Instance;
 };
 
 #endif // PHYSICSMANAGER_H

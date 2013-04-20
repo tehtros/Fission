@@ -1,10 +1,7 @@
 #include "Core/ResourceManager.h"
 
-ResourceManager *ResourceManager::Instance = NULL;
-
-ResourceManager::ResourceManager()
+ResourceManager::ResourceManager(Game *game) : Manager(game)
 {
-    Instance = this;
 }
 
 ResourceManager::~ResourceManager()

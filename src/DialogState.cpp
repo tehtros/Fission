@@ -1,6 +1,6 @@
 #include "DialogState.h"
 
-DialogState::DialogState(std::string text, int delay)
+DialogState::DialogState(Game *game, std::string text, int delay) : State(game)
 {
     mDelay = delay;
     mCursor = 0;
@@ -46,8 +46,8 @@ DialogState::DialogState(std::string text, int delay)
 DialogState::~DialogState()
 {
     // Unpause the game when we are done with the dialogue
-    SceneManager::get()->setPaused(false);
-    PhysicsManager::get()->setPaused(false);
+    getGame()->getSceneManager()->setPaused(false);
+    getGame()->getPhysicsManager()->setPaused(false);
 
     mPages.clear();
     delete mDialogBox;
@@ -56,18 +56,18 @@ DialogState::~DialogState()
 
 void DialogState::initialize()
 {
-    mDialogBox = new sf::Sprite(*ResourceManager::get()->getTexture("Content/Textures/dialogbox.png"));
-    mGameBackground = new sf::Sprite(*ResourceManager::get()->getTexture("Content/Textures/background.png"));
+    mDialogBox = new sf::Sprite(*getGame()->getResourceManager()->getTexture("Content/Textures/dialogbox.png"));
+    mGameBackground = new sf::Sprite(*getGame()->getResourceManager()->getTexture("Content/Textures/background.png"));
 
     mDialogBox->move(sf::Vector2f(0,640-150));
 
-    SceneManager::get()->setPaused(true);
-    PhysicsManager::get()->setPaused(true);
+    getGame()->getSceneManager()->setPaused(true);
+    getGame()->getPhysicsManager()->setPaused(true);
 }
 
 bool DialogState::update(float dt)
 {
-    if (InputManager::get()->getKeyState(sf::Keyboard::Return) == ButtonState::PRESSED)
+    if (getGame()->getInputManager()->getKeyState(sf::Keyboard::Return) == ButtonState::PRESSED)
         mPage++;
 
     if (mPage >= (int)mPages.size()) // Finished reading!
@@ -87,13 +87,13 @@ void DialogState::onPostRender(sf::RenderTarget *target, sf::RenderStates states
     target->draw(*mDialogBox, states);
 
     // Render the actual dialogue text
-    sf::Text text(mPages[mPage], *ResourceManager::get()->getFont("Content/Fonts/font.ttf"), 16);
+    sf::Text text(mPages[mPage], *getGame()->getResourceManager()->getFont("Content/Fonts/font.ttf"), 16);
     text.setColor(sf::Color(50,50,50));
     text.move(sf::Vector2f(5, 640-150+5));
     target->draw(text, states);
 
     // Continue text
-    sf::Text contText("Press enter to continue...", *ResourceManager::get()->getFont("Content/Fonts/font.ttf"), 16);
+    sf::Text contText("Press enter to continue...", *getGame()->getResourceManager()->getFont("Content/Fonts/font.ttf"), 16);
     contText.setColor(sf::Color(50,50,50));
     contText.move(sf::Vector2f(465, 580));
     target->draw(contText, states);

@@ -22,7 +22,6 @@ class GameState : public State
         virtual void handlePacket(sf::Packet &packet, int connectorID);
 
     protected:
-        Game *mGame;
 };
 
 #endif // GAMESTATE_H

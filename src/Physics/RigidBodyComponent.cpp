@@ -32,7 +32,7 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
         def.type = (b2BodyType)bodyType;
         def.fixedRotation = false;
 
-        mBody = PhysicsManager::get()->getWorld()->CreateBody(&def);
+        mBody = getGame()->getPhysicsManager()->getWorld()->CreateBody(&def);
         mBody->SetUserData(mGameObject); //set the user data to this component's object
 
         //get the fixture count
@@ -88,12 +88,12 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, std
             def.type = b2_dynamicBody;
         def.fixedRotation = false;
 
-        mBody = PhysicsManager::get()->getWorld()->CreateBody(&def);
+        mBody = getGame()->getPhysicsManager()->getWorld()->CreateBody(&def);
         mBody->SetUserData(mGameObject); //set the user data to this component's object
 
         b2PolygonShape *shape = new b2PolygonShape;
-        shape->SetAsBox(((sprite->getFrameSize().x/RenderingManager::get()->getPTU())/2), //Multiply by 0.98 since box2D makes it slightly too large
-                        ((sprite->getFrameSize().y/RenderingManager::get()->getPTU())/2));
+        shape->SetAsBox(((sprite->getFrameSize().x/getGame()->getRenderingManager()->getPTU())/2), //Multiply by 0.98 since box2D makes it slightly too large
+                        ((sprite->getFrameSize().y/getGame()->getRenderingManager()->getPTU())/2));
 
         b2FixtureDef fixtureDef;
         fixtureDef.shape = shape;
@@ -117,7 +117,7 @@ RigidBodyComponent::RigidBodyComponent(GameObject *object, std::string name, b2B
 
 RigidBodyComponent::~RigidBodyComponent()
 {
-    PhysicsManager::get()->getWorld()->DestroyBody(mBody);
+    getGame()->getPhysicsManager()->getWorld()->DestroyBody(mBody);
 }
 
 void RigidBodyComponent::serialize(sf::Packet &packet)
@@ -169,7 +169,7 @@ void RigidBodyComponent::serialize(sf::Packet &packet)
 void RigidBodyComponent::deserialize(sf::Packet &packet)
 {
     if (mBody)
-        PhysicsManager::get()->getWorld()->DestroyBody(mBody);
+        getGame()->getPhysicsManager()->getWorld()->DestroyBody(mBody);
 
     Component::deserialize(packet);
 
@@ -190,7 +190,7 @@ void RigidBodyComponent::deserialize(sf::Packet &packet)
     bodyDef.fixedRotation = fixedRotation;
     bodyDef.allowSleep = allowSleep;
 
-    mBody = PhysicsManager::get()->getWorld()->CreateBody(&bodyDef);
+    mBody = getGame()->getPhysicsManager()->getWorld()->CreateBody(&bodyDef);
     mBody->SetUserData(mGameObject); //set the user data to this object
 
     packet >> mCollisionGroup;

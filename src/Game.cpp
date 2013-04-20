@@ -14,14 +14,14 @@ Game::Game(int width, int height)
 {
     mRunning = true;
 
-    mResourceManager = new ResourceManager;
-    mStateManager = new StateManager;
-    mSceneManager = new SceneManager;
-    mGUIManager = new GUIManager;
-    mRenderingManager = new RenderingManager(width, height);
-    mPhysicsManager = new PhysicsManager;
-    mInputManager = new InputManager(mRenderingManager->getRenderWindow());
-    mNetworkManager = new NetworkManager;
+    mResourceManager = new ResourceManager(this);
+    mStateManager = new StateManager(this);
+    mSceneManager = new SceneManager(this);
+    mGUIManager = new GUIManager(this);
+    mRenderingManager = new RenderingManager(this, width, height);
+    mPhysicsManager = new PhysicsManager(this);
+    mInputManager = new InputManager(this, mRenderingManager->getRenderWindow());
+    mNetworkManager = new NetworkManager(this);
 
     mLockStep = 1.f/30.f;
 }
@@ -42,7 +42,7 @@ void Game::run(State *state)
 {
     mStateManager->pushState(state);
 
-    int lastFrameTime = InputManager::get()->getTime();
+    int lastFrameTime = mInputManager->getTime();
     float deltaTime = 0;
     mLockStepAccumulator = 0.f;
     mLockStepAccumulatorRatio = 0.f;
@@ -51,10 +51,10 @@ void Game::run(State *state)
     {
         try
         {
-            while (InputManager::get()->getTime()-lastFrameTime < 1); // Cap framerate at 1000 FPS
+            while (mInputManager->getTime()-lastFrameTime < 1); // Cap framerate at 1000 FPS
 
-            deltaTime = (InputManager::get()->getTime()-lastFrameTime)/1000.f;
-            lastFrameTime = InputManager::get()->getTime();
+            deltaTime = (mInputManager->getTime()-lastFrameTime)/1000.f;
+            lastFrameTime = mInputManager->getTime();
 
             //calculate framerate
             mFrameRate = 1.f/deltaTime;

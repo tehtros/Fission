@@ -27,15 +27,16 @@
 1355120079 source:c:\users\teddy\programming\fission\src\core\state.cpp
 	"Core/State.h"
 
-1360636581 c:\users\teddy\programming\fission\include\core\state.h
+1366492784 c:\users\teddy\programming\fission\include\core\state.h
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Network.hpp>
+	"Core/GameRef.h"
 
-1366347983 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
+1366491933 source:c:\users\teddy\programming\fission\src\core\statemanager.cpp
 	"Core/StateManager.h"
 	"Core/State.h"
 
-1365123217 c:\users\teddy\programming\fission\include\core\statemanager.h
+1366491611 c:\users\teddy\programming\fission\include\core\statemanager.h
 	<stack>
 	<Core/Manager.h>
 	<Core/State.h>
@@ -534,10 +535,10 @@
 1346494012 c:\users\teddy\programming\fission\box2d\rope\b2rope.h
 	<Box2D/Common/b2Math.h>
 
-1365580027 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
+1366492369 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
 	"Rendering/RenderingManager.h"
 
-1365579682 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
+1366491603 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
 	<SFML/Graphics.hpp>
 	<LTBL/Light/LightSystem.h>
 	<LTBL/Light/Light_Point.h>
@@ -1704,9 +1705,9 @@
 	<SFML/Window/WindowImpl.hpp>
 	<SFML/System/String.hpp>
 
-1365142741 c:\users\teddy\programming\fission\include\game.h
+1366490501 c:\users\teddy\programming\fission\include\game.h
 
-1366015712 source:c:\users\teddy\programming\fission\src\game.cpp
+1366491971 source:c:\users\teddy\programming\fission\src\game.cpp
 	"Game.h"
 	<Core/Math.h>
 	<Core/ResourceManager.h>
@@ -1767,16 +1768,17 @@
 	<AGL/agl.h>
 	<GL/glxew.h>
 
-1366348684 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
+1366491911 source:c:\users\teddy\programming\fission\src\core\inputmanager.cpp
 	"Core/InputManager.h"
 	<iostream>
 	"GUI/GUIManager.h"
 
-1365494930 c:\users\teddy\programming\fission\include\core\inputmanager.h
+1366491578 c:\users\teddy\programming\fission\include\core\inputmanager.h
 	<SFML/Window.hpp>
 	"Core/Manager.h"
 
-1355275717 c:\users\teddy\programming\fission\include\core\manager.h
+1366490857 c:\users\teddy\programming\fission\include\core\manager.h
+	"Core/GameRef.h"
 
 1355128551 c:\users\teddy\programming\fission\ltbl\light\lightsystem.h
 	<SFML/OpenGL.hpp>
@@ -1947,7 +1949,7 @@
 	<SFML/Graphics/RenderWindow.hpp>
 	"Core/RefCounted.h"
 
-1365921767 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
+1366492330 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
 	"Rendering/SpriteComponent.h"
 	<SFML/Graphics/Sprite.hpp>
 	<iostream>
@@ -1960,17 +1962,17 @@
 	<SFML/Graphics/Sprite.hpp>
 	"Core/Component.h"
 
-1355655600 source:c:\users\teddy\programming\fission\src\core\resourcemanager.cpp
+1366491920 source:c:\users\teddy\programming\fission\src\core\resourcemanager.cpp
 	"Core/ResourceManager.h"
 
-1360216661 c:\users\teddy\programming\fission\include\core\resourcemanager.h
+1366491595 c:\users\teddy\programming\fission\include\core\resourcemanager.h
 	<string>
 	<vector>
 	<SFML/Graphics/Font.hpp>
 	<SFML/Graphics/Texture.hpp>
 	<Core/Manager.h>
 
-1366014760 source:c:\users\teddy\programming\fission\src\scene\scene.cpp
+1366492480 source:c:\users\teddy\programming\fission\src\scene\scene.cpp
 	"Scene/Scene.h"
 	<fstream>
 	"Core/GameObject.h"
@@ -1978,18 +1980,19 @@
 	"Scene/SceneManager.h"
 	"Physics/RigidBodyComponent.h"
 
-1365896610 c:\users\teddy\programming\fission\include\scene\scene.h
+1366492445 c:\users\teddy\programming\fission\include\scene\scene.h
 	<vector>
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Network/Packet.hpp>
+	"Core/GameRef.h"
 
-1364890338 c:\users\teddy\programming\fission\include\scene\scenemanager.h
+1366491587 c:\users\teddy\programming\fission\include\scene\scenemanager.h
 	<string>
 	<vector>
 	"Core/Manager.h"
 	"Scene.h"
 
-1364870190 source:c:\users\teddy\programming\fission\src\scene\scenemanager.cpp
+1366492492 source:c:\users\teddy\programming\fission\src\scene\scenemanager.cpp
 	"Scene/SceneManager.h"
 	<fstream>
 	"Scene/SceneManager.h"
@@ -2026,7 +2029,7 @@
 	<Box2D/Box2D.h>
 	"Core/Component.h"
 
-1365902467 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
+1366492359 source:c:\users\teddy\programming\fission\src\physics\rigidbodycomponent.cpp
 	"Physics/RigidBodyComponent.h"
 	<iostream>
 	<fstream>
@@ -2036,27 +2039,30 @@
 	<Rendering/RenderingManager.h>
 	<Rendering/SpriteComponent.h>
 
-1365921934 c:\users\teddy\programming\fission\include\core\component.h
+1366491100 c:\users\teddy\programming\fission\include\core\component.h
 	<string>
 	<Box2D/Dynamics/Contacts/b2Contact.h>
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Network/Packet.hpp>
 	"Core/RefCounted.h"
+	"Core/GameRef.h"
 
-1365921679 source:c:\users\teddy\programming\fission\src\core\component.cpp
+1366491035 source:c:\users\teddy\programming\fission\src\core\component.cpp
 	"Core/Component.h"
+	"Core/GameObject.h"
 
-1366158522 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
+1366491893 source:c:\users\teddy\programming\fission\src\core\gameobject.cpp
 	"Core/GameObject.h"
 	<iostream>
 	<Scene/SceneManager.h>
 
-1366158434 c:\users\teddy\programming\fission\include\core\gameobject.h
+1366491138 c:\users\teddy\programming\fission\include\core\gameobject.h
 	<vector>
 	<SFML/System/Vector2.hpp>
 	<SFML/Network/Packet.hpp>
 	"Core/RefCounted.h"
+	"Core/GameRef.h"
 	"Core/Component.h"
 
 1346494012 c:\users\teddy\programming\fission\box2d\box2d.h
@@ -2088,12 +2094,12 @@
 	<Box2D/Dynamics/Joints/b2RopeJoint.h>
 	<Box2D/Dynamics/Joints/b2WeldJoint.h>
 
-1365793059 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
+1366492262 source:c:\users\teddy\programming\fission\src\physics\physicsmanager.cpp
 	"Physics/PhysicsManager.h"
 	<Core/GameObject.h>
 	<Physics/RigidBodyComponent.h>
 
-1364542237 c:\users\teddy\programming\fission\include\physics\physicsmanager.h
+1366491621 c:\users\teddy\programming\fission\include\physics\physicsmanager.h
 	<Box2D/Box2D.h>
 	<Core/Manager.h>
 
@@ -2108,7 +2114,7 @@
 	<LTBL/Light/ConvexHull.h>
 	<Core/Component.h>
 
-1364683154 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
+1366492330 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
 	"Rendering/ShapeComponent.h"
 	<fstream>
 	<Core/Math.h>
@@ -2120,7 +2126,7 @@
 	<vector>
 	<SFML/System/Vector2.hpp>
 
-1364578196 source:c:\users\teddy\programming\fission\src\physics\dragcomponent.cpp
+1366492359 source:c:\users\teddy\programming\fission\src\physics\dragcomponent.cpp
 	"Physics/DragComponent.h"
 	<Core/Math.h>
 	<Core/InputManager.h>
@@ -2158,7 +2164,7 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 
-1364683145 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
+1366492330 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
 	"Rendering/GlowingShapeComponent.h"
 	<SFML/Graphics.hpp>
 	<Core/ResourceManager.h>
@@ -2172,7 +2178,7 @@
 1366159436 c:\users\teddy\programming\fission\include\logic\weaponcomponent.h
 	<Core/Component.h>
 
-1366159650 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
+1366491997 source:c:\users\teddy\programming\fission\src\logic\weaponcomponent.cpp
 	"Logic/WeaponComponent.h"
 	<Core/Math.h>
 	<Core/GameObject.h>
@@ -2257,10 +2263,10 @@
 1360710753 c:\users\teddy\programming\fission\include\enemycomponent.h
 	<Core/Component.h>
 
-1365658428 c:\users\teddy\programming\fission\include\gamestate.h
+1366492900 c:\users\teddy\programming\fission\include\gamestate.h
 	<Fission.h>
 
-1366348080 source:c:\users\teddy\programming\fission\src\gamestate.cpp
+1366492923 source:c:\users\teddy\programming\fission\src\gamestate.cpp
 	"GameState.h"
 	<iostream>
 	<assert.h>
@@ -2276,10 +2282,10 @@
 1360221566 c:\users\teddy\programming\fission\include\dialoguestate.h
 	<Fission.h>
 
-1360293072 source:c:\users\teddy\programming\fission\src\dialogstate.cpp
+1366492851 source:c:\users\teddy\programming\fission\src\dialogstate.cpp
 	"DialogState.h"
 
-1360292565 c:\users\teddy\programming\fission\include\dialogstate.h
+1366492864 c:\users\teddy\programming\fission\include\dialogstate.h
 	<Fission.h>
 
 1360646027 source:c:\users\teddy\programming\fission\src\networkmanager.cpp
@@ -2302,12 +2308,12 @@
 	<SFML/Network/TcpSocket.hpp>
 	<SFML/Network/UdpSocket.hpp>
 
-1365896916 c:\users\teddy\programming\fission\include\network\networkmanager.h
+1366491649 c:\users\teddy\programming\fission\include\network\networkmanager.h
 	<enet/enet.h>
 	<SFML/Network.hpp>
 	<Core/Manager.h>
 
-1366152102 source:c:\users\teddy\programming\fission\src\network\networkmanager.cpp
+1366492179 source:c:\users\teddy\programming\fission\src\network\networkmanager.cpp
 	<Network/NetworkManager.h>
 	<iostream>
 	<Core/StateManager.h>
@@ -2326,13 +2332,13 @@
 	<vector>
 	<Core/ResourceManager.h>
 
-1362010125 c:\users\teddy\programming\fission\include\network\chat.h
+1366492030 c:\users\teddy\programming\fission\include\network\chat.h
 	<string>
 	<vector>
 	<Core/ResourceManager.h>
 	<Rendering/RenderingManager.h>
 
-1365756139 source:c:\users\teddy\programming\fission\src\network\chat.cpp
+1366492112 source:c:\users\teddy\programming\fission\src\network\chat.cpp
 	"Network/Chat.h"
 	<Core/InputManager.h>
 	<Network/NetworkManager.h>
@@ -3370,12 +3376,12 @@
 	<SFGUI/Engine.hpp>
 	<SFGUI/Context.hpp>
 
-1365146474 c:\users\teddy\programming\fission\include\gui\guimanager.h
+1366491632 c:\users\teddy\programming\fission\include\gui\guimanager.h
 	<SFGUI/SFGUI.hpp>
 	<SFML/Graphics.hpp>
 	<Core/Manager.h>
 
-1365146492 source:c:\users\teddy\programming\fission\src\gui\guimanager.cpp
+1366491980 source:c:\users\teddy\programming\fission\src\gui\guimanager.cpp
 	"GUI/GUIManager.h"
 
 1356571301 source:c:\users\teddy\programming\fission\extlibs\headers\glee\src\glee.c
@@ -3523,4 +3529,10 @@
 
 1365653238 c:\users\teddy\programming\fission\include\dronemanager.h
 	<Fission.h>
+
+1366490575 source:c:\users\teddy\programming\fission\src\core\gameref.cpp
+	"Core/GameRef.h"
+
+1366491158 c:\users\teddy\programming\fission\include\core\gameref.h
+	"Game.h"
 

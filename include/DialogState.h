@@ -6,7 +6,7 @@
 class DialogState : public State
 {
     public:
-        DialogState(std::string text, int delay);
+        DialogState(Game *game, std::string text, int delay);
         virtual ~DialogState();
 
         virtual void initialize();

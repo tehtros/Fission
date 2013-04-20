@@ -15,7 +15,7 @@ typedef Component *(*ComponentCreationFunction)(GameObject *);
 class SceneManager : public Manager
 {
     public:
-        SceneManager();
+        SceneManager(Game *game);
         virtual ~SceneManager();
 
         virtual bool update(float dt);
@@ -45,8 +45,6 @@ class SceneManager : public Manager
         // Mutators
         void setNextID(int ID){mNextID=ID;}
 
-        static SceneManager *get(){return Instance;}
-
     protected:
         /// List of all the loaded scenes
         std::vector <Scene*> mScenes;
@@ -60,7 +58,6 @@ class SceneManager : public Manager
         int mNextID; // Next GameObject's ID
 
     private:
-        static SceneManager *Instance;
 };
 
 #endif // SCENEMANAGER_H

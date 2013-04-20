@@ -18,7 +18,7 @@ DragComponent::DragComponent(GameObject *object, std::string name) : Component(o
 
 DragComponent::~DragComponent()
 {
-    PhysicsManager::get()->setDragger(NULL);
+    getGame()->getPhysicsManager()->setDragger(NULL);
 }
 
 bool DragComponent::update(float dt)
@@ -27,12 +27,12 @@ bool DragComponent::update(float dt)
 
     // Real world coordinate from mouse position
     //sf::Vector2f camOffset =
-    sf::Vector2f mouseScreen = sf::Vector2f(InputManager::get()->getMousePosition().x, InputManager::get()->getMousePosition().y)-
-                                RenderingManager::get()->getCameraScreenOffset();
+    sf::Vector2f mouseScreen = getGame()->getInputManager()->getMousePosition()-
+                                getGame()->getRenderingManager()->getCameraScreenOffset();
     sf::Vector2f mouseWorld = screenToWorld(mouseScreen);
     b2Vec2 mousePos = b2Vec2(mouseWorld.x, mouseWorld.y);
 
-    if (InputManager::get()->getLMBState() == ButtonState::PRESSED)
+    if (getGame()->getInputManager()->getLMBState() == ButtonState::PRESSED)
     {
         // Test the point in our body's fixtures
         for (b2Fixture* f = mBody->GetFixtureList(); f != NULL; f = f->GetNext())
@@ -49,7 +49,7 @@ bool DragComponent::update(float dt)
     {
         b2MouseJointDef mousedef;
 
-        mousedef.bodyA = PhysicsManager::get()->getGroundBody();
+        mousedef.bodyA = getGame()->getPhysicsManager()->getGroundBody();
         mousedef.bodyB = mBody;
 
         mousedef.target = mousePos;
@@ -59,19 +59,19 @@ bool DragComponent::update(float dt)
         mousedef.maxForce = 300 * mousedef.bodyB->GetMass();
 
         mBody->SetAwake(true);
-        mMouseJoint = (b2MouseJoint*)PhysicsManager::get()->getWorld()->CreateJoint(&mousedef);
+        mMouseJoint = (b2MouseJoint*)getGame()->getPhysicsManager()->getWorld()->CreateJoint(&mousedef);
 
-        PhysicsManager::get()->setDragger(this);
+        getGame()->getPhysicsManager()->setDragger(this);
     }
-    else if (InputManager::get()->getLMBDown() && mMouseJoint) // We are dragging this component around
+    else if (getGame()->getInputManager()->getLMBDown() && mMouseJoint) // We are dragging this component around
     {
         mMouseJoint->SetTarget(mousePos);
         mBody->SetAwake(true);
     }
-    else if (InputManager::get()->getLMBState() == ButtonState::RELEASED && mMouseJoint)
+    else if (getGame()->getInputManager()->getLMBState() == ButtonState::RELEASED && mMouseJoint)
     {
-        PhysicsManager::get()->getWorld()->DestroyJoint(mMouseJoint);
-        PhysicsManager::get()->setDragger(NULL);
+        getGame()->getPhysicsManager()->getWorld()->DestroyJoint(mMouseJoint);
+        getGame()->getPhysicsManager()->setDragger(NULL);
         mMouseJoint = NULL;
     }
 

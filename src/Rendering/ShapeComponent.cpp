@@ -32,7 +32,7 @@ ShapeComponent::ShapeComponent(GameObject *object, std::string name, std::string
         if (y < min.y) min.y = y;
         if (x > max.x) max.x = x;
         if (y > max.y) max.y = y;
-        ((sf::ConvexShape*)mShape)->setPoint(index++, sf::Vector2f(x,-y)*RenderingManager::get()->getPTU());
+        ((sf::ConvexShape*)mShape)->setPoint(index++, sf::Vector2f(x,-y)*getGame()->getRenderingManager()->getPTU());
     }
 
     mCenter = (min+max)/2.f;
@@ -44,7 +44,7 @@ ShapeComponent::ShapeComponent(GameObject *object, std::string name, std::string
         // Create a hull by loading it from a file
         mLightHull = new ltbl::ConvexHull();
 
-        if(!mLightHull->LoadShape(shapeFile.c_str(), RenderingManager::get()->getPTU()))
+        if(!mLightHull->LoadShape(shapeFile.c_str(), getGame()->getRenderingManager()->getPTU()))
             abort();
 
         // Pre-calculate certain aspects
@@ -53,7 +53,7 @@ ShapeComponent::ShapeComponent(GameObject *object, std::string name, std::string
 
         mLightHull->m_renderLightOverHull = lit;
 
-        RenderingManager::get()->getLightSystem()->AddConvexHull(mLightHull);
+        getGame()->getRenderingManager()->getLightSystem()->AddConvexHull(mLightHull);
     }
 }
 
@@ -71,9 +71,9 @@ void ShapeComponent::onRender(sf::RenderTarget *target, sf::RenderStates states)
 {
     sf::Vector2u screenSize = target->getSize();
 
-    sf::Vector2f newPos = (mGameObject->getPosition()*RenderingManager::get()->getPTU());
+    sf::Vector2f newPos = (mGameObject->getPosition()*getGame()->getRenderingManager()->getPTU());
     newPos.y *= -1;
-    newPos += RenderingManager::get()->getCameraScreenOffset();
+    newPos += getGame()->getRenderingManager()->getCameraScreenOffset();
 
     mShape->setPosition(newPos);
     mShape->setRotation(-mGameObject->getRotation());

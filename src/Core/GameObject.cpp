@@ -12,7 +12,7 @@ GameObject implementation
 
 #include <Scene/SceneManager.h>
 
-GameObject::GameObject()
+GameObject::GameObject(Game *game) : GameRef(game)
 {
     mID = -1;
 
@@ -66,8 +66,8 @@ void GameObject::deserialize(sf::Packet &packet)
 {
     packet >> mID;
 
-    if (mID >= SceneManager::get()->getLastID())
-        SceneManager::get()->setNextID(mID+1);
+    if (mID >= getGame()->getSceneManager()->getLastID())
+        getGame()->getSceneManager()->setNextID(mID+1);
 
     sf::Int8 syncNetwork;
     packet >> syncNetwork;
@@ -85,9 +85,9 @@ void GameObject::deserialize(sf::Packet &packet)
     {
         packet >> componentType;
 
-        if (SceneManager::get()->getComponentCreationFunction(componentType) != NULL)
+        if (getGame()->getSceneManager()->getComponentCreationFunction(componentType) != NULL)
         {
-            Component *component = SceneManager::get()->getComponentCreationFunction(componentType)(this);
+            Component *component = getGame()->getSceneManager()->getComponentCreationFunction(componentType)(this);
             component->deserialize(packet);
             addComponent(component);
         }
@@ -103,7 +103,7 @@ GameObject *GameObject::clone(bool giveID)
 {
     sf::Packet packet;
     serialize(packet);
-    GameObject *clone = SceneManager::get()->createGameObject(giveID);
+    GameObject *clone = getGame()->getSceneManager()->createGameObject(giveID);
     clone->deserialize(packet);
     return clone;
 }

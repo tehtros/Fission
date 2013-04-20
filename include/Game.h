@@ -23,6 +23,14 @@ class Game
 
         //accessors
         int getFrameRate(){return mFrameRate;}
+        ResourceManager *getResourceManager(){return mResourceManager;}
+        InputManager *getInputManager(){return mInputManager;}
+        StateManager *getStateManager(){return mStateManager;}
+        RenderingManager *getRenderingManager(){return mRenderingManager;}
+        PhysicsManager *getPhysicsManager(){return mPhysicsManager;}
+        SceneManager *getSceneManager(){return mSceneManager;}
+        GUIManager *getGUIManager(){return mGUIManager;}
+        NetworkManager *getNetworkManager(){return mNetworkManager;}
 
     protected:
         ResourceManager *mResourceManager;

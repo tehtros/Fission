@@ -3,12 +3,8 @@
 #include <Core/GameObject.h>
 #include <Physics/RigidBodyComponent.h>
 
-PhysicsManager *PhysicsManager::Instance = NULL;
-
-PhysicsManager::PhysicsManager()
+PhysicsManager::PhysicsManager(Game *game) : Manager(game)
 {
-    Instance = this;
-
     mWorld = new b2World(b2Vec2(0, -10)); //gravity = 10
     mWorld->SetContactListener(this);
 

@@ -2,6 +2,8 @@
 #define FISSION_H_INCLUDED
 
 #include <Core/Math.h>
+#include <Core/RefCounted.h>
+#incluee <Core/GameRef.h>
 #include <Core/GameObject.h>
 #include <Core/Component.h>
 

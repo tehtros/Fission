@@ -1,11 +1,7 @@
 #include "GUI/GUIManager.h"
 
-GUIManager *GUIManager::Instance = NULL;
-
-GUIManager::GUIManager()
+GUIManager::GUIManager(Game *game) : Manager(game)
 {
-    Instance = this;
-
     mSFGUI = new sfg::SFGUI;
     mDesktop = new sfg::Desktop;
 }

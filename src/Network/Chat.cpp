@@ -3,7 +3,7 @@
 #include <Core/InputManager.h>
 #include <Network/NetworkManager.h>
 
-Chat::Chat(int chatPacketID, std::string userName)
+Chat::Chat(Game *game, int chatPacketID, std::string userName) : GameRef(game)
 {
     mFont = NULL;
     mChatting = false;
@@ -18,19 +18,19 @@ Chat::~Chat()
 
 void Chat::initialize()
 {
-    //if (NetworkManager::get()->getType() == NetworkType::CLIENT)
-        mFont = ResourceManager::get()->getFont("Content/Fonts/NeoGen.ttf");
+    //if (NetworkManager()->getType() == NetworkType::CLIENT)
+        mFont = getGame()->getResourceManager()->getFont("Content/Fonts/NeoGen.ttf");
 }
 
 void Chat::update()
 {
-    //if (NetworkManager::get()->getType() == NetworkType::CLIENT)
+    //if (NetworkManager()->getType() == NetworkType::CLIENT)
     {
         if (mChatting)
         {
             for (int k = 0; k < sf::Keyboard::KeyCount; k++)
             {
-                if (InputManager::get()->getKeyState(k) == ButtonState::PRESSED)
+                if (getGame()->getInputManager()->getKeyState(k) == ButtonState::PRESSED)
                 {
                     if (k == sf::Keyboard::BackSpace)
                     {
@@ -41,8 +41,8 @@ void Chat::update()
                         mMessage += ' ';
                     else if (k >= sf::Keyboard::Num0 && k <= sf::Keyboard::Num9)
                     {
-                        if (InputManager::get()->getKeyState(sf::Keyboard::LShift) == ButtonState::DOWN || //caps
-                            InputManager::get()->getKeyState(sf::Keyboard::RShift) == ButtonState::DOWN)
+                        if (getGame()->getInputManager()->getKeyState(sf::Keyboard::LShift) == ButtonState::DOWN || //caps
+                            getGame()->getInputManager()->getKeyState(sf::Keyboard::RShift) == ButtonState::DOWN)
                         {
                             switch (k)
                             {
@@ -63,16 +63,16 @@ void Chat::update()
                     }
                     else if (k >= sf::Keyboard::A && k <= sf::Keyboard::Z)
                     {
-                        if (InputManager::get()->getKeyState(sf::Keyboard::LShift) == ButtonState::DOWN || //caps
-                            InputManager::get()->getKeyState(sf::Keyboard::RShift) == ButtonState::DOWN)
+                        if (getGame()->getInputManager()->getKeyState(sf::Keyboard::LShift) == ButtonState::DOWN || //caps
+                            getGame()->getInputManager()->getKeyState(sf::Keyboard::RShift) == ButtonState::DOWN)
                             mMessage += (char)(k-sf::Keyboard::A+'a');
                         else
                             mMessage += (char)(k-sf::Keyboard::A+'A');
                     }
                     else
                     {
-                        if (InputManager::get()->getKeyState(sf::Keyboard::LShift) == ButtonState::DOWN || //caps
-                            InputManager::get()->getKeyState(sf::Keyboard::RShift) == ButtonState::DOWN)
+                        if (getGame()->getInputManager()->getKeyState(sf::Keyboard::LShift) == ButtonState::DOWN || //caps
+                            getGame()->getInputManager()->getKeyState(sf::Keyboard::RShift) == ButtonState::DOWN)
                         {
                             switch (k)
                             {
@@ -104,17 +104,17 @@ void Chat::update()
                 }
             }
 
-            if (InputManager::get()->getKeyState(sf::Keyboard::Return) == ButtonState::PRESSED) //user hit enter - send the message!
+            if (getGame()->getInputManager()->getKeyState(sf::Keyboard::Return) == ButtonState::PRESSED) //user hit enter - send the message!
             {
                 mMessage = mUserName+": " + mMessage;
-                addMessage(NetworkManager::get()->getNetworkID(), mMessage);
+                addMessage(getGame()->getNetworkManager()->getNetworkID(), mMessage);
                 mMessage = "";
                 mChatting = false;
             }
         }
 
         //if the user wants to chat or stop chatting
-        if (InputManager::get()->getKeyState(sf::Keyboard::T) == ButtonState::PRESSED && !mChatting)
+        if (getGame()->getInputManager()->getKeyState(sf::Keyboard::T) == ButtonState::PRESSED && !mChatting)
         {
             mChatting = true;
             mMessage = ""; //clear the message the user was typing
@@ -123,7 +123,7 @@ void Chat::update()
         for (unsigned int m = 0; m < mMessages.size(); m++)
         {
             // Don't keep messages for more than 20 seconds
-            if (InputManager::get()->getTime()-mMessages[m].mTimeStamp > 20000)
+            if (getGame()->getInputManager()->getTime()-mMessages[m].mTimeStamp > 20000)
             {
                 mMessages.erase(mMessages.begin()+m);
                 m--;
@@ -169,17 +169,17 @@ void Chat::addMessage(int playerID, std::string message)
 {
     ChatMessage newMessage;
     newMessage.mMessage = message;
-    newMessage.mTimeStamp = InputManager::get()->getTime();
+    newMessage.mTimeStamp = getGame()->getInputManager()->getTime();
     mMessages.push_back(newMessage);
 
     // Send messages
-    if (NetworkManager::get()->getType() == NetworkType::SERVER ||
-        (NetworkManager::get()->getType() == NetworkType::CLIENT && NetworkManager::get()->getNetworkID() == playerID))
+    if (getGame()->getNetworkManager()->getType() == NetworkType::SERVER ||
+        (getGame()->getNetworkManager()->getType() == NetworkType::CLIENT && getGame()->getNetworkManager()->getNetworkID() == playerID))
     {
         sf::Packet packet;
         packet << mChatPacketID;
         packet << playerID;
         packet << message;
-        NetworkManager::get()->send(packet);
+        getGame()->getNetworkManager()->send(packet);
     }
 }

@@ -29,7 +29,7 @@ class InputManager : public Manager
         };
 
     public:
-        InputManager(sf::Window *window);
+        InputManager(Game *game, sf::Window *window);
         virtual ~InputManager();
 
         virtual bool update(float dt);
@@ -58,8 +58,6 @@ class InputManager : public Manager
         sf::Vector2f getMousePosition(){return mMouseState.mPosition;}
         sf::Vector2f getMouseMove(){return mMouseState.mMove;}
 
-        static InputManager *get(){return Instance;}
-
     protected:
         /// The window this application is contained in
         sf::Window *mWindow;
@@ -74,7 +72,6 @@ class InputManager : public Manager
         MouseState mMouseState;
 
     private:
-        static InputManager *Instance;
 };
 
 #endif // INPUTMANAGER_H
