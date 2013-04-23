@@ -31,13 +31,14 @@ class RenderingManager : public Manager
         sf::Vector2f getScreenSize(){return sf::Vector2f(mRenderWindow->getSize().x, mRenderWindow->getSize().y);}
         sf::Vector2f getCameraPosition(){return mCameraPosition;}
         float getCameraRotation(){return mCameraRotation;}
-        sf::Vector2f getCameraScreenOffset(){return (sf::Vector2f(-mCameraPosition.x, mCameraPosition.y)*mPTU)+(mRenderWindow->getView().getSize()/2.f);}
+        float getCameraZoom(){return mCameraZoom;}
         sf::Vector2f screenToWorld(sf::Vector2f screenPos);
         sf::Vector2f worldToScreen(sf::Vector2f worldPos);
 
         // Mutators
         void setCameraPosition(sf::Vector2f pos){mCameraPosition=pos;}
         void setCameraRotation(float rot){mCameraRotation=rot;}
+        void setCameraZoom(float zoom){mCameraZoom=zoom;}
 
     protected:
         sf::RenderWindow *mRenderWindow; //the sfml render window
@@ -52,6 +53,9 @@ class RenderingManager : public Manager
 
         /// Rotation of the camera
         float mCameraRotation;
+
+        /// Zoom of the camera
+        float mCameraZoom;
 
     private:
 };

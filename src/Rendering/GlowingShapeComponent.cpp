@@ -80,7 +80,6 @@ void GlowingShapeComponent::onRender(sf::RenderTarget *target, sf::RenderStates 
 
     sf::Vector2f newPos = (mGameObject->getPosition()*getGame()->getRenderingManager()->getPTU());
     newPos.y *= -1;
-    newPos += getGame()->getRenderingManager()->getCameraScreenOffset();
 
     Vec2f center(mCenter.x, mCenter.y);
     center.RotateBy(-mGameObject->getRotation());

@@ -2050,6 +2050,10 @@
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>
+		<Unit filename="include/Core/GameRef.h">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
 		<Unit filename="include/Core/InputManager.h">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
@@ -2169,6 +2173,10 @@
 			<Option target="ReleaseWin" />
 		</Unit>
 		<Unit filename="src/Core/GameObject.cpp">
+			<Option target="DebugWin" />
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="src/Core/GameRef.cpp">
 			<Option target="DebugWin" />
 			<Option target="ReleaseWin" />
 		</Unit>

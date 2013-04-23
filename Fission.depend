@@ -24,7 +24,7 @@
 
 1355092252 c:\users\teddy\programming\fission\include\core\refcounted.h
 
-1355120079 source:c:\users\teddy\programming\fission\src\core\state.cpp
+1366492794 source:c:\users\teddy\programming\fission\src\core\state.cpp
 	"Core/State.h"
 
 1366492784 c:\users\teddy\programming\fission\include\core\state.h
@@ -535,10 +535,10 @@
 1346494012 c:\users\teddy\programming\fission\box2d\rope\b2rope.h
 	<Box2D/Common/b2Math.h>
 
-1366492369 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
+1366698571 source:c:\users\teddy\programming\fission\src\rendering\renderingmanager.cpp
 	"Rendering/RenderingManager.h"
 
-1366491603 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
+1366698637 c:\users\teddy\programming\fission\include\rendering\renderingmanager.h
 	<SFML/Graphics.hpp>
 	<LTBL/Light/LightSystem.h>
 	<LTBL/Light/Light_Point.h>
@@ -1949,7 +1949,7 @@
 	<SFML/Graphics/RenderWindow.hpp>
 	"Core/RefCounted.h"
 
-1366492330 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
+1366698597 source:c:\users\teddy\programming\fission\src\rendering\spritecomponent.cpp
 	"Rendering/SpriteComponent.h"
 	<SFML/Graphics/Sprite.hpp>
 	<iostream>
@@ -2114,7 +2114,7 @@
 	<LTBL/Light/ConvexHull.h>
 	<Core/Component.h>
 
-1366492330 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
+1366698616 source:c:\users\teddy\programming\fission\src\rendering\shapecomponent.cpp
 	"Rendering/ShapeComponent.h"
 	<fstream>
 	<Core/Math.h>
@@ -2164,7 +2164,7 @@
 	<SFML/System/Vector2.hpp>
 	<SFML/Graphics/Color.hpp>
 
-1366492330 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
+1366698591 source:c:\users\teddy\programming\fission\src\rendering\glowingshapecomponent.cpp
 	"Rendering/GlowingShapeComponent.h"
 	<SFML/Graphics.hpp>
 	<Core/ResourceManager.h>

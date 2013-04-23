@@ -134,7 +134,6 @@ void SpriteComponent::onRender(sf::RenderTarget *target, sf::RenderStates states
     //calculate pixel position from GameObject position
     sf::Vector2f newPos = ((mGameObject->getPosition()+mRelativePosition)*getGame()->getRenderingManager()->getPTU());
     newPos.y *= -1;
-    newPos += getGame()->getRenderingManager()->getCameraScreenOffset();
 
     mSprite->setOrigin(sf::Vector2f(mFrameDim.x/2, mFrameDim.y/2));
     mSprite->setPosition(newPos);

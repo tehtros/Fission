@@ -26,10 +26,7 @@ bool DragComponent::update(float dt)
     bool isTouched = false;
 
     // Real world coordinate from mouse position
-    //sf::Vector2f camOffset =
-    sf::Vector2f mouseScreen = getGame()->getInputManager()->getMousePosition()-
-                                getGame()->getRenderingManager()->getCameraScreenOffset();
-    sf::Vector2f mouseWorld = screenToWorld(mouseScreen);
+    sf::Vector2f mouseWorld = getGame()->getRenderingManager()->screenToWorld(getGame()->getInputManager()->getMousePosition());
     b2Vec2 mousePos = b2Vec2(mouseWorld.x, mouseWorld.y);
 
     if (getGame()->getInputManager()->getLMBState() == ButtonState::PRESSED)

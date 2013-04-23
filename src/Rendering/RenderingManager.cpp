@@ -13,6 +13,7 @@ RenderingManager::RenderingManager(Game *game, int width, int height) : Manager(
 
     mPTU = 32.f; //32 pixels per unit
     mCameraRotation = 0.f;
+    mCameraZoom = 1.f;
 }
 
 RenderingManager::~RenderingManager()
@@ -34,7 +35,10 @@ void RenderingManager::beginRender()
 
 void RenderingManager::initializeView()
 {
+    sf::Vector2f halfScreen = sf::Vector2f(mRenderWindow->getSize().x, mRenderWindow->getSize().y)/2.f;
+    mView.move(sf::Vector2f(mCameraPosition.x, -mCameraPosition.y)*mPTU - halfScreen);
     mView.setRotation(-mCameraRotation);
+    mView.zoom(mCameraZoom);
     mRenderWindow->setView(mView);
 
     mLightSystem->SetView(mRenderWindow->getView());
@@ -64,21 +68,30 @@ void RenderingManager::endRender()
 
 sf::Vector2f RenderingManager::screenToWorld(sf::Vector2f screenPos)
 {
-    sf::Vector2f worldPos = screenPos-getCameraScreenOffset();
-    worldPos.x = worldPos.x/mPTU;
-    worldPos.y = -worldPos.y/mPTU;
-    worldPos.rotateBy(getGame()->getRenderingManager()->getCameraRotation(), getGame()->getRenderingManager()->getCameraPosition());
+    sf::View view = mRenderWindow->getDefaultView();
+    sf::Vector2f halfScreen = sf::Vector2f(mRenderWindow->getSize().x, mRenderWindow->getSize().y)/2.f;
+    view.move(sf::Vector2f(mCameraPosition.x, -mCameraPosition.y)*mPTU - halfScreen);
+    view.setRotation(-mCameraRotation);
+    view.zoom(mCameraZoom);
+
+    sf::Vector2f worldPos = mRenderWindow->mapPixelToCoords(sf::Vector2i(screenPos.x, screenPos.y), view);
+    worldPos.y *= -1;
+    worldPos /= mPTU;
 
     return worldPos;
 }
 
 sf::Vector2f RenderingManager::worldToScreen(sf::Vector2f worldPos)
 {
-    sf::Vector2f screenPos = worldPos;
-    screenPos.rotateBy(-getGame()->getRenderingManager()->getCameraRotation(), getGame()->getRenderingManager()->getCameraPosition());
-    screenPos.x *= mPTU;
-    screenPos.y *= -mPTU;
-    screenPos += getCameraScreenOffset();
+    sf::View view = mRenderWindow->getDefaultView();
+    sf::Vector2f halfScreen = sf::Vector2f(mRenderWindow->getSize().x, mRenderWindow->getSize().y)/2.f;
+    view.move(sf::Vector2f(mCameraPosition.x, -mCameraPosition.y)*mPTU - halfScreen);
+    view.setRotation(-mCameraRotation);
+    view.zoom(mCameraZoom);
 
-    return screenPos;
+    worldPos.y *= -1;
+    worldPos *= mPTU;
+    sf::Vector2i screenPos = mRenderWindow->mapCoordsToPixel(sf::Vector2f(worldPos.x, worldPos.y), view);
+
+    return sf::Vector2f(screenPos.x, screenPos.y);
 }
